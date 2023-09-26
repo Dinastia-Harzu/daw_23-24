@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - MαsθerM4tikא</title>
+</head>
+<body>
+
+    <h1>Crear cuenta</h1>
+    
+    <hr>
+
+    <!-- Formulario de Registro -->
+    <form action="index.html" method="post">
+
+        <!-- Datos del usuario -->
+        <section id="form_1">
+
+            <h2>Por favor, introduce tus datos para registarte.</h2>
+
+            <!-- Nombre -->
+            <p>
+                <label for="nombre">Nombre: </label> 
+                <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre...">
+            </p>
+
+            <!-- Contrasenya -->
+            <p>
+                <label for="contrasenya">Contraseña:</label> 
+                <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce la contraseña...">
+            </p>
+
+            <!-- Repetir contrasenya -->
+            <p>
+                <label for="rep_con">Repetir contraseña:</label> 
+                <input type="password" name="rep_con" id="rep_con" placeholder="Repite la contraseña...">
+            </p>
+
+            <!-- Email -->
+            <p>
+                <label for="email">Email: </label> 
+                <input type="email" name="email" id="email" placeholder="Introduce tu email...">
+            </p>
+
+            <!-- Sexo -->
+            <p>
+                <label for="sexo">Sexo: </label>
+                <select name="sexo" id="sexo">
+                    <option value="cod_M">Masculino</option>
+                    <option value="cod_F">Femenino</option>
+                    <option value="cod_O">Otro</option>
+                </select>
+            </p>
+
+            <!-- Fecha -->
+            <p>
+                <label for="fecha">Fecha de nacimiento: </label> 
+                <input type="date" name="fecha" id="fecha">
+            </p>
+
+            <!-- Ciudad -->
+            <p>
+                <label for="ciudad">Ciudad: </label> 
+                <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
+            </p>
+
+            <!-- Pais -->
+            <p>
+                <label for="paises">País: </label>
+                <select name="paises" id="paises">
+                    <option value="cod_es">España</option>
+                    <option value="cod_fr">Francia</option>
+                    <option value="cod_uk">Reino Unido</option>
+                    <option value="cod_al">Alemania</option>
+                    <option value="cod_it">Italia</option>
+                    <option value="cod_bel">Bélgica</option>
+                    <option value="cod_chi">China</option>
+                    <option value="cod_sui">Suiza</option>
+                    <option value="cod_pol">Polonia</option>
+                    <option value="cod_usa">Estados Unidos</option>
+                </select>
+            </p>
+        </section>
+
+        <!-- Foto de perfil -->
+        <section class="form_2">
+
+            <h3>Introduce tu foto de perfil:</h3>
+            <p>
+                <img src="https://st2.depositphotos.com/19428878/44645/v/600/depositphotos_446453832-stock-illustration-default-avatar-profile-icon-social.jpg" 
+                alt="Foto de perfil" width="250" height="250">
+            </p>
+            <input type="file" name="img_perfil" id="img_perfil">
+        </section>
+
+
+        <!-- Boton de crear -->
+        <p class="form_3">
+            <input type="submit" value="Crear">
+        </p>
+
+        <p>¿Tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+        
+    </form>
+
+</body>
+</html>
