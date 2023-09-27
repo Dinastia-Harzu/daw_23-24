@@ -7,102 +7,139 @@
 </head>
 <body>
 
-    <h1>Crear cuenta</h1>
-    
-    <hr>
+    <!--Header-->
+    <header>
+        <div>
+            <img src="logo.png" alt="Icono de la red social">
+            <h1>MαsθerM4tikא</h1>
+            <p>El Instagram o Flickr de las matemáticas</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="busqueda.html">Descubrir</a></li>
+                <li><a href="publicar.html">Publicar</a></li>
+            </ul>
+        </nav>
+        <div><input type="text" name="busqueda_rapida" id="busqueda_rapida"></div>
+        <figure>
+            <a href="registro.html">
+                <img src="placeholder.png" alt="Foto de perfil del usuario">
+            </a>
+        </figure>
+    </header>
 
-    <!-- Formulario de Registro -->
-    <form action="index.html" method="post">
+    <!--Main content-->
+    <main>
+        <h1>Crear cuenta</h1>
 
-        <!-- Datos del usuario -->
-        <section id="reg_1">
+        <!-- Formulario de Registro -->
+        <form action="index.html" method="post">
 
-            <h2>Introduce tus datos para registarte:</h2>
+            <!-- Datos del usuario -->
+            <section id="reg_1">
 
-            <!-- Nombre -->
-            <p>
-                <label for="nombre">Nombre: </label> 
-                <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre...">
+                <h2>Introduce tus datos para registarte:</h2>
+
+                <!-- Nombre -->
+                <p>
+                    <label for="nombre">Nombre: </label> 
+                    <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre...">
+                </p>
+
+                <!-- Contrasenya -->
+                <p>
+                    <label for="contrasenya">Contraseña:</label> 
+                    <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce la contraseña...">
+                </p>
+
+                <!-- Repetir contrasenya -->
+                <p>
+                    <label for="rep_con">Repetir contraseña:</label> 
+                    <input type="password" name="rep_con" id="rep_con" placeholder="Repite la contraseña...">
+                </p>
+
+                <!-- Email -->
+                <p>
+                    <label for="email">Email: </label> 
+                    <input type="email" name="email" id="email" placeholder="Introduce tu email...">
+                </p>
+
+                <!-- Sexo -->
+                <p>
+                    <label for="sexo">Sexo: </label>
+                    <select name="sexo" id="sexo">
+                        <option value="cod_M">Masculino</option>
+                        <option value="cod_F">Femenino</option>
+                        <option value="cod_O">Otro</option>
+                    </select>
+                </p>
+
+                <!-- Fecha -->
+                <p>
+                    <label for="fecha">Fecha de nacimiento: </label> 
+                    <input type="date" name="fecha" id="fecha">
+                </p>
+
+                <!-- Ciudad -->
+                <p>
+                    <label for="ciudad">Ciudad: </label> 
+                    <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
+                </p>
+
+                <!-- Pais -->
+                <p>
+                    <label for="paises">País: </label>
+                    <select name="paises" id="paises">
+                        <option value="cod_es">España</option>
+                        <option value="cod_fr">Francia</option>
+                        <option value="cod_uk">Reino Unido</option>
+                        <option value="cod_al">Alemania</option>
+                        <option value="cod_it">Italia</option>
+                        <option value="cod_bel">Bélgica</option>
+                        <option value="cod_chi">China</option>
+                        <option value="cod_sui">Suiza</option>
+                        <option value="cod_pol">Polonia</option>
+                        <option value="cod_usa">Estados Unidos</option>
+                    </select>
+                </p>
+            </section>
+
+            <!-- Foto de perfil -->
+            <section class="reg_2">
+
+                <h3>Introduce tu foto de perfil:</h3>
+                <p>
+                    <label for="img_perfil">
+                        <img src="https://st2.depositphotos.com/19428878/44645/v/600/depositphotos_446453832-stock-illustration-default-avatar-profile-icon-social.jpg" 
+                        alt="Foto de perfil" width="250" height="250">
+                    </label>
+                </p>
+                <input type="file" name="img_perfil" id="img_perfil">
+            </section>
+
+
+            <!-- Boton de crear -->
+            <p class="reg_3">
+                <input type="submit" value="Crear">
             </p>
 
-            <!-- Contrasenya -->
-            <p>
-                <label for="contrasenya">Contraseña:</label> 
-                <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce la contraseña...">
-            </p>
+            <p>¿Tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+            
+        </form>
+    </main>
 
-            <!-- Repetir contrasenya -->
-            <p>
-                <label for="rep_con">Repetir contraseña:</label> 
-                <input type="password" name="rep_con" id="rep_con" placeholder="Repite la contraseña...">
-            </p>
-
-            <!-- Email -->
-            <p>
-                <label for="email">Email: </label> 
-                <input type="email" name="email" id="email" placeholder="Introduce tu email...">
-            </p>
-
-            <!-- Sexo -->
-            <p>
-                <label for="sexo">Sexo: </label>
-                <select name="sexo" id="sexo">
-                    <option value="cod_M">Masculino</option>
-                    <option value="cod_F">Femenino</option>
-                    <option value="cod_O">Otro</option>
-                </select>
-            </p>
-
-            <!-- Fecha -->
-            <p>
-                <label for="fecha">Fecha de nacimiento: </label> 
-                <input type="date" name="fecha" id="fecha">
-            </p>
-
-            <!-- Ciudad -->
-            <p>
-                <label for="ciudad">Ciudad: </label> 
-                <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
-            </p>
-
-            <!-- Pais -->
-            <p>
-                <label for="paises">País: </label>
-                <select name="paises" id="paises">
-                    <option value="cod_es">España</option>
-                    <option value="cod_fr">Francia</option>
-                    <option value="cod_uk">Reino Unido</option>
-                    <option value="cod_al">Alemania</option>
-                    <option value="cod_it">Italia</option>
-                    <option value="cod_bel">Bélgica</option>
-                    <option value="cod_chi">China</option>
-                    <option value="cod_sui">Suiza</option>
-                    <option value="cod_pol">Polonia</option>
-                    <option value="cod_usa">Estados Unidos</option>
-                </select>
-            </p>
-        </section>
-
-        <!-- Foto de perfil -->
-        <section class="reg_2">
-
-            <h3>Introduce tu foto de perfil:</h3>
-            <p>
-                <img src="https://st2.depositphotos.com/19428878/44645/v/600/depositphotos_446453832-stock-illustration-default-avatar-profile-icon-social.jpg" 
-                alt="Foto de perfil" width="250" height="250">
-            </p>
-            <input type="file" name="img_perfil" id="img_perfil">
-        </section>
-
-
-        <!-- Boton de crear -->
-        <p class="reg_3">
-            <input type="submit" value="Crear">
-        </p>
-
-        <p>¿Tienes cuenta? <a href="index.html">Inicia sesión</a></p>
-        
-    </form>
+    <!--Footer-->
+    <footer>
+        <div>
+            <p>Marta Gómez Verdú y Arturo García Richardson</p>
+            <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
+            <p>Copyright</p>
+        </div>
+        <div>
+            <a href="acerca.html">Acerca de</a>
+        </div>
+    </footer>
 
 </body>
 </html>

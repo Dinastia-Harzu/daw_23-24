@@ -6,55 +6,92 @@
     <title>Descubrir - MαsθerM4tikא</title>
 </head>
 <body>
-    <h1>Descubre</h1>
 
-    <hr>
+    <!--Header-->
+    <header>
+        <div>
+            <img src="logo.png" alt="Icono de la red social">
+            <h1>MαsθerM4tikא</h1>
+            <p>El Instagram o Flickr de las matemáticas</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="busqueda.html">Descubrir</a></li>
+                <li><a href="publicar.html">Publicar</a></li>
+            </ul>
+        </nav>
+        <div><input type="text" name="busqueda_rapida" id="busqueda_rapida"></div>
+        <figure>
+            <a href="registro.html">
+                <img src="placeholder.png" alt="Foto de perfil del usuario">
+            </a>
+        </figure>
+    </header>
 
-    <!--Formulario de Busqueda-->
-    <form action="resultado.html" method="post">
+    <!--Main-->
+    <main>
+        <h1>Descubre</h1>
 
-        <section id="busc_1">
-            <h2>Introduce los parámetros de búsqueda:</h2>
+        <!--Formulario de Busqueda-->
+        <form action="resultado.html" method="post">
 
-            <!-- Titulo -->
-            <p>
-                <label for="titulo">Título: </label> 
-                <input type="text" name="titulo" id="titulo" placeholder="Introduce el título...">
+            <section id="busc_1">
+                <h2>Introduce los parámetros de búsqueda:</h2>
+
+                <!-- Titulo -->
+                <p>
+                    <label for="titulo">Título: </label> 
+                    <input type="text" name="titulo" id="titulo" placeholder="Introduce el título...">
+                </p>
+
+                <!--Fecha entre y-->
+                <p>
+                    <label for="fecha_d">Fecha entre:</label>
+                    <input type="date" name="fecha_d" id="fecha_d">
+
+                    <label for="fecha_h">y</label>
+                    <input type="date" name="fecha_h" id="fecha_h">
+                </p>
+
+                <!--País-->
+                <p>
+                    <label for="paises">País: </label>
+                    <select name="paises" id="paises">
+                        <option value="cod_es">España</option>
+                        <option value="cod_fr">Francia</option>
+                        <option value="cod_uk">Reino Unido</option>
+                        <option value="cod_al">Alemania</option>
+                        <option value="cod_it">Italia</option>
+                        <option value="cod_bel">Bélgica</option>
+                        <option value="cod_chi">China</option>
+                        <option value="cod_sui">Suiza</option>
+                        <option value="cod_pol">Polonia</option>
+                        <option value="cod_usa">Estados Unidos</option>
+                    </select>
+                </p>
+                
+            </section>
+
+            <p id="busc_2">
+                <input type="submit" value="Enviar">
             </p>
 
-            <!--Fecha entre y-->
-            <p>
-                <label for="fecha_d">Fecha entre:</label>
-                <input type="date" name="fecha_d" id="fecha_d">
+        </form>
 
-                <label for="fecha_h">y</label>
-                <input type="date" name="fecha_h" id="fecha_h">
-            </p>
+    </main>
 
-            <!--País-->
-            <p>
-                <label for="paises">País: </label>
-                <select name="paises" id="paises">
-                    <option value="cod_es">España</option>
-                    <option value="cod_fr">Francia</option>
-                    <option value="cod_uk">Reino Unido</option>
-                    <option value="cod_al">Alemania</option>
-                    <option value="cod_it">Italia</option>
-                    <option value="cod_bel">Bélgica</option>
-                    <option value="cod_chi">China</option>
-                    <option value="cod_sui">Suiza</option>
-                    <option value="cod_pol">Polonia</option>
-                    <option value="cod_usa">Estados Unidos</option>
-                </select>
-            </p>
-            
-        </section>
-
-        <p id="busc_2">
-            <input type="submit" value="Enviar">
-        </p>
-
-    </form>
+    <!--Footer-->
+    <footer>
+        <div>
+            <p>Marta Gómez Verdú y Arturo García Richardson</p>
+            <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
+            <p>Copyright</p>
+        </div>
+        <div>
+            <a href="acerca.html">Acerca de</a>
+        </div>
+    </footer>
 
 </body>
 </html>
