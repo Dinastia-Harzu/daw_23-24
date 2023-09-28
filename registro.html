@@ -6,8 +6,6 @@
     <title>Registro - Masthermatika</title>
 </head>
 <body>
-
-    <!--Header-->
     <header>
         <div>
             <img src="img/logo.png" alt="Icono de la red social">
@@ -16,80 +14,59 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.no_registrado.html">Inicio</a></li>
                 <li><a href="busqueda.html">Descubrir</a></li>
-                <li><a href="publicar.html">Publicar</a></li>
             </ul>
         </nav>
-        <div><input type="text" name="busqueda_rapida" id="busqueda_rapida"></div>
-        <figure>
-            <a href="registro.html">
-                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-            </a>
-        </figure>
+        <form action="resultado.html">
+            <input type="text" name="busqueda_rapida" id="busqueda_rapida" placeholder="Búsqueda rápida">
+            <input type="submit" value="Invisible">
+        </form>
     </header>
-
-    <!--Main content-->
     <main>
         <h1>Crear cuenta</h1>
-
-        <!-- Formulario de Registro -->
         <form action="index.html" method="post">
-
-            <!-- Datos del usuario -->
             <section id="reg_1">
-
                 <h2>Introduce tus datos para registarte:</h2>
-
-                <!-- Nombre -->
                 <p>
-                    <label for="nombre">Nombre: </label> 
-                    <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre...">
+                    <label for="name">Nombre:</label> 
+                    <input type="text" name="name" id="name" placeholder="Introduce tu nombre">
+                    <span class="campo_obligatorio">*</span>
                 </p>
-
-                <!-- Contrasenya -->
                 <p>
-                    <label for="contrasenya">Contraseña:</label> 
-                    <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce la contraseña...">
+                    <label for="pass">Contraseña:</label> 
+                    <input type="password" name="pass" id="pass" placeholder="Introduce la contraseña">
+                    <span class="campo_obligatorio">*</span>
                 </p>
-
-                <!-- Repetir contrasenya -->
                 <p>
-                    <label for="rep_con">Repetir contraseña:</label> 
-                    <input type="password" name="rep_con" id="rep_con" placeholder="Repite la contraseña...">
+                    <label for="pass2">Repetir contraseña:</label> 
+                    <input type="password" name="pass2" id="pass2" placeholder="Repite la contraseña">
+                    <span class="campo_obligatorio">*</span>
                 </p>
-
-                <!-- Email -->
                 <p>
-                    <label for="email">Email: </label> 
-                    <input type="email" name="email" id="email" placeholder="Introduce tu email...">
+                    <label for="email">Correo electrónico:</label> 
+                    <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico">
+                    <span class="campo_obligatorio">*</span>
                 </p>
-
-                <!-- Sexo -->
                 <p>
-                    <label for="sexo">Sexo: </label>
+                    <label for="sexo">Sexo:</label>
                     <select name="sexo" id="sexo">
+                        <option value="cod_U">Prefiero no revelarlo</option>
                         <option value="cod_M">Masculino</option>
                         <option value="cod_F">Femenino</option>
-                        <option value="cod_O">Otro</option>
                     </select>
+                    <span class="campo_obligatorio">*</span>
                 </p>
-
-                <!-- Fecha -->
                 <p>
-                    <label for="fecha">Fecha de nacimiento: </label> 
+                    <label for="fecha">Fecha de nacimiento:</label> 
                     <input type="date" name="fecha" id="fecha">
                 </p>
-
-                <!-- Ciudad -->
                 <p>
-                    <label for="ciudad">Ciudad: </label> 
+                    <label for="ciudad">Ciudad:</label> 
                     <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
                 </p>
-
-                <!-- Pais -->
                 <p>
-                    <label for="paises">País: </label>
+                    <label for="paises">País:</label>
                     <select name="paises" id="paises">
                         <option value="cod_es">España</option>
                         <option value="cod_fr">Francia</option>
@@ -104,41 +81,61 @@
                     </select>
                 </p>
             </section>
-
-            <!-- Foto de perfil -->
             <section class="reg_2">
-
                 <h3>Introduce tu foto de perfil:</h3>
                 <p>
-                    <label for="img_perfil">
+                    <label for="pfp">
                         <img src="img/placeholder.png" alt="Foto de perfil">
                     </label>
                 </p>
-                <input type="file" name="img_perfil" id="img_perfil">
+                <input type="file" name="pfp" id="pfp">
             </section>
-
-
-            <!-- Boton de crear -->
             <p class="reg_3">
                 <input type="submit" value="Crear">
             </p>
-
-            <p>¿Tienes cuenta? <a href="index.html">Inicia sesión</a></p>
-            
+            <hr>
+            <p>...o continúa con Google</p>
+            <a href="https://accounts.google.com" class="google_login">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="l">
+                    <g fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M20.64 12.2c0-.63-.06-1.25-.16-1.84H12v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.61z" fill="#4285F4"></path><path d="M12 21a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.41 5.41 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 12 21z" fill="#34A853"></path><path d="M6.96 13.71a5.41 5.41 0 0 1 0-3.42V7.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M12 6.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 3.96 7.96l3 2.33A5.36 5.36 0 0 1 12 6.6z" fill="#EA4335"></path>
+                    </g>
+                </svg>
+                Inicia sesión con Google
+            </a>
+            <hr>
+            <p>¿Ya tienes una cuenta? <a href="#login">Inicia sesión</a></p>
         </form>
     </main>
-
-    <!--Footer-->
     <footer>
-        <div>
-            <p>Marta Gómez Verdú y Arturo García Richardson</p>
-            <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
-            <p>Copyright</p>
-        </div>
-        <div>
-            <a href="acerca.html">Acerca de</a>
-        </div>
+        <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
+        <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
     </footer>
-
+    <dialog open id="login">
+        <h1>Iniciar sesión</h1>
+        <form action="index.html">
+            <p>
+                <label for="user">Usuario:</label>
+                <input type="text" id="user" placeholder="Introduce tu nombre de usuario">
+            </p>
+            <p>
+                <label for="pass">Contraseña:</label>
+                <input type="password" id="pass" placeholder="Introduce tu contraseña">
+            </p>
+            <p>
+                <input type="submit" value="Iniciar sesión">
+            </p>
+            <hr>
+            <p>...o continúa con Google</p>
+            <a href="https://accounts.google.com" class="google_login">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="l">
+                    <g fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M20.64 12.2c0-.63-.06-1.25-.16-1.84H12v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.61z" fill="#4285F4"></path><path d="M12 21a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.41 5.41 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 12 21z" fill="#34A853"></path><path d="M6.96 13.71a5.41 5.41 0 0 1 0-3.42V7.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M12 6.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 3.96 7.96l3 2.33A5.36 5.36 0 0 1 12 6.6z" fill="#EA4335"></path>
+                    </g>
+                </svg>
+                Inicia sesión con Google
+            </a>
+        </form>
+    </dialog>
 </body>
 </html>

@@ -6,8 +6,6 @@
     <title>Descubrir - Masthermatika</title>
 </head>
 <body>
-
-    <!--Header-->
     <header>
         <div>
             <img src="img/logo.png" alt="Icono de la red social">
@@ -18,34 +16,28 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="busqueda.html">Descubrir</a></li>
-                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="javascript:void(0);">Publicar</a></li>
             </ul>
         </nav>
-        <div><input type="text" name="busqueda_rapida" id="busqueda_rapida"></div>
+        <form action="resultado.html">
+            <input type="text" name="busqueda_rapida" id="busqueda_rapida" placeholder="Búsqueda rápida">
+            <input type="submit" value="Invisible">
+        </form>
         <figure>
-            <a href="registro.html">
+            <a href="javascript:void(0);">
                 <img src="img/placeholder.png" alt="Foto de perfil del usuario">
             </a>
         </figure>
     </header>
-
-    <!--Main-->
     <main>
         <h1>Descubre</h1>
-
-        <!--Formulario de Busqueda-->
         <form action="resultado.html" method="post">
-
             <section id="busc_1">
                 <h2>Introduce los parámetros de búsqueda:</h2>
-
-                <!-- Titulo -->
                 <p>
                     <label for="titulo">Título: </label> 
                     <input type="text" name="titulo" id="titulo" placeholder="Introduce el título...">
                 </p>
-
-                <!--Fecha entre y-->
                 <p>
                     <label for="fecha_d">Fecha entre:</label>
                     <input type="date" name="fecha_d" id="fecha_d">
@@ -53,8 +45,6 @@
                     <label for="fecha_h">y</label>
                     <input type="date" name="fecha_h" id="fecha_h">
                 </p>
-
-                <!--País-->
                 <p>
                     <label for="paises">País: </label>
                     <select name="paises" id="paises">
@@ -70,28 +60,15 @@
                         <option value="cod_usa">Estados Unidos</option>
                     </select>
                 </p>
-                
             </section>
-
             <p id="busc_2">
                 <input type="submit" value="Enviar">
             </p>
-
         </form>
-
     </main>
-
-    <!--Footer-->
     <footer>
-        <div>
-            <p>Marta Gómez Verdú y Arturo García Richardson</p>
-            <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
-            <p>Copyright</p>
-        </div>
-        <div>
-            <a href="acerca.html">Acerca de</a>
-        </div>
+        <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
+        <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
     </footer>
-
 </body>
 </html>
