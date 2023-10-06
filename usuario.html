@@ -32,19 +32,71 @@
     <main>
         <h1>Usuario</h1>
         <h2>Mis datos</h2>
-        <section>
-            <div>
+        <div id="datos">
+            <p>
                 <label for="pfp"><img src="img/placeholder.png" alt="Foto de perfil"></label>
                 <input type="file" name="pfp" id="pfp">
                 <input type="button" value="Cambiar">
-            </div>
-            (p>)
-        </section>
-        <h2>Álbumes</h2>
+            </p>
+
+            <p>Nombre: Usuario</p>
+            <p>Correo: usu11@gmail.com</p>
+            <p>Contraseña: *******</p>
+            <p>Ciudad: Alicante</p>
+            <p>Pais: España</p>
+        </div>
+
+        <div id="funciones">
+            <p><a href="#editar_perfil">Editar perfil</a></p>
+            <p><a href="javascript:void(0);">Mis álbumes</a></p>
+            <p><a href="javascript:void(0);">Crear álbum</a></p>
+            <p><a href="solicitar_album.html">Solicitar álbum</a></p>
+            <p><a href="index.no_registrado.html">Cerrar sesión</a></p>
+        </div>
+
+        <a href="index.html">Salir</a>
+        
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
         <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
     </footer>
+
+    <!--Dialog con Editar Perfil-->
+    <dialog id="editar_perfil" open>
+
+        <h3>Edita tus datos</h3>
+
+        <form action="usuario.html">
+            <p>
+                <label for="usuario" >Usuario:</label>
+                <input type="text" id="usuario">
+            </p>
+
+            <p>
+                <label for="ciudad" >Ciudad:</label>
+                <input type="text" id="ciudad">
+            </p>
+
+            <p>
+                <label for="paises">País:</label>
+                <select name="paises" id="paises">
+                    <option value="cod_es">España</option>
+                    <option value="cod_fr">Francia</option>
+                    <option value="cod_uk">Reino Unido</option>
+                    <option value="cod_al">Alemania</option>
+                    <option value="cod_it">Italia</option>
+                    <option value="cod_bel">Bélgica</option>
+                    <option value="cod_chi">China</option>
+                    <option value="cod_sui">Suiza</option>
+                    <option value="cod_pol">Polonia</option>
+                    <option value="cod_usa">Estados Unidos</option>
+                </select>
+            </p>
+
+            <input type="submit" value="Guardar cambios">
+            <a href="usuario.html">Salir sin guardar</a>
+        </form>
+    </dialog>
 </body>
 </html>
