@@ -30,13 +30,98 @@
         </figure>
     </header>
     <main>
-        <section id="info_foto">
-            <img src="img/foto1.png" alt="Foto matemática">
-            <h1>Título imagen</h1>
-            <time>2023</time>
-            <p>País</p>
-            <p>Álbum</p>
-            <p>Usuario</p>
+        <h1>Solicitud de impresión de álbum</h1>
+        <p>Mediante esta opción puedes solicitar la impresión y envío de uso de tus álbumes a todo color, toda resolución.</p>
+        <aside>
+            <h2>Tarifas</h2>
+            <table>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Tarifa</th>
+                </tr>
+                <tr>
+                    <td>< 5 páginas</td>
+                    <td>0.10€ por pág.</td>
+                </tr>
+                <tr>
+                    <td>entre 5 y 11 páginas</td>
+                    <td>0.08€ por pág.</td>
+                </tr>
+                <tr>
+                    <td>> 11 páginas</td>
+                    <td>0.07€ por pág.</td>
+                </tr>
+                <tr>
+                    <td>Blanco y negro</td>
+                    <td>0€</td>
+                </tr>
+                <tr>
+                    <td>A color</td>
+                    <td>0.05€ por foto</td>
+                </tr>
+                <tr>
+                    <td>Resolución mayor a 300 dpi</td>
+                    <td>0.02€ por foto</td>
+                </tr>
+            </table>
+        </aside>
+        <section>
+            <h2>Formulario de solicitud</h2>
+            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
+            <form action="respuesta_album.html">
+                <p>
+                    <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre">
+                </p>
+                <p>
+                    <label for="titulo">Título:</label><input type="text" name="titulo" id="titulo">
+                </p>
+                <p>
+                    <label for="texto">Texto adicional:</label><textarea name="texto" id="texto" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium cumque commodi dolores porro enim repellendus, eum voluptate ad dignissimos doloremque? Id molestiae, quisquam eos tempora saepe earum qui explicabo!</textarea>
+                </p>
+                <p>
+                    <label for="correo">Correo electrónico:</label><input type="email" name="correo" id="correo">
+                </p>
+                <p>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion">
+                    <input type="number" name="numero" id="numero">
+                    <input type="number" name="cp" id="cp">
+                    <select name="localidad" id="localidad">
+                        <option value="01">Benidorm</option>
+                    </select>
+                    <select name="provincia" id="provincia">
+                        <option value="01">Alicante</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="telefono">Teléfono:</label><input type="tel" name="telefono" id="telefono">
+                </p>
+                <p>
+                    <label for="color">Color de la portada:</label><input type="color" name="color" id="color">
+                </p>
+                <p>
+                    <label for="copias">Número de copias:</label><input type="number" name="copias" id="copias">
+                </p>
+                <p>
+                    <label for="resolucion">Resolución de impresión:</label>
+                    <select name="resolucion" id="resolucion">
+                        <option value="150">150 dpi</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="album">Álbum de PI:</label><select name="album" id="album">
+                    <option value="0">Mis álbumes</option>
+                </select>
+            </p>
+                <p>
+                    <label for="recepcion">Fecha recepción:</label><input type="date" name="recepcion" id="recepcion">
+                    <span>Fecha aproximada de recepción: <time>06/10/2023</time></span>
+                </p>
+                <p>
+                    <label for="impresion_color">Impresión a color:</label><input type="checkbox" name="impresion_color" id="impresion_color">
+                </p>
+                <input type="submit" value="Enviar">
+            </form>
         </section>
     </main>
     <footer>
