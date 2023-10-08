@@ -70,55 +70,71 @@
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
             <form action="respuesta_album.html">
                 <p>
-                    <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
-                    <label for="titulo">Título:</label><input type="text" name="titulo" id="titulo">
+                    <label for="titulo">Título:</label>
+                    <input type="text" name="titulo" id="titulo">
+                    <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
-                    <label for="texto">Texto adicional:</label><textarea name="texto" id="texto" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium cumque commodi dolores porro enim repellendus, eum voluptate ad dignissimos doloremque? Id molestiae, quisquam eos tempora saepe earum qui explicabo!</textarea>
+                    <label for="texto">Texto adicional:</label>
+                    <textarea name="texto" id="texto" cols="30" rows="10" maxlength="4000"></textarea>
                 </p>
                 <p>
-                    <label for="correo">Correo electrónico:</label><input type="email" name="correo" id="correo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correo">
+                    <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
                     <label for="direccion">Dirección:</label>
                     <input type="text" name="direccion" id="direccion">
                     <input type="number" name="numero" id="numero">
                     <input type="number" name="cp" id="cp">
-                    <select name="localidad" id="localidad">
-                        <option value="01">Benidorm</option>
-                    </select>
-                    <select name="provincia" id="provincia">
-                        <option value="01">Alicante</option>
-                    </select>
+                    <input type="text" name="ciudad" id="ciudad">
+                    <input type="text" name="provincia" id="provincia">
+                    <input type="text" name="pais" id="pais">
+                    <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
-                    <label for="telefono">Teléfono:</label><input type="tel" name="telefono" id="telefono">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" name="telefono" id="telefono">
                 </p>
                 <p>
-                    <label for="color">Color de la portada:</label><input type="color" name="color" id="color">
+                    <label for="color">Color de la portada:</label>
+                    <input type="color" name="color" id="color">
                 </p>
                 <p>
-                    <label for="copias">Número de copias:</label><input type="number" name="copias" id="copias">
+                    <label for="copias">Número de copias:</label>
+                    <input type="number" name="copias" id="copias">
                 </p>
                 <p>
                     <label for="resolucion">Resolución de impresión:</label>
                     <select name="resolucion" id="resolucion">
                         <option value="150">150 dpi</option>
+                        <option value="300">300 dpi</option>
+                        <option value="450">450 dpi</option>
+                        <option value="600">600 dpi</option>
+                        <option value="750">750 dpi</option>
+                        <option value="900">900 dpi</option>
                     </select>
                 </p>
                 <p>
-                    <label for="album">Álbum de PI:</label><select name="album" id="album">
-                    <option value="0">Mis álbumes</option>
-                </select>
-            </p>
-                <p>
-                    <label for="recepcion">Fecha recepción:</label><input type="date" name="recepcion" id="recepcion">
-                    <span>Fecha aproximada de recepción: <time>06/10/2023</time></span>
+                    <label for="album">Álbum de Masthermatika:</label>
+                    <select name="album" id="album">
+                        <option value="0">Mis álbumes</option>
+                    </select>
+                    <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
-                    <label for="impresion_color">Impresión a color:</label><input type="checkbox" name="impresion_color" id="impresion_color">
+                    <label for="recepcion">Fecha recepción:</label>
+                    <input type="date" name="recepcion" id="recepcion">
+                </p>
+                <p>
+                    <label for="impresion_color">Impresión a color:</label>
+                    <input type="checkbox" name="impresion_color" id="impresion_color">
                 </p>
                 <input type="submit" value="Enviar">
             </form>
