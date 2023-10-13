@@ -68,7 +68,7 @@
         <section>
             <h2>Formulario de solicitud</h2>
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-            <form action="respuesta_album.html">
+            <form action="respuesta_album.html" oninput="dpi.value = parseInt(resolucion.value);">
                 <p>
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" id="nombre">
@@ -89,13 +89,15 @@
                     <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" name="direccion" id="direccion">
-                    <input type="number" name="numero" id="numero">
-                    <input type="number" name="cp" id="cp">
-                    <input type="text" name="ciudad" id="ciudad">
-                    <input type="text" name="provincia" id="provincia">
-                    <input type="text" name="pais" id="pais">
+                    <fieldset>
+                        <legend>Dirección:</legend>
+                        <input type="text" name="direccion" id="direccion">
+                        <input type="number" name="numero" id="numero">
+                        <input type="number" name="cp" id="cp">
+                        <input type="text" name="ciudad" id="ciudad">
+                        <input type="text" name="provincia" id="provincia">
+                        <input type="text" name="pais" id="pais">
+                    </fieldset>
                     <span class="campo_obligatorio">*</span>
                 </p>
                 <p>
@@ -112,14 +114,8 @@
                 </p>
                 <p>
                     <label for="resolucion">Resolución de impresión:</label>
-                    <select name="resolucion" id="resolucion">
-                        <option value="150">150 dpi</option>
-                        <option value="300">300 dpi</option>
-                        <option value="450">450 dpi</option>
-                        <option value="600">600 dpi</option>
-                        <option value="750">750 dpi</option>
-                        <option value="900">900 dpi</option>
-                    </select>
+                    <input type="range" name="resolucion" id="resolucion" step="150" min="150" max="900" value="150">
+                    <output name="dpi" for="resolucion">150</output> dpi
                 </p>
                 <p>
                     <label for="album">Álbum de Masthermatika:</label>

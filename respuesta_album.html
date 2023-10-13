@@ -66,69 +66,68 @@
         </aside>
         <section>
             <h2>Formulario de solicitud</h2>
-            <p>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" value="Pepito Palotes">
-            </p>
-            <p>
-                <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" value="Mi primer álbum impreso">
-            </p>
-            <p>
-                <label for="texto">Texto adicional:</label>
-                <textarea name="texto" id="texto" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium cumque commodi dolores porro enim repellendus, eum voluptate ad dignissimos doloremque? Id molestiae, quisquam eos tempora saepe earum qui explicabo!</textarea>
-            </p>
-            <p>
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="correo" value="pepito@correo.es">
-            </p>
-            <p>
-                <label for="direccion">Dirección:</label>
-                <input type="text" name="direccion" id="direccion" value="Rue del Percebe">
-                <input type="number" name="numero" id="numero" value="13">
-                <input type="number" name="cp" id="cp" value="03503">
-                <input type="text" name="ciudad" id="ciudad" value="Benidorm">
-                <input type="text" name="provincia" id="provincia" value="Alicante">
-                <input type="text" name="pais" id="pais" value="España">
-            </p>
-            <p>
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" id="telefono" value="900 90 90 90">
-            </p>
-            <p>
-                <label for="color">Color de la portada:</label>
-                <input type="color" name="color" id="color" value="#34A853">
-            </p>
-            <p>
-                <label for="copias">Número de copias:</label>
-                <input type="number" name="copias" id="copias" value="3">
-            </p>
-            <p>
-                <label for="resolucion">Resolución de impresión:</label>
-                <select name="resolucion" id="resolucion">
-                    <option value="150">150 dpi</option>
-                    <option value="300">300 dpi</option>
-                    <option value="450">450 dpi</option>
-                    <option value="600">600 dpi</option>
-                    <option value="750">750 dpi</option>
-                    <option value="900">900 dpi</option>
-                </select>
-            </p>
-            <p>
-                <label for="album">Álbum de Masthermatika:</label>
-                <select name="album" id="album" disabled>
-                    <option value="0">Mis álbumes</option>
-                </select>
-            </p>
-            <p>
-                <label for="recepcion">Fecha recepción:</label>
-                <input type="date" name="recepcion" id="recepcion" value="2023-10-05">
-                <span>Fecha aproximada de recepción: <time>06/10/2023</time></span>
-            </p>
-            <p>
-                <label for="impresion_color">Impresión a color:</label>
-                <input type="checkbox" name="impresion_color" id="impresion_color">
-            </p>
+            <form action="">
+                <p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" value="Pepito Palotes">
+                </p>
+                <p>
+                    <label for="titulo">Título:</label>
+                    <input type="text" name="titulo" id="titulo" value="Mi primer álbum impreso">
+                </p>
+                <p>
+                    <label for="texto">Texto adicional:</label>
+                    <textarea name="texto" id="texto" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium cumque commodi dolores porro enim repellendus, eum voluptate ad dignissimos doloremque? Id molestiae, quisquam eos tempora saepe earum qui explicabo!</textarea>
+                </p>
+                <p>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correo" value="pepito@correo.es">
+                </p>
+                <p>
+                    <fieldset>
+                        <legend>Dirección:</legend>
+                        <input type="text" name="direccion" id="direccion">
+                        <input type="number" name="numero" id="numero">
+                        <input type="number" name="cp" id="cp">
+                        <input type="text" name="ciudad" id="ciudad">
+                        <input type="text" name="provincia" id="provincia">
+                        <input type="text" name="pais" id="pais">
+                    </fieldset>
+                    <span class="campo_obligatorio">*</span>
+                </p>
+                <p>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" name="telefono" id="telefono" value="900 90 90 90">
+                </p>
+                <p>
+                    <label for="color">Color de la portada:</label>
+                    <input type="color" name="color" id="color" value="#34A853">
+                </p>
+                <p>
+                    <label for="copias">Número de copias:</label>
+                    <input type="number" name="copias" id="copias" value="3">
+                </p>
+                <p>
+                    <label for="resolucion">Resolución de impresión:</label>
+                    <input type="range" name="resolucion" id="resolucion" step="150" min="150" max="900" value="150">
+                    <output name="dpi" for="resolucion">150</output> dpi
+                </p>
+                <p>
+                    <label for="album">Álbum de Masthermatika:</label>
+                    <select name="album" id="album" disabled>
+                        <option value="0">Mis álbumes</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="recepcion">Fecha recepción:</label>
+                    <input type="date" name="recepcion" id="recepcion" value="2023-10-05">
+                    <span>Fecha aproximada de recepción: <time>06/10/2023</time></span>
+                </p>
+                <p>
+                    <label for="impresion_color">Impresión a color:</label>
+                    <input type="checkbox" name="impresion_color" id="impresion_color">
+                </p>
+            </form>
         </section>
     </main>
     <footer>
