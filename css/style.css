@@ -41,3 +41,17 @@ header {
     background-color: var(--footer_clr);
 }
 
+#tab-login>ul{
+    padding: 2em;
+    list-style-type: none;
+    text-align: center;
+}
+
+#tab-login>ul>li{
+    padding: 1em;
+}
+
+#tab-login>ul>li>a{
+    text-decoration: none;
+}
+
