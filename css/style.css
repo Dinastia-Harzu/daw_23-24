@@ -25,14 +25,16 @@ footer {
 
 header {
     background-color: var(--header_clr);
+    display: flex;
 }
 
-#logo-icono{
-    width: 130px;
+#logo-icono {
+    width: auto;
+    height: auto;
 }
 
-#logo-titulo{
-    width: 350px;
+#logo-titulo {
+    height: auto;
 }
 
 #tab-login {
