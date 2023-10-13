@@ -1,0 +1,33 @@
+:root{
+    --negro: #000000;
+    --ceruleo_grisaceo_oscuro:  #273234;
+    --cian_grisaceo_oscuro: #37474A;
+    --blanco: #FFFFFF;
+
+    --body_clr: var(--cian_grisaceo_oscuro);
+    --footer_clr: var(--ceruleo_grisaceo_oscuro);
+    --header_clr: var(--negro);
+
+}
+
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--blanco);
+}
+
+body{
+    background-color: var(--body_clr);
+}
+
+footer{
+    background-color: var(--footer_clr);
+}
+
+header{
+    background-color: var(--header_clr);
+}
+
+#tab_login{
+    background-color: var(--footer_clr);
+}
+
