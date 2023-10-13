@@ -27,11 +27,11 @@ header {
     background-color: var(--header_clr);
 }
 
-img[src="img/logo.png"]{
+#logo-icono{
     width: 130px;
 }
 
-img[src="img/nombre.png"]{
+#logo-titulo{
     width: 350px;
 }
 
