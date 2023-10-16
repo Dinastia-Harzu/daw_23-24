@@ -1,8 +1,10 @@
 :root {
-    --negro:                    #000000;
-    --ceruleo_grisaceo_oscuro:  #273234;
-    --cian_grisaceo_oscuro:     #37474A;
-    --blanco:                   #FFFFFF;
+    --negro:                        #000000;
+    --ceruleo_grisaceo_oscuro:      #273234;
+    --ceruleo_grisaceo__mas_oscuro: #1e2425;
+    --cian_grisaceo_oscuro:         #37474A;
+    --blanco:                       #FFFFFF;
+    --gris_oscuro:                  #9D9C9C;
 
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
@@ -13,11 +15,36 @@
 
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p, a, h1, h2, h3{ /* Si no hago esto, algunas cosas se ven blancas cuando no deberían */
     color: var(--blanco);
+}
+
+dialog p{
+    color: var(--negro);
 }
 
 body {
     background-color: var(--body_clr);
+}
+
+#datos-usu{
+    width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
+    display: flex;
+    justify-content: center;
+    gap: 7.5em;
+    padding: 2em;
+    background-color: var(--ceruleo_grisaceo_oscuro);
+    margin: 0 auto 1em;
+}
+
+#funciones{
+    margin-top: 3em;
+}
+
+#funciones a:hover{
+    color: var(--gris_oscuro);
 }
 
 footer {
@@ -28,16 +55,29 @@ footer {
 
 header {
     background-color: var(--header_clr);
+}
+
+input[name="pfp"]{
+    display: none;
+}
+
+#foto{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5em;
+    padding: 1em;
+    margin-bottom: 1;
 }
 
-#logo-icono {
-    width: auto;
-    height: auto;
+#foto img{
+    width: 33.5em;
 }
 
-#logo-titulo {
-    height: auto;
+#info-foto{
+    width: 20.5em;
+    padding: 1em;
+    background-color: var(--footer_clr);
 }
 
 #tab-login {
@@ -63,9 +103,21 @@ header {
     background-color: var(--cian_grisaceo_oscuro); /* En principio el color es blanco, pero las letras se ven blancas */
 }
 
+#tab-login li:hover{
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+}
+
 
 #tab-login a{
     text-decoration: none;
 }
+
+#tab-usuario{
+    display: grid;
+    justify-content: center;
+}
+
+
+
 
 
