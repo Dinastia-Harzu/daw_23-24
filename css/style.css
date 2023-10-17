@@ -5,6 +5,7 @@
     --cian_grisaceo_oscuro:         #37474A;
     --blanco:                       #FFFFFF;
     --gris_oscuro:                  #9D9C9C;
+    --gris_normal:                  gray;
 
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
@@ -33,6 +34,7 @@ body {
     width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 7.5em;
     padding: 2em;
     background-color: var(--ceruleo_grisaceo_oscuro);
@@ -74,10 +76,42 @@ input[name="pfp"]{
     width: 33.5em;
 }
 
+.google-login{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    background-color: var(--blanco);
+    color: var(--negro);
+    text-decoration: none;
+    border: 0.15em solid var(--negro);
+}
+
 #info-foto{
     width: 20.5em;
     padding: 1em;
     background-color: var(--footer_clr);
+}
+
+#reg_1 p{
+    display: flex;
+    justify-content: space-between;
+}
+
+#reg_2 h3{
+    margin-top: 1.35em;
+}
+
+select, input[type=date]{
+    color: var(--gris_normal);
+}
+
+#tab-google{
+    text-align: center;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #tab-login {
@@ -110,6 +144,12 @@ input[name="pfp"]{
 
 #tab-login a{
     text-decoration: none;
+}
+
+#tab-reg{
+    display: flex;
+    justify-content: center;
+    gap: 5.5em;
 }
 
 #tab-usuario{
