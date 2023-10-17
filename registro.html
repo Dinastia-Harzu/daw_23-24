@@ -25,69 +25,72 @@
         </form>
     </header>
     <main>
-        <h1>Crear cuenta</h1>
-        <form action="index.html" method="post" id="tab-reg">
-            <section id="reg_1">
-                <h2>Introduce tus datos para registarte:</h2>
-                <p>
-                    <label for="name">Nombre: *</label> 
-                    <input type="text" name="name" id="name" placeholder="Introduce tu nombre">
-                </p>
-                <p>
-                    <label for="pass">Contraseña: *</label> 
-                    <input type="password" name="pass" id="pass" placeholder="Introduce la contraseña">
-                </p>
-                <p>
-                    <label for="pass2">Repetir contraseña: *</label> 
-                    <input type="password" name="pass2" id="pass2" placeholder="Repite la contraseña">
-                </p>
-                <p>
-                    <label for="email">Correo electrónico: *</label> 
-                    <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico">
-                </p>
-                <p>
-                    <label for="sexo">Sexo:</label>
-                    <select name="sexo" id="sexo">
-                        <option value="cod_U">Prefiero no revelarlo</option>
-                        <option value="cod_M">Masculino</option>
-                        <option value="cod_F">Femenino</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="fecha">Fecha de nacimiento:</label> 
-                    <input type="date" name="fecha" id="fecha">
-                </p>
-                <p>
-                    <label for="ciudad">Ciudad:</label> 
-                    <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
-                </p>
-                <p>
-                    <label for="paises">País:</label>
-                    <select name="paises" id="paises">
-                        <option value="cod_es">España</option>
-                        <option value="cod_fr">Francia</option>
-                        <option value="cod_uk">Reino Unido</option>
-                        <option value="cod_al">Alemania</option>
-                        <option value="cod_it">Italia</option>
-                        <option value="cod_bel">Bélgica</option>
-                        <option value="cod_chi">China</option>
-                        <option value="cod_sui">Suiza</option>
-                        <option value="cod_pol">Polonia</option>
-                        <option value="cod_usa">Estados Unidos</option>
-                    </select>
-                </p>
-                <input type="submit" value="Crear">
-            </section>
-            <section id="reg_2">
-                <h3>Introduce tu foto de perfil:</h3>
-                <p>
-                    <label for="pfp">
-                        <img src="img/placeholder.png" alt="Foto de perfil">
-                    </label>
-                </p>
-                <input type="file" name="pfp" id="pfp">
-            </section>
-        </form>
+        <div id="creacion-cuenta">
+            <h1>Crear cuenta</h1>
+            <form action="index.html" method="post" id="tab-reg">
+                <section id="reg_1">
+                    <h2>Introduce tus datos para registarte:</h2>
+                    <p>
+                        <p><label for="name">Nombre: *</label></p>
+                        <input type="text" name="name" id="name" placeholder="Introduce tu nombre">
+                    </p>
+                    <p>
+                        <p><label for="pass">Contraseña: *</label></p>
+                        <input type="password" name="pass" id="pass" placeholder="Introduce la contraseña">
+                    </p>
+                    <p>
+                        <p><label for="pass2">Repetir contraseña: *</label></p>
+                        <input type="password" name="pass2" id="pass2" placeholder="Repite la contraseña">
+                    </p>
+                    <p>
+                        <p><label for="email">Correo electrónico: *</label></p>
+                        <input type="email" name="email" id="email" placeholder="Introduce tu correo">
+                    </p>
+                    <p>
+                        <p><label for="sexo">Sexo:</label></p>
+                        <select name="sexo" id="sexo">
+                            <option value="cod_U">Prefiero no revelarlo</option>
+                            <option value="cod_M">Masculino</option>
+                            <option value="cod_F">Femenino</option>
+                        </select>
+                    </p>
+                    <p>
+                        <p><label for="fecha">Fecha de nacimiento:</label></p> 
+                        <input type="date" name="fecha" id="fecha">
+                    </p>
+                    <p>
+                        <p><label for="ciudad">Ciudad:</label></p> 
+                        <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
+                    </p>
+                    <p>
+                        <p><label for="paises">País:</label></p>
+                        <select name="paises" id="paises">
+                            <option value="cod_es">España</option>
+                            <option value="cod_fr">Francia</option>
+                            <option value="cod_uk">Reino Unido</option>
+                            <option value="cod_al">Alemania</option>
+                            <option value="cod_it">Italia</option>
+                            <option value="cod_bel">Bélgica</option>
+                            <option value="cod_chi">China</option>
+                            <option value="cod_sui">Suiza</option>
+                            <option value="cod_pol">Polonia</option>
+                            <option value="cod_usa">Estados Unidos</option>
+                        </select>
+                    </p>
+                    <input type="submit" value="Crear usuario">
+                </section>
+                <section id="reg_2">
+                    <h3>Introduce tu foto de perfil:</h3>
+                    <p>
+                        <label for="pfp">
+                            <img src="img/placeholder.png" alt="Foto de perfil">
+                        </label>
+                    </p>
+                    <p>Icono de carpeta</p>
+                    <input type="file" name="pfp" id="pfp">
+                </section>
+            </form>
+        </div>
         <section id="tab-google">
             <p>...o continúa con Google</p>
             <a href="https://accounts.google.com" class="google-login">
