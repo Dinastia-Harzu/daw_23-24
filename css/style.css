@@ -154,8 +154,39 @@ footer {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
     background-color: var(--header_clr);
 }
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 3em;
+    display: flex;
+    flex-direction: row;
+}
+
+header li {
+    width: 6.25em;
+    text-align: center;
+    padding: 1em;
+    margin-right: 1em;
+    background-color: var(--ceruleo_grisaceo_oscuro);
+    text-decoration: none;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header li:hover{
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+}
+
 
 input[name="pfp"]{
     display: none;
@@ -291,6 +322,17 @@ select, input[type=date]{
 
 .text-google{
     text-align: center;
+}
+
+.text-google a:hover{
+    color: var(--gris_oscuro);
+}
+
+.text-slogan{
+    font-size: large;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 1em;
 }
 
 .titulo-dialog{
