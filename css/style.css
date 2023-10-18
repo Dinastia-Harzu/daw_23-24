@@ -36,7 +36,7 @@ body {
 }
 
 #creacion-cuenta h1{
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
 }
 
 #datos-usu{
@@ -104,14 +104,15 @@ footer {
     text-align: center;
 }
 
-.grid-img{
+.grid-img, .grid-img-sin-user{
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
     justify-items: center;
+    gap: 3em;
+    border-top: 0.25em solid var(--blanco);
     padding: 2em;
     margin-top: 0.5em;
-    gap: 3em;
 }
 
 .grid-img article{
@@ -120,7 +121,12 @@ footer {
     color: var(--blanco);
 } 
 
-.grid-img article img{
+.grid-img-sin-user article{
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    padding: 2em;
+} 
+
+.grid-img article img, .grid-img-sin-user article img{
     width: 22em;
     height: 18em;
     object-fit: cover;
@@ -129,6 +135,22 @@ footer {
 
 .grid-img article p, .grid-img article time{
     font-size: large;
+}
+
+.google-login{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    background-color: var(--blanco);
+    color: var(--negro);
+    text-decoration: none;
+    border: 0.15em solid var(--negro);
+}
+
+#grid-params{
+    display: grid;
+    justify-content: center;
 }
 
 header {
@@ -153,21 +175,9 @@ input[name="pfp"]{
     width: 33.5em;
 }
 
-.google-login{
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 1em;
-    background-color: var(--blanco);
-    color: var(--negro);
-    text-decoration: none;
-    border: 0.15em solid var(--negro);
-}
 
 .titulo-index{
     margin-left: 1.05em;
-    border-bottom: 0.1em solid var(--negro);
-    padding-bottom: 0.3em;
 }
 
 #info-foto{
@@ -183,6 +193,33 @@ input[name="pfp"]{
 
 select, input[type=date]{
     color: var(--gris_normal);
+}
+
+.tab-busc{
+    display: grid;
+    padding: 2em;
+    background-color: var(--ceruleo_grisaceo_oscuro);
+    font-size: large;
+    justify-content: center;
+}
+
+.tab-busc-fecha{
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.tab-busc input[type=text], .tab-busc select{
+    display: block;
+    font-size: 16px;
+    margin-top: 0.5em;
+}
+
+.tab-busc input[type=date], input[type=submit]{
+    font-size: 16px;
+}
+
+.tab-busc-y{
+    margin: 0 0.25em 0 0.25em;
 }
 
 #tab-google{
@@ -205,6 +242,7 @@ select, input[type=date]{
     gap: 1em;
     padding: 1em;
     justify-content: center;
+    margin-top: 0;
 }
 
 #tab-login li{
@@ -244,6 +282,11 @@ select, input[type=date]{
 #tab-usuario{
     display: grid;
     justify-content: center;
+}
+
+.tab-params{
+    width: 38.75em;
+    margin-bottom: 2em;
 }
 
 .text-google{

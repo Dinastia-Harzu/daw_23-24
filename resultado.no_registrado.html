@@ -25,14 +25,15 @@
         </form>
     </header>
     <main>
-        <div>
+        <div class="tab-busc">
             <p>
                 <label for="titulo">Título:</label> 
                 <input type="text" name="titulo" id="titulo" placeholder="Introduce el título">
             </p>
             <p>
-                <label for="fecha_d">Fecha entre:</label>
+                <label for="fecha_d" class="tab-busc-fecha">Fecha entre:</label>
                 <input type="date" name="fecha_d" id="fecha_d">
+
                 <label for="fecha_h">y</label>
                 <input type="date" name="fecha_h" id="fecha_h">
             </p>
@@ -52,8 +53,8 @@
                 </select>
             </p>
         </div>
-        <section>
-            <h2>Resultados</h2>
+        <h1 class="titulo-index">Resultados</h1>
+        <div class="grid-img-sin-user">
             <article>
                 <!-- Este <a> se esfumará cuando lleguemos a JS -->
                 <a href="#error">
@@ -84,7 +85,7 @@
                     <img src="img/foto5.png" alt="Última foto #5">
                 </a>
             </article>
-        </section>
+        </div>
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
