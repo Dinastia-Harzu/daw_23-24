@@ -4,8 +4,8 @@
     --ceruleo_grisaceo__mas_oscuro: #1e2425;
     --cian_grisaceo_oscuro:         #37474A;
     --blanco:                       #FFFFFF;
-    --gris_oscuro:                  #9D9C9C;
-    --gris_normal:                  gray;
+    --gris_oscuro:                  #7a7a7a;
+    --gris_normal:                  rgb(149, 149, 149);
 
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
@@ -22,7 +22,7 @@ p, a, h1, h2, h3{ /* Si no hago esto, algunas cosas se ven blancas cuando no deb
     color: var(--blanco);
 }
 
-dialog p{
+dialog p, dialog a{
     color: var(--negro);
 }
 
@@ -50,6 +50,46 @@ body {
     margin: 0 auto 1em;
 }
 
+#error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#error ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#error img{
+    width: 100px;
+}
+
+#error p, #error li{
+    width: 16em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#error li{
+    padding: 0.4em;
+    background-color: var(--gris_normal);
+    text-decoration: none;
+}
+
+#error li:hover{
+    background-color: var(--gris_oscuro);
+}
+
+#error li a{
+    text-decoration: none;
+}
+
+#error li:last-child{
+    margin-top: 1.25em;
+}
+
+
 #funciones{
     margin-top: 3em;
 }
@@ -64,6 +104,33 @@ footer {
     text-align: center;
 }
 
+.grid-img{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-items: center;
+    padding: 2em;
+    margin-top: 0.5em;
+    gap: 3em;
+}
+
+.grid-img article{
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    padding: 1em 2em 2em 2em;
+    color: var(--blanco);
+} 
+
+.grid-img article img{
+    width: 22em;
+    height: 18em;
+    object-fit: cover;
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+} 
+
+.grid-img article p, .grid-img article time{
+    font-size: large;
+}
+
 header {
     background-color: var(--header_clr);
 }
@@ -71,6 +138,7 @@ header {
 input[name="pfp"]{
     display: none;
 }
+
 
 #foto{
     display: flex;
@@ -94,6 +162,12 @@ input[name="pfp"]{
     color: var(--negro);
     text-decoration: none;
     border: 0.15em solid var(--negro);
+}
+
+.titulo-index{
+    margin-left: 1.05em;
+    border-bottom: 0.1em solid var(--negro);
+    padding-bottom: 0.3em;
 }
 
 #info-foto{
@@ -137,7 +211,6 @@ select, input[type=date]{
     width: 12.5em;
     padding: 1em;
     text-align: center;
-    border-radius: 0.4em;
     background-color: var(--cian_grisaceo_oscuro); /* En principio el color es blanco, pero las letras se ven blancas */
 }
 
@@ -173,6 +246,14 @@ select, input[type=date]{
     justify-content: center;
 }
 
+.text-google{
+    text-align: center;
+}
+
+.titulo-dialog{
+    margin-top: 0.3em;
+    font-size: large;
+}
 
 
 
