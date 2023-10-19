@@ -358,5 +358,26 @@ select, input[type=date]{
     margin-left: 1.05em;
 }
 
+/* MEDIA QUERYS */
+@media screen and (max-width: 1500px) {
+    .grid-img, .grid-img-sin-user{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-items: center;
+        border-top: 0.25em solid var(--blanco);
+    } 
+}
+
+@media screen and (max-width: 950px) {
+    .grid-img, .grid-img-sin-user{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-items: center;
+        border-top: 0.25em solid var(--blanco);
+    } 
+}
+
 
 
