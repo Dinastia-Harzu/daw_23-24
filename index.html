@@ -3,29 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global/style.css">
+    <link rel="stylesheet" href="css/movil/style.css">
+    <link rel="stylesheet" href="css/tablet/style.css">
+    <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Masthermatika</title>
 </head>
 <body>
     <header>
-        <div>
-            <img src="img/logo.png" alt="Icono de la red social" id="logo-icono">
-            <img src="img/nombre.png" alt="Nombre de la red social" id="logo-titulo">
-            <p>El arte de las matemáticas</p>
+        <div class="grid-contenedor">
+            <div class="grid-casilla izquierda">
+                <img src="img/logo.png" alt="Icono de la red social" id="logo-icono">
+            </div>
+            <div class="grid-casilla derecha">
+                <div class="grid-casilla arriba">
+                    <img src="img/nombre.png" alt="Nombre de la red social" id="logo-titulo">
+                </div>
+                <p class="grid-casilla abajo">El arte de las matemáticas</p>
+            </div>
         </div>
-        <nav>
+        <nav class="grid-casilla">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="busqueda.html">Descubrir</a></li>
                 <li><a href="javascript:void(0);">Publicar</a></li>
             </ul>
         </nav>
-        <form action="resultado.html">
-            <input type="text" name="busqueda_rapida" id="busqueda_rapida" placeholder="Búsqueda rápida">
+        <form action="resultado.no_registrado.html" id="busqueda-rapida" class="grid-casilla">
+            <input type="text" name="busqueda_rapida" placeholder="Búsqueda rápida">
+            <label for="busqueda-rapida-sub" id="lupa"><i class="fa fa-search"></i></label>
             <input type="submit" value="Invisible">
         </form>
-        <figure>
+        <figure class="grid-casilla">
             <a href="usuario.html">
                 <img src="img/placeholder.png" alt="Foto de perfil del usuario">
             </a>

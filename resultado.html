@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masthermatika</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global/style.css">
+    <link rel="stylesheet" href="css/movil/style.css">
+    <link rel="stylesheet" href="css/tablet/style.css">
+    <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -21,8 +24,9 @@
                 <li><a href="javascript:void(0);">Publicar</a></li>
             </ul>
         </nav>
-        <form action="resultado.html">
-            <input type="text" name="busqueda_rapida" id="busqueda_rapida" placeholder="Búsqueda rápida">
+        <form action="resultado.no_registrado.html" id="busqueda-rapida">
+            <input type="text" name="busqueda_rapida" placeholder="Búsqueda rápida">
+            <label for="busqueda-rapida-sub" id="lupa"><i class="fa fa-search"></i></label>
             <input type="submit" value="Invisible">
         </form>
         <figure>

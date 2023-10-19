@@ -24,6 +24,14 @@ p, a, h1, h2, h3{ /* Si no hago esto, algunas cosas se ven blancas cuando no deb
     color: var(--blanco);
 }
 
+.arriba {
+    grid-row: 1;
+}
+
+.abajo {
+    grid-row: 2;
+}
+
 dialog p, dialog a, dialog h3{
     color: var(--negro);
 }
@@ -32,20 +40,20 @@ body {
     background-color: var(--body_clr);
 }
 
-#busqueda-rapida-sub{
+#busqueda-rapida input[type=submit] {
     display: none;
 }
 
-#creacion-cuenta{
+#creacion-cuenta {
     display: grid;
     justify-content: center;
 }
 
-#creacion-cuenta h1{
+#creacion-cuenta h1 {
     margin-bottom: 0.5em;
 }
 
-#datos-usu{
+#datos-usu {
     width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
     display: flex;
     justify-content: center;
@@ -56,7 +64,16 @@ body {
     margin: 0 auto 1em;
 }
 
-#editar-perfil a{
+.derecha {
+    grid-column: 2;
+    align-items: center;
+}
+
+.derecha, .izquierda {
+    width: 22em;
+}
+
+#editar-perfil a {
     width: 8.2em;
     text-decoration: none;
     padding: 0.15em;
@@ -67,64 +84,59 @@ body {
     border: 0.1em solid var(--negro);
 }
 
-#editar-perfil a:hover{
+#editar-perfil a:hover {
     background-color: var(--gris_claro_menor);
 }
 
-#editar-perfil input[type=submit]{
+#editar-perfil input[type=submit] {
     display: block;
     cursor: pointer;
 }
 
-#error{
+#error {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#error ul{
+#error ul {
     list-style-type: none;
     padding: 0;
 }
 
-#error img{
+#error img {
     width: 100px;
 }
 
-#error p, #error li{
+#error p, #error li {
     width: 16em;
     text-align: center;
     margin-bottom: 0;
 }
 
-#error li{
+#error li {
     padding: 0.4em;
     background-color: var(--gris_normal);
     text-decoration: none;
 }
 
-#error li:hover{
+#error li:hover {
     background-color: var(--gris_oscuro);
 }
 
-#error li a{
+#error li a {
     text-decoration: none;
 }
 
-#error li:last-child{
+#error li:last-child {
     margin-top: 1.25em;
 }
 
-
-#funciones{
-    margin-top: 3em;
+header > figure img {
+    width: 48px;
 }
 
-#funciones a:hover, #tab-google p>a:hover{
-    color: var(--gris_normal);
-}
-
-.folder{
+.folder {
     font-size:x-large;
     padding: 0.8em;
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
@@ -136,7 +148,46 @@ footer {
     text-align: center;
 }
 
-.grid-img, .grid-img-sin-user{
+#foto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5em;
+    padding: 1em;
+    margin-bottom: 1;
+}
+
+#foto img {
+    width: 33.5em;
+}
+
+#funciones {
+    margin-top: 3em;
+}
+
+#funciones a:hover, #tab-google p>a:hover {
+    color: var(--gris_normal);
+}
+
+.grid-casilla {
+    /* padding: 0 1em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: fit-content;
+}
+
+.grid-contenedor {
+    display: grid;
+    /* padding: 1em; */
+    align-items: center;
+    grid-template-columns: 30% 70%;
+    justify-content: space-around;
+    width: fit-content;
+}
+
+.grid-img, .grid-img-sin-user {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
@@ -147,26 +198,26 @@ footer {
     margin-top: 0.5em;
 }
 
-.grid-img article{
+.grid-img article {
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
     padding: 1em 2em 2em 2em;
     color: var(--blanco);
 } 
 
-.grid-img-sin-user article{
+.grid-img-sin-user article {
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
     padding: 2em;
-} 
+}     
 
-.grid-img article img, .grid-img-sin-user article img{
+.grid-img article img, .grid-img-sin-user article img {
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
-} 
+}     
 
-.grid-img article p, .grid-img article time{
+.grid-img article p, .grid-img article time {
     font-size: large;
-}
+}    
 
-.google-login{
+.google-login {
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -175,89 +226,116 @@ footer {
     color: var(--negro);
     text-decoration: none;
     border: 0.15em solid var(--negro);
-}
+}    
 
-#grid-params{
+#grid-params {
     display: grid;
     justify-content: center;
-}
+}    
 
 header {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    padding: 2em;
+    justify-content: flex-end;
+    padding: 1em;
     background-color: var(--header_clr);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 50% 25% 20% 5%;
+}
+
+header > div {
+    grid-column: 1;
+}
+
+header > figure {
+    margin: 0;
+}
+
+header > form {
+    grid-column: 3;
+}
+
+header > nav {
+    grid-column: 2;
+    width: fit-content;
+}
+
+header p {
+    margin: 0;
 }
 
 header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: 3em;
+    /* margin-left: 3em; */
     display: flex;
     flex-direction: row;
-}
+}    
 
 header li {
     width: 6.25em;
     text-align: center;
     padding: 1em;
-    margin-right: 1em;
+    margin: 0.25em;
     background-color: var(--ceruleo_grisaceo_oscuro);
     text-decoration: none;
-}
+}    
 
-header a{
+header a {
     text-decoration: none;
-}
+}    
 
-header li:hover{
+header li:hover {
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
-}
+}    
 
-
-input[name="pfp"]{
+input[name="pfp"] {
     display: none;
-}
+}    
 
+.izquierda {
+    grid-column: 1;
+}    
 
-#foto{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2.5em;
-    padding: 1em;
-    margin-bottom: 1;
-}
+.izquierda > p {
+    text-align: center;
+}    
 
-#foto img{
-    width: 33.5em;
-}
-
-#info-foto{
+#info-foto {
     width: 20.5em;
     padding: 1em;
     background-color: var(--footer_clr);
 }
 
-#lupa{
+#logo-icono {
+    width: 75px;
+}
+
+#logo-titulo {
+    width: 250px;
+}
+
+#lupa {
     color: var(--blanco);
 }
 
-label[for=pfp]{
+label[for=pfp] {
     cursor: pointer;
 }
 
-#reg_2 h3{
+#reg_2 h3 {
     margin-top: 1.35em;
 }
 
-select, input[type=date]{
+select, input[type=date] {
     color: var(--gris_normal);
 }
 
-.tab-busc{
+.tab-busc {
     display: grid;
     padding: 2em;
     background-color: var(--ceruleo_grisaceo_oscuro);
@@ -265,37 +343,37 @@ select, input[type=date]{
     justify-content: center;
 }
 
-.tab-busc-fecha{
+.tab-busc-fecha {
     display: block;
     margin-bottom: 0.5em;
 }
 
-.tab-busc input[type=text], .tab-busc select{
+.tab-busc input[type=text], .tab-busc select {
     display: block;
     font-size: 16px;
     margin-top: 0.5em;
 }
 
-.tab-busc input[type=date], input[type=submit]{
+.tab-busc input[type=date], input[type=submit] {
     font-size: 16px;
 }
 
-.tab-busc-y{
+.tab-busc-y {
     margin: 0 0.25em 0 0.25em;
 }
 
-#tab-google{
+#tab-google {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#tab-login {
+#tab-login  {
     background-color: var(--footer_clr);
 }
 
-#tab-login>ul{
+#tab-login>ul {
     height: 11.875em;
     list-style-type: none;
     display: flex;
@@ -307,7 +385,7 @@ select, input[type=date]{
     margin-top: 0;
 }
 
-#tab-login li{
+#tab-login li {
     width: 12.5em;
     padding: 1em;
     text-align: center;
@@ -315,15 +393,15 @@ select, input[type=date]{
     cursor: pointer;
 }
 
-#tab-login li:hover{
+#tab-login li:hover {
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
 }
 
-#tab-login a{
+#tab-login a {
     text-decoration: none;
 }
 
-#tab-reg{
+#tab-reg {
     display: flex;
     justify-content: center;
     gap: 5.5em;
@@ -332,54 +410,54 @@ select, input[type=date]{
     background-color: var(--footer_clr);
 }
 
-#tab-reg input, #tab-reg select{
+#tab-reg input, #tab-reg select {
     font-size: 15px;
 }
 
-#tab-reg input[type=submit]{
+#tab-reg input[type=submit] {
     font-size: 15px;
     margin-top: 1em;
 }
 
-#tab-reg img{
+#tab-reg img {
     width: 15.56em;
 }
 
-#tab-usuario{
+#tab-usuario {
     display: grid;
     justify-content: center;
 }
 
-.tab-params{
+.tab-params {
     width: 38.75em;
     margin-bottom: 2em;
 }
 
-.text-google{
+.text-google {
     text-align: center;
 }
 
-.text-google a:hover{
+.text-google a:hover {
     color: var(--gris_oscuro);
 }
 
-.text-slogan{
+.text-slogan {
     font-size: large;
     text-align: center;
     margin-top: 0;
     margin-left: 1em;
 }
 
-.titulo-dialog{
+.titulo-dialog {
     margin-top: 0.3em;
     font-size: large;
 }
 
-.titulo-index{
+.titulo-index {
     margin-left: 1.05em;
 }
 
-#pfp-query{
+#pfp-query {
     display: none;
 }
 
