@@ -4,8 +4,10 @@
     --ceruleo_grisaceo__mas_oscuro: #1e2425;
     --cian_grisaceo_oscuro:         #37474A;
     --blanco:                       #FFFFFF;
-    --gris_oscuro:                  #7a7a7a;
+    --gris_claro:                   #efefef;
+    --gris_claro_menor:             rgb(214, 214, 214);
     --gris_normal:                  rgb(149, 149, 149);
+    --gris_oscuro:                  #7a7a7a;
 
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
@@ -55,14 +57,23 @@ body {
 }
 
 #editar-perfil a{
+    width: 8.2em;
     text-decoration: none;
-    padding-left: 0.1em;
-    margin-top: 0.5em;
-    background-color: var(--gris_normal);
+    padding: 0.15em;
+    margin-top: 1em;
+    background-color: var(--gris_claro);
+    display: block;
+    text-align: center;
+    border: 0.1em solid var(--negro);
+}
+
+#editar-perfil a:hover{
+    background-color: var(--gris_claro_menor);
 }
 
 #editar-perfil input[type=submit]{
     display: block;
+    cursor: pointer;
 }
 
 #error{
@@ -110,7 +121,7 @@ body {
 }
 
 #funciones a:hover, #tab-google p>a:hover{
-    color: var(--gris_oscuro);
+    color: var(--gris_normal);
 }
 
 .folder{
