@@ -30,6 +30,10 @@ body {
     background-color: var(--body_clr);
 }
 
+#busqueda-rapida-sub{
+    display: none;
+}
+
 #creacion-cuenta{
     display: grid;
     justify-content: center;
@@ -98,6 +102,12 @@ body {
     color: var(--gris_oscuro);
 }
 
+.folder{
+    font-size:x-large;
+    padding: 0.8em;
+    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+}
+
 footer {
     background-color: var(--footer_clr);
     padding: 0.3em;
@@ -153,7 +163,7 @@ footer {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 2em;
     background-color: var(--header_clr);
 }
@@ -203,17 +213,19 @@ input[name="pfp"]{
     width: 33.5em;
 }
 
-
-.titulo-index{
-    margin-left: 1.05em;
-}
-
 #info-foto{
     width: 20.5em;
     padding: 1em;
     background-color: var(--footer_clr);
 }
 
+#lupa{
+    color: var(--blanco);
+}
+
+label[for=pfp]{
+    cursor: pointer;
+}
 
 #reg_2 h3{
     margin-top: 1.35em;
@@ -308,6 +320,10 @@ select, input[type=date]{
     margin-top: 1em;
 }
 
+#tab-reg img{
+    width: 15.56em;
+}
+
 #tab-usuario{
     display: grid;
     justify-content: center;
@@ -338,6 +354,9 @@ select, input[type=date]{
     font-size: large;
 }
 
+.titulo-index{
+    margin-left: 1.05em;
+}
 
 
 
