@@ -127,9 +127,6 @@ footer {
 } 
 
 .grid-img article img, .grid-img-sin-user article img{
-    width: 22em;
-    height: 18em;
-    object-fit: cover;
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
 } 
 
@@ -281,6 +278,7 @@ select, input[type=date]{
     padding: 1em;
     text-align: center;
     background-color: var(--cian_grisaceo_oscuro); /* En principio el color es blanco, pero las letras se ven blancas */
+    cursor: pointer;
 }
 
 #tab-login li:hover{
