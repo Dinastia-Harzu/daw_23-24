@@ -401,5 +401,19 @@ select, input[type=date]{
     } 
 }
 
+@media screen and (max-width: 600px) {
+    #datos-usu{
+        width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
+        display: block;
+        padding: 2em;
+        background-color: var(--ceruleo_grisaceo_oscuro);
+        margin: 0 auto 1em;
+    }
+
+    #funciones{
+        margin-top: 2em;
+    }
+}
+
 
 
