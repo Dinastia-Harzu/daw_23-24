@@ -319,7 +319,6 @@ select, input[type=date]{
     background-color: var(--ceruleo_grisaceo__mas_oscuro);
 }
 
-
 #tab-login a{
     text-decoration: none;
 }
@@ -380,6 +379,10 @@ select, input[type=date]{
     margin-left: 1.05em;
 }
 
+#pfp-query{
+    display: none;
+}
+
 /* MEDIA QUERYS */
 @media screen and (max-width: 1500px) {
     .grid-img, .grid-img-sin-user{
@@ -392,13 +395,29 @@ select, input[type=date]{
 }
 
 @media screen and (max-width: 950px) {
+
+    #tab-reg{
+        width: 400px;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
     .grid-img, .grid-img-sin-user{
         display: grid;
         grid-template-columns: auto;
         align-items: center;
         justify-items: center;
         border-top: 0.25em solid var(--blanco);
-    } 
+    }
+    
+    #reg-2{
+        display: none;
+    }
+
+    #pfp-query{
+        display: block;
+        color: var(--blanco);
+    }
 }
 
 @media screen and (max-width: 600px) {
