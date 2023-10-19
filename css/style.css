@@ -22,7 +22,7 @@ p, a, h1, h2, h3{ /* Si no hago esto, algunas cosas se ven blancas cuando no deb
     color: var(--blanco);
 }
 
-dialog p, dialog a{
+dialog p, dialog a, dialog h3{
     color: var(--negro);
 }
 
@@ -52,6 +52,17 @@ body {
     padding: 2em;
     background-color: var(--ceruleo_grisaceo_oscuro);
     margin: 0 auto 1em;
+}
+
+#editar-perfil a{
+    text-decoration: none;
+    padding-left: 0.1em;
+    margin-top: 0.5em;
+    background-color: var(--gris_normal);
+}
+
+#editar-perfil input[type=submit]{
+    display: block;
 }
 
 #error{
