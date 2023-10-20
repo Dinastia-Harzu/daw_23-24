@@ -1,4 +1,4 @@
-@media screen and (min-width: 361px) and (max-width: 1366px) {
+@media screen and (min-width: 1000px) and (max-width: 1366px) {
     header ul {
         flex-direction: column;
     }

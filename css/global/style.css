@@ -243,7 +243,7 @@ header {
 
 header {
     display: grid;
-    grid-template-columns: 50% 25% 20% 5%;
+    grid-template-columns: 40% 45% 13% 2%;
 }
 
 header > div {
@@ -471,6 +471,27 @@ select, input[type=date] {
         border-top: 0.25em solid var(--blanco);
     } 
 }
+
+@media screen and (max-width: 1366px) {
+    header {
+        display: grid;
+        grid-template-columns: 40% 30% 20% 10%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header ul{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+
 
 @media screen and (max-width: 950px) {
 
