@@ -10,22 +10,26 @@
     --blanco:                       #FFFFFF; */
 
     /* Colores cambiados */
-    --ceruleo_grisaceo_mas_claro: #accbcf;
+    --ceruleo_grisaceo_muy_claro: #c3e5e9;
+    --ceruleo_grisaceo_mas_claro: #ACCBCF;
     --ceruleo_grisaceo_claro: #99C4CC;
-    --cian_grisaceo_claro: #86AEB5;
+    --cian_grisaceo_claro: #7b9da3;
 
     /*Cambiamos colores*/
-    --negro: #FFFFFF;
+    --negro_cambiado: #FFFFFF;
+    --negro: var(--negro_cambiado);
+    --ceruleo_grisaceo_muy_oscuro: var(--ceruleo_grisaceo_muy_claro);
     --ceruleo_grisaceo_mas_oscuro: var(--ceruleo_grisaceo_mas_claro);
     --ceruleo_grisaceo_oscuro: var(--ceruleo_grisaceo_claro);
     --cian_grisaceo_oscuro: var(--cian_grisaceo_claro);
-    --blanco: #000000;
+    --blanco_cambiado: #000000;
+    --blanco: var(--blanco_cambiado);
     
     /*Grises*/
-    --gris_claro:                   #efefef;
-    --gris_claro_menor:             rgb(214, 214, 214);
-    --gris_normal:                  rgb(149, 149, 149);
-    --gris_oscuro:                  #7a7a7a;
+    --gris_claro:                   #c7c7c7;
+    --gris_claro_menor:             rgb(184, 184, 184);
+    --gris_normal:                  rgb(102, 102, 102);
+    --gris_oscuro:                  #545454;
 }
 
 /* Cambiamos las fotos */
@@ -40,4 +44,31 @@
 
 .grid-contenedor{
     display: none;
+}
+
+/* Cambios en los dialog */
+dialog p, dialog a, dialog h3 {
+    color: var(--blanco);
+}
+
+.google-login {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    background-color: var(--negro_cambiado);
+    color: var(--blanco_cambiado);
+    text-decoration: none;
+    border: 0.15em solid var(--blanco_cambiado);
+}
+
+/* Cambios adicionales */
+#error li {
+    padding: 0.4em;
+    background-color: var(--gris_claro);
+    text-decoration: none;
+}
+
+#error li:hover {
+    background-color: var(--gris_claro_menor);
 }

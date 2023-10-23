@@ -1,7 +1,8 @@
 :root {
     --negro:                        #000000;
+    --ceruleo_grisaceo_muy_oscuro:  #121617;
+    --ceruleo_grisaceo_mas_oscuro:  #1e2425;
     --ceruleo_grisaceo_oscuro:      #273234;
-    --ceruleo_grisaceo_mas_oscuro: #1e2425;
     --cian_grisaceo_oscuro:         #37474A;
     --blanco:                       #FFFFFF;
     --gris_claro:                   #efefef;
@@ -149,6 +150,11 @@ header > figure img {
     background-color: var(--ceruleo_grisaceo_mas_oscuro);
 }
 
+.folder:hover{
+    background-color: var(--ceruleo_grisaceo_muy_oscuro);
+    cursor: pointer;
+}
+
 footer {
     background-color: var(--footer_clr);
     padding: 0.3em;
@@ -230,6 +236,7 @@ footer {
 .google-login {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5em;
     padding: 1em;
     background-color: var(--blanco);
