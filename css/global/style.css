@@ -1,7 +1,7 @@
 :root {
     --negro:                        #000000;
     --ceruleo_grisaceo_oscuro:      #273234;
-    --ceruleo_grisaceo__mas_oscuro: #1e2425;
+    --ceruleo_grisaceo_mas_oscuro: #1e2425;
     --cian_grisaceo_oscuro:         #37474A;
     --blanco:                       #FFFFFF;
     --gris_claro:                   #efefef;
@@ -13,7 +13,7 @@
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
     --header_clr:   var(--negro);
-    --botones_log_clr: var(--blanco)
+    --botones_log_clr: var(--blanco);
 
 }
 
@@ -146,7 +146,7 @@ header > figure img {
 .folder {
     font-size:x-large;
     padding: 0.8em;
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
 }
 
 footer {
@@ -193,6 +193,10 @@ footer {
     width: fit-content;
 }
 
+.grid-contenedor-claro{
+    display: none;
+}
+
 .grid-img, .grid-img-sin-user {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -205,18 +209,18 @@ footer {
 }
 
 .grid-img article {
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
     padding: 1em 2em 2em 2em;
     color: var(--blanco);
 } 
 
 .grid-img-sin-user article {
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
     padding: 2em;
 }     
 
 .grid-img article img, .grid-img-sin-user article img {
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
 }     
 
 .grid-img article p, .grid-img article time {
@@ -291,7 +295,7 @@ header a {
 }    
 
 header li:hover {
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
 }    
 
 input[name="pfp"] {
@@ -395,7 +399,7 @@ select, input[type=date] {
 }
 
 #tab-login li:hover {
-    background-color: var(--ceruleo_grisaceo__mas_oscuro);
+    background-color: var(--ceruleo_grisaceo_mas_oscuro);
 }
 
 #tab-login a {
