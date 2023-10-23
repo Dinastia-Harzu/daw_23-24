@@ -9,6 +9,7 @@
     --gris_normal:                  rgb(149, 149, 149);
     --gris_oscuro:                  #7a7a7a;
 
+    --font_clr:     var(--blanco);
     --body_clr:     var(--cian_grisaceo_oscuro);
     --footer_clr:   var(--ceruleo_grisaceo_oscuro);
     --header_clr:   var(--negro);
@@ -20,8 +21,8 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-p, a, h1, h2, h3{ /* Si no hago esto, algunas cosas se ven blancas cuando no deberían */
-    color: var(--blanco);
+p, a, h1, h2, h3, time{ /* Si no hago esto, algunas cosas se ven blancas cuando no deberían */
+    color: var(--font_clr);
 }
 
 .arriba {
@@ -38,6 +39,12 @@ dialog p, dialog a, dialog h3{
 
 body {
     background-color: var(--body_clr);
+}
+
+#busqueda-rapida {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #busqueda-rapida input[type=submit] {
@@ -172,10 +179,9 @@ footer {
 .grid-casilla {
     /* padding: 0 1em; */
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: baseline;
     width: fit-content;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .grid-contenedor {
@@ -234,16 +240,11 @@ footer {
 }    
 
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% 40% 15% 10%;
     align-items: center;
-    justify-content: flex-end;
     padding: 1em;
     background-color: var(--header_clr);
-}
-
-header {
-    display: grid;
-    grid-template-columns: 40% 45% 13% 2%;
 }
 
 header > div {
@@ -491,7 +492,11 @@ select, input[type=date] {
     }
 }
 
-
+@media screen and (min-width: 1000px) and (max-width: 1366px) {
+    header ul {
+        flex-direction: column;
+    }
+}
 
 @media screen and (max-width: 950px) {
 

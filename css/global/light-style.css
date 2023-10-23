@@ -1,0 +1,19 @@
+@import url('./style.css');
+
+:root {
+    --negro:                        #000000;
+    --ceruleo_grisaceo_oscuro:      #273234;
+    --ceruleo_grisaceo__mas_oscuro: #1e2425;
+    --cian_grisaceo_oscuro:         #37474A;
+    --blanco:                       #FFFFFF;
+    --gris_claro:                   #efefef;
+    --gris_claro_menor:             rgb(214, 214, 214);
+    --gris_normal:                  rgb(149, 149, 149);
+    --gris_oscuro:                  #7a7a7a;
+
+    --font_clr:     var(--negro);
+    --body_clr:     var(--cian_grisaceo_oscuro);
+    --footer_clr:   var(--ceruleo_grisaceo_oscuro);
+    --header_clr:   var(--blanco);
+    --botones_log_clr: var(--negro);
+}
