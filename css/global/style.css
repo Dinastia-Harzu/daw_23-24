@@ -324,7 +324,7 @@ input[name="pfp"] {
 #info-foto {
     width: 20.5em;
     padding: 1em;
-    background-color: var(--footer_clr);
+    background-color: var(--articulos_clr);
 }
 
 #logo-icono {
@@ -354,7 +354,7 @@ select, input[type=date] {
 .tab-busc {
     display: grid;
     padding: 2em;
-    background-color: var(--footer_clr);
+    background-color: var(--articulos_clr);
     font-size: large;
     justify-content: center;
 }
