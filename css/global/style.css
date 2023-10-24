@@ -149,10 +149,6 @@ body {
     margin-top: 1.25em;
 }
 
-header > figure img {
-    width: 48px;
-}
-
 .folder {
     font-size:x-large;
     padding: 0.8em;
@@ -206,10 +202,6 @@ footer {
     grid-template-columns: 30% 70%;
     justify-content: space-around;
     width: fit-content;
-}
-
-.grid-contenedor-claro{
-    display: none;
 }
 
 .grid-img, .grid-img-sin-user {

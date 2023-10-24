@@ -25,20 +25,6 @@
     --gris_oscuro:                  #545454;
 }
 
-/* Cambiamos las fotos */
-.grid-contenedor-claro {
-    display: grid;
-    /* padding: 1em; */
-    align-items: center;
-    grid-template-columns: 30% 70%;
-    justify-content: space-around;
-    width: fit-content;
-}
-
-.grid-contenedor{
-    display: none;
-}
-
 /* Cambios en los dialog */
 dialog p, dialog a, dialog h3 {
     color: var(--blanco);
