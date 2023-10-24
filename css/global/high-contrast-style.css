@@ -1,2 +1,7 @@
 @import url('style.css');
 
+:root{
+    --ceruleo_grisaceo_mas_oscuro:  #1e2425;
+    --ceruleo_grisaceo_oscuro:      #273234;
+    --cian_grisaceo_oscuro:         #37474A;
+}

@@ -3,6 +3,7 @@
     --ceruleo_grisaceo_mas_oscuro:  #1e2425;
     --ceruleo_grisaceo_oscuro:      #273234;
     --cian_grisaceo_oscuro:         #37474A;
+    
     --blanco:                       #FFFFFF;
     --gris_claro:                   #efefef;
     --gris_claro_menor:             rgb(214, 214, 214);
@@ -55,7 +56,7 @@ body {
 #busqueda-rapida input[type=text], #busqueda-rapida button {
     background: none;
     border: none;
-    color: var(--blanco);
+    color: var(--font_clr);
 }
 
 #busqueda-rapida input[type=text]:focus-visible {
@@ -153,11 +154,11 @@ body {
 .folder {
     font-size:x-large;
     padding: 0.8em;
-    background-color: var(--articulos_clr);
+    background-color: var(--body_clr);
 }
 
 .folder:hover{
-    background-color: var(--articulos_clr);
+    background-color: var(--footer_clr);
     cursor: pointer;
 }
 
@@ -387,7 +388,7 @@ select, input[type=date] {
 }
 
 #tab-login  {
-    background-color: var(--footer_clr);
+    background-color: var(--articulos_clr);
 }
 
 #tab-login>ul {
@@ -424,7 +425,7 @@ select, input[type=date] {
     gap: 5.5em;
     width: 900px;
     padding-bottom: 1.5em;
-    background-color: var(--footer_clr);
+    background-color: var(--articulos_clr);
 }
 
 #tab-reg input, #tab-reg select {
