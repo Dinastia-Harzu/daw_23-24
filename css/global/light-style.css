@@ -1,22 +1,19 @@
-@import url('./style.css');
+@import url('style.css');
 
 :root {
 
     /* Colores cambiados */
-    --ceruleo_grisaceo_muy_claro: #c3e5e9;
     --ceruleo_grisaceo_mas_claro: #ACCBCF;
     --ceruleo_grisaceo_claro: #99C4CC;
     --cian_grisaceo_claro: #7b9da3;
 
-    /*Cambiamos colores*/
-    --negro_cambiado: #FFFFFF;
-    --negro: var(--negro_cambiado);
-    --ceruleo_grisaceo_muy_oscuro: var(--ceruleo_grisaceo_muy_claro);
-    --ceruleo_grisaceo_mas_oscuro: var(--ceruleo_grisaceo_mas_claro);
-    --ceruleo_grisaceo_oscuro: var(--ceruleo_grisaceo_claro);
-    --cian_grisaceo_oscuro: var(--cian_grisaceo_claro);
-    --blanco_cambiado: #000000;
-    --blanco: var(--blanco_cambiado);
+    /* Cambiamos colores */
+    --font_clr:     var(--negro);
+    --body_clr:     var(--cian_grisaceo_claro);
+    --footer_clr:   var(--ceruleo_grisaceo_claro);
+    --header_clr:   var(--blanco);
+    --articulos_clr: var(--ceruleo_grisaceo_mas_claro);
+    --botones_clr: var(--negro);
     
     /*Grises*/
     --gris_claro:                   #c7c7c7;
