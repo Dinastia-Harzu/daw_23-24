@@ -46,10 +46,19 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 0.5em;
+    background: var(--ceruleo_grisaceo_mas_oscuro);
+    border-radius: 0.5em;
 }
 
-#busqueda-rapida input[type=submit] {
-    display: none;
+#busqueda-rapida input[type=text], #busqueda-rapida button {
+    background: none;
+    border: none;
+    color: var(--blanco);
+}
+
+#busqueda-rapida input[type=text]:focus-visible {
+    outline: none;
 }
 
 #creacion-cuenta {
@@ -283,19 +292,22 @@ header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* margin-left: 3em; */
     display: flex;
     flex-direction: row;
 }    
 
 header li {
-    width: 6.25em;
+    /* width: 6.25em; */
     text-align: center;
-    padding: 1em;
+    /* padding: 1em; */
     margin: 0.25em;
     background-color: var(--ceruleo_grisaceo_oscuro);
     text-decoration: none;
-}    
+}
+
+header li a {
+    padding: 1em;
+}
 
 header a {
     text-decoration: none;
