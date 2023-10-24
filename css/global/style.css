@@ -50,6 +50,7 @@ body {
     padding: 0.5em;
     background: var(--articulos_clr);
     border-radius: 0.5em;
+    justify-content: space-between;
 }
 
 #busqueda-rapida input[type=text], #busqueda-rapida button {
@@ -253,11 +254,11 @@ footer {
 }    
 
 header {
-    display: grid;
-    grid-template-columns: 40% 40% 15% 10%;
+    display: flex;
     align-items: center;
     padding: 1em;
     background-color: var(--header_clr);
+    justify-content: space-between;
 }
 
 header > div {
@@ -325,7 +326,7 @@ input[name="pfp"] {
 #info-foto {
     width: 20.5em;
     padding: 1em;
-    background-color: var(--articulos_clr);
+    background-color: var(--footer_clr);
 }
 
 #logo-icono {
@@ -355,7 +356,7 @@ select, input[type=date] {
 .tab-busc {
     display: grid;
     padding: 2em;
-    background-color: var(--articulos_clr);
+    background-color: var(--footer_clr);
     font-size: large;
     justify-content: center;
 }
@@ -491,8 +492,6 @@ select, input[type=date] {
 
 @media screen and (max-width: 1366px) {
     header {
-        display: grid;
-        grid-template-columns: 40% 30% 20% 10%;
     }
 }
 
