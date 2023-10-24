@@ -23,6 +23,10 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 p, a, h1, h2, h3, time{ /* Si no hago esto, algunas cosas se ven blancas cuando no deberían */
     color: var(--font_clr);
 }
@@ -44,13 +48,6 @@ body {
 }
 
 #busqueda-rapida {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5em;
-    background: var(--articulos_clr);
-    border-radius: 0.5em;
-    justify-content: space-between;
 }
 
 #busqueda-rapida input[type=text], #busqueda-rapida button {
@@ -181,6 +178,10 @@ footer {
     width: 33.5em;
 }
 
+#foto-perfil {
+    border-radius: 50%;
+}
+
 #funciones {
     margin-top: 3em;
 }
@@ -255,9 +256,10 @@ footer {
 
 header {
     display: flex;
-    align-items: center;
+    flex: 2 1 auto;
     padding: 1em;
     background-color: var(--header_clr);
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -270,42 +272,11 @@ header > figure {
 }
 
 header > form {
-    grid-column: 3;
-}
-
-header > nav {
-    grid-column: 2;
-    width: fit-content;
-}
-
-header p {
-    margin: 0;
-}
-
-header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: row;
-}    
-
-header li {
-    /* width: 6.25em; */
-    text-align: center;
-    /* padding: 1em; */
-    margin: 0.25em;
-    background-color: var(--footer_clr);
-    text-decoration: none;
+    padding: 0.5em;
+    background: var(--articulos_clr);
+    border-radius: 0.5em;
 }
-
-header li a {
-    padding: 1em;
-}
-
-header a {
-    text-decoration: none;
-}    
 
 header li:hover {
     background-color: var(--articulos_clr);
@@ -343,6 +314,47 @@ input[name="pfp"] {
 
 label[for=pfp] {
     cursor: pointer;
+}
+
+nav {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav i::before {
+    font-size: xx-large;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    flex-grow: 1;
+    text-align: center;
+    background: var(--footer_clr);
+    border-radius: 0.5em;
+    margin: 0.25em;
+    width: 8em;
+}
+
+nav li:hover {
+    background: var(--body_clr);
+}
+
+nav li span {
+    color: inherit;
+}
+
+nav li a {
+    display: flex;
+    padding: 1em;
+    font-weight: bold;
+    justify-content: center;
 }
 
 #reg_2 h3 {
@@ -480,7 +492,7 @@ select, input[type=date] {
 }
 
 /* MEDIA QUERYS */
-@media screen and (max-width: 1500px) {
+/* @media screen and (max-width: 1500px) {
     .grid-img, .grid-img-sin-user{
         display: grid;
         grid-template-columns: auto auto;
@@ -488,11 +500,6 @@ select, input[type=date] {
         justify-items: center;
         border-top: 0.25em solid var(--blanco);
     } 
-}
-
-@media screen and (max-width: 1366px) {
-    header {
-    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -504,12 +511,6 @@ select, input[type=date] {
     header ul{
         margin-top: 1em;
         margin-bottom: 1em;
-    }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1366px) {
-    header ul {
-        flex-direction: column;
     }
 }
 
@@ -552,7 +553,7 @@ select, input[type=date] {
 
 @media screen and (max-width: 600px) {
     #datos-usu{
-        width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
+        width: 31.25em;
         display: block;
         padding: 2em;
         background-color: var(--footer_clr);
@@ -574,7 +575,4 @@ select, input[type=date] {
         margin-top: 2em;
     }
 
-}
-
-
-
+} */

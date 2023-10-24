@@ -1,5 +1,13 @@
 @media screen and (min-width: 1000px) and (max-width: 1366px) {
-    header ul {
-        flex-direction: column;
+    #nav-texto {
+        display: none;
+    }
+
+    #nav-iconos {
+        display: flex;
+    }
+
+    nav li {
+        width: 4em;
     }
 }
