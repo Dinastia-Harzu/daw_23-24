@@ -21,14 +21,6 @@ p, a, h1, h2, h3, time, i {
     color: var(--font_clr);
 }
 
-.arriba {
-    grid-row: 1;
-}
-
-.abajo {
-    grid-row: 2;
-}
-
 dialog p, dialog a, dialog h3{
     color: var(--negro);
 }
@@ -45,7 +37,6 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    /* box-shadow: 0 1em 2em 0 #020202; */
     background-color: #020202;
     z-index: 1;
 }
@@ -54,59 +45,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#buscar {
-
-}
-
-#creacion-cuenta {
-    display: grid;
-    justify-content: center;
-}
-
-#creacion-cuenta h1 {
-    margin-bottom: 0.5em;
-}
-
-#datos-usu {
-    width: 31.25em; /* Pondría fit-content, pero esa propiedad no está soportada por firefox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7.5em;
-    padding: 2em;
-    background-color: var(--articulos_clr);
-    margin: 0 auto 1em;
-}
-
-.derecha {
-    grid-column: 2;
-    align-items: center;
-}
-
-.derecha, .izquierda {
-    width: 22em;
-}
-
-#editar-perfil a {
-    width: 8.2em;
-    text-decoration: none;
-    padding: 0.15em;
-    margin-top: 1em;
-    background-color: var(--gris_claro);
-    display: block;
-    text-align: center;
-    border: 0.1em solid var(--negro);
-}
-
-#editar-perfil a:hover {
-    background-color: var(--gris_claro_menor);
-}
-
-#editar-perfil input[type=submit] {
-    display: block;
-    cursor: pointer;
 }
 
 #error {
@@ -148,63 +86,14 @@ body {
     margin-top: 1.25em;
 }
 
-.folder {
-    font-size:x-large;
-    padding: 0.8em;
-    background-color: var(--body_clr);
-}
-
-.folder:hover{
-    background-color: var(--footer_clr);
-    cursor: pointer;
-}
-
 footer {
     background-color: var(--footer_clr);
     padding: 0.3em;
     text-align: center;
 }
 
-#foto {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2.5em;
-    padding: 1em;
-    margin-bottom: 1;
-}
-
-#foto img {
-    width: 33.5em;
-}
-
-#foto-perfil {
+header > figure img {
     border-radius: 50%;
-}
-
-#funciones {
-    margin-top: 3em;
-}
-
-#funciones a:hover, #tab-google p>a:hover {
-    color: var(--gris_normal);
-}
-
-.grid-casilla {
-    /* padding: 0 1em; */
-    display: flex;
-    width: fit-content;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.grid-contenedor {
-    display: grid;
-    /* padding: 1em; */
-    align-items: center;
-    grid-template-columns: 30% 70%;
-    justify-content: space-around;
-    width: fit-content;
 }
 
 .grid-img, .grid-img-sin-user {
@@ -227,15 +116,15 @@ footer {
 .grid-img-sin-user article {
     background-color: var(--articulos_clr);
     padding: 2em;
-}     
+}
 
 .grid-img article img, .grid-img-sin-user article img {
     background-color: var(--articulos_clr);
-}     
+}
 
 .grid-img article p, .grid-img article time {
     font-size: large;
-}    
+}
 
 .google-login {
     display: flex;
@@ -247,11 +136,6 @@ footer {
     color: var(--negro);
     text-decoration: none;
     border: 0.15em solid var(--negro);
-}    
-
-#grid-params {
-    display: grid;
-    justify-content: center;
 }    
 
 header {
@@ -300,36 +184,10 @@ header > form {
 
 header li:hover {
     background-color: var(--articulos_clr);
-}    
+}
 
 input[name="pfp"] {
     display: none;
-}    
-
-.izquierda {
-    grid-column: 1;
-}    
-
-.izquierda > p {
-    text-align: center;
-}    
-
-#info-foto {
-    width: 20.5em;
-    padding: 1em;
-    background-color: var(--footer_clr);
-}
-
-#logo-icono {
-    width: 75px;
-}
-
-#logo-titulo {
-    width: 250px;
-}
-
-#lupa {
-    color: var(--blanco);
 }
 
 label[for=pfp] {
@@ -385,14 +243,6 @@ nav li > div > i::before {
     display: none;
 }
 
-#nav-iconos {
-    display: flex;
-}
-
-#reg_2 h3 {
-    margin-top: 1.35em;
-}
-
 select, input[type=date] {
     color: var(--gris_normal);
 }
@@ -424,77 +274,6 @@ select, input[type=date] {
     margin: 0 0.25em 0 0.25em;
 }
 
-#tab-google {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#tab-login  {
-    background-color: var(--articulos_clr);
-}
-
-#tab-login>ul {
-    height: 11.875em;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    padding: 1em;
-    justify-content: center;
-    margin-top: 0;
-}
-
-#tab-login li {
-    width: 12.5em;
-    padding: 1em;
-    text-align: center;
-    background-color: var(--body_clr); /* En principio el color es blanco, pero las letras se ven blancas */
-    cursor: pointer;
-}
-
-#tab-login li:hover {
-    background-color: var(--articulos_clr);
-}
-
-#tab-login a {
-    text-decoration: none;
-}
-
-#tab-reg {
-    display: flex;
-    justify-content: center;
-    gap: 5.5em;
-    width: 900px;
-    padding-bottom: 1.5em;
-    background-color: var(--articulos_clr);
-}
-
-#tab-reg input, #tab-reg select {
-    font-size: 15px;
-}
-
-#tab-reg input[type=submit] {
-    font-size: 15px;
-    margin-top: 1em;
-}
-
-#tab-reg img {
-    width: 15.56em;
-}
-
-#tab-usuario {
-    display: grid;
-    justify-content: center;
-}
-
-.tab-params {
-    width: 38.75em;
-    margin-bottom: 2em;
-}
-
 .text-google {
     text-align: center;
 }
@@ -503,12 +282,12 @@ select, input[type=date] {
     color: var(--gris_oscuro);
 }
 
-.text-slogan {
+/* .text-slogan {
     font-size: large;
     text-align: center;
     margin-top: 0;
     margin-left: 1em;
-}
+} */
 
 .titulo-dialog {
     margin-top: 0.3em;
@@ -517,10 +296,6 @@ select, input[type=date] {
 
 .titulo-index {
     margin-left: 1.05em;
-}
-
-#pfp-query {
-    display: none;
 }
 
 /* MEDIA QUERYS */

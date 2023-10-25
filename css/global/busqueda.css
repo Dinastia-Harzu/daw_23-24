@@ -1,0 +1,9 @@
+#grid-params {
+    display: grid;
+    justify-content: center;
+}
+
+.tab-params {
+    width: 38.75em;
+    margin-bottom: 2em;
+}

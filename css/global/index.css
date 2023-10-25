@@ -1,0 +1,31 @@
+#tab-login  {
+    background-color: var(--articulos_clr);
+}
+
+#tab-login > ul {
+    height: 11.875em;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    justify-content: center;
+    margin-top: 0;
+}
+
+#tab-login li {
+    width: 12.5em;
+    padding: 1em;
+    text-align: center;
+    background-color: var(--body_clr); /* En principio el color es blanco, pero las letras se ven blancas */
+    cursor: pointer;
+}
+
+#tab-login li:hover {
+    background-color: var(--articulos_clr);
+}
+
+#tab-login a {
+    text-decoration: none;
+}

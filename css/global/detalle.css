@@ -1,0 +1,18 @@
+#foto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5em;
+    padding: 1em;
+    margin-bottom: 1;
+}
+
+#foto img {
+    width: 33.5em;
+}
+
+#info-foto {
+    width: 20.5em;
+    padding: 1em;
+    background-color: var(--footer_clr);
+}

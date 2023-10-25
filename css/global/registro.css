@@ -1,0 +1,56 @@
+#creacion-cuenta {
+    display: grid;
+    justify-content: center;
+}
+
+#creacion-cuenta h1 {
+    margin-bottom: 0.5em;
+}
+
+.folder {
+    font-size: x-large;
+    padding: 0.8em;
+    background-color: var(--body_clr);
+}
+
+.folder:hover{
+    background-color: var(--footer_clr);
+    cursor: pointer;
+}
+
+#reg-2 h3 {
+    margin-top: 1.35em;
+}
+
+#tab-google {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tab-reg {
+    display: flex;
+    justify-content: center;
+    gap: 5.5em;
+    width: 900px;
+    padding-bottom: 1.5em;
+    background-color: var(--articulos_clr);
+}
+
+#tab-reg input, #tab-reg select {
+    font-size: 15px;
+}
+
+#tab-reg input[type=submit] {
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+#tab-reg img {
+    width: 15.56em;
+}
+
+#pfp-query {
+    display: none;
+}
