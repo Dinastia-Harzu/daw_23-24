@@ -1,11 +1,6 @@
-@import url('style.css');
+@import url('colores.css');
 
 :root {
-
-    /* Colores cambiados */
-    --ceruleo_grisaceo_mas_claro: #ACCBCF;
-    --ceruleo_grisaceo_claro: #99C4CC;
-    --cian_grisaceo_claro: #7b9da3;
 
     /* Cambiamos colores */
     --font_clr:     var(--negro);
@@ -14,4 +9,8 @@
     --header_clr:   var(--blanco);
     --articulos_clr: var(--ceruleo_grisaceo_mas_claro);
     --botones_clr: var(--negro);
+}
+
+#tab-login li:hover {
+    background-color: var(--cian-grisaceo);
 }

@@ -1,11 +1,19 @@
-@import url('style.css');
+@import url('colores.css');
 
 :root{
-    --ceruleo_grisaceo_mas_oscuro:  #000000;
-    --ceruleo_grisaceo_oscuro:      #191a1a;
-    --cian_grisaceo_oscuro:         #141414;
+    /* Cambiamos colores */
+    --font_clr:         var(--blanco);
+    --body_clr:         var(--gris-negraceo);
+    --footer_clr:       var(--negro);
+    --header_clr:       var(--negro);
+    --articulos_clr:    var(--negro);
+    --botones_clr:      var(--negro);
 }
 
-header, footer, article {
-    border: var(--blanco);
+header, footer, article, nav li, form, #info-foto, #tab-login, #tab-login li, .folder, .tab-busc, #datos-usu{
+    border: 1px solid var(--blanco);
+}
+
+nav li:hover, #tab-login li:hover, .folder:hover {
+    background: var(--gris_normal);
 }
