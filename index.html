@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global/style.css" title="Modo oscuro (normal)">
-    <link rel="alternative stylesheet" href="css/global/light-style.css" title="Modo claro">
-    <link rel="alternative stylesheet" href="css/global/high-contrast-style.css" title="Modo de alto contraste">
+    <link rel="stylesheet" href="css/global/style.css">
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
     <link rel="stylesheet" href="css/movil/style.css">
+    <link rel="stylesheet" href="css/global/index.css">
+    <link rel="stylesheet" href="css/ordenador/index.css">
+    <link rel="stylesheet" href="css/tablet/index.css">
+    <link rel="stylesheet" href="css/movil/index.css">
+    <link rel="alternative stylesheet" href="css/modos-alternativos/oscuro.css" title="Modo oscuro (predeterminado)">
+    <link rel="alternative stylesheet" href="css/modos-alternativos/claro.css" title="Modo claro">
+    <link rel="alternative stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Masthermatika</title>
 </head>
 <body>
     <header>
-        <figure>
-            <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika" id="logo">
-        </figure>
-        <nav>
-            <ul id="nav-texto">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda.html">Descubrir</a></li>
-                <li><a href="javascript:void(0);">Publicar</a></li>
-            </ul>
-            <ul id="nav-iconos">
-                <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-                <li><a href="busqueda.html"><i class="fa fa-search"></i></a></li>
-                <li><a href="javascript:void(0);"><i class="fa fa-plus"></i></a></li>
-            </ul>
-        </nav>
+        <aside>
+            <figure>
+                <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika" id="logo">
+            </figure>
+            <nav>
+                <ul id="nav-texto">
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="busqueda.html">Descubrir</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Publicar</a>
+                    </li>
+                </ul>
+                <ul id="nav-iconos">
+                    <li>
+                        <a href="index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="busqueda.html"><i class="fa fa-search"></i></a>
+                        <a href="busqueda.html"><i class="fa fa-search"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><i class="fa fa-plus"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
         <form action="resultado.no_registrado.html" id="busqueda-rapida">
             <input type="text" name="busqueda_rapida" placeholder="Búsqueda rápida">
             <button type="submit"><i class="fa fa-search"></i></button>
