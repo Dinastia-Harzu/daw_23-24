@@ -17,3 +17,15 @@ header, footer, article, nav li, form, #info-foto, #tab-login, #tab-login li, .f
 nav li:hover, #tab-login li:hover, .folder:hover {
     background: var(--gris_normal);
 }
+
+.tab-busc input[type="date"], .tab-busc select{
+    color: var(--negro);
+}
+
+.tab-busc input[type="text"]::placeholder, #login input[type="text"]::placeholder, #login input[type="password"]::placeholder,
+#editar-perfil select, #tab-reg input::placeholder, #tab-reg select, #tab-reg input[type="date"], #editar-perfil select{
+    color: var(--negro);
+    opacity: 1;
+}
+
+

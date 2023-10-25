@@ -10,8 +10,12 @@ h3 {
     font-size: 1.5em;
 }
 
-a, p, input {
-    font-size: 1.25em;
+a, p {
+    font-size: 1.15em;
+}
+
+#login input {
+    font-size: 1em;
 }
 
 #datos-usu{
@@ -20,6 +24,10 @@ a, p, input {
 
 #datos-usu img{
     width: 4.375em;
+}
+
+.titulo-dialog{
+    font-size: larger;
 }
 
 .grid-img article p, .grid-img article time {
@@ -40,4 +48,4 @@ a, p, input {
 
 #tab-reg input, #tab-reg input[type="submit"], #tab-reg select {
     font-size: 1.05em;
-  }
+}
