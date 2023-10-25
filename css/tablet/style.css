@@ -1,13 +1,5 @@
 @media screen and (min-width: 1000px) and (max-width: 1366px) {
-    #nav-texto {
+    header > form {
         display: none;
-    }
-
-    #nav-iconos {
-        display: flex;
-    }
-
-    nav li {
-        width: 4em;
     }
 }
