@@ -1,0 +1,43 @@
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+a, p, input {
+    font-size: 1.25em;
+}
+
+#datos-usu{
+    width: 40em;
+}
+
+#datos-usu img{
+    width: 4.375em;
+}
+
+.grid-img article p, .grid-img article time {
+    font-size: 1.5em;
+}
+
+#logo {
+    width: 37.5em;
+}
+
+.tab-busc input[type="text"], .tab-busc input[type="date"], .tab-busc input[type="submit"], .tab-busc select {
+    font-size: 1.05em;
+}
+
+#tab-reg{
+    width: 1200px;
+}
+
+#tab-reg input, #tab-reg input[type="submit"], #tab-reg select {
+    font-size: 1.05em;
+  }
