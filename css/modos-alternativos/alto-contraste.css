@@ -5,3 +5,7 @@
     --ceruleo_grisaceo_oscuro:      #191a1a;
     --cian_grisaceo_oscuro:         #141414;
 }
+
+header, footer, article {
+    border: var(--blanco);
+}

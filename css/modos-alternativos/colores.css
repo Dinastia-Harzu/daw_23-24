@@ -1,0 +1,12 @@
+:root {
+    --negro:                        #000000;
+    --ceruleo_grisaceo_mas_oscuro:  #1e2425;
+    --ceruleo_grisaceo_oscuro:      #273234;
+    --cian_grisaceo_oscuro:         #37474A;
+    
+    --blanco:                       #FFFFFF;
+    --gris_claro:                   #efefef;
+    --gris_claro_menor:             rgb(214, 214, 214);
+    --gris_normal:                  rgb(149, 149, 149);
+    --gris_oscuro:                  #7a7a7a;
+}
