@@ -6,4 +6,12 @@
     #nav-iconos {
         display: none;
     }
+
+    header > form {
+        display: flex;
+    }
+
+    nav li {
+        width: 8em;
+    }
 }

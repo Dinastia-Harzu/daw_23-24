@@ -40,8 +40,14 @@
                         <a href="index.html"><i class="fa fa-home"></i></a>
                     </li>
                     <li class="dropdown">
-                        <a href="busqueda.html"><i class="fa fa-search"></i></a>
-                        <a href="busqueda.html"><i class="fa fa-search"></i></a>
+                        <div class="dropdown-button"><i class="fa fa-search"></i></div>
+                        <div class="dropdown-content">
+                            <a href="busqueda.html">Descubrir</a>
+                            <form action="resultado.html">
+                                <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
                     </li>
                     <li>
                         <a href="javascript:void(0);"><i class="fa fa-plus"></i></a>
@@ -49,8 +55,8 @@
                 </ul>
             </nav>
         </aside>
-        <form action="resultado.no_registrado.html" id="busqueda-rapida">
-            <input type="text" name="busqueda_rapida" placeholder="Búsqueda rápida">
+        <form action="resultado.html" id="busqueda-rapida">
+            <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <figure>

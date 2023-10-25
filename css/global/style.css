@@ -17,7 +17,7 @@ a {
     text-decoration: none;
 }
 
-p, a, h1, h2, h3, time{ /* Si no hago esto, algunas cosas se ven blancas cuando no deberían */
+p, a, h1, h2, h3, time, i {
     color: var(--font_clr);
 }
 
@@ -45,31 +45,19 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    box-shadow: 0 1em 2em 0 #020202;
-    padding: 1.5em 2em;
+    /* box-shadow: 0 1em 2em 0 #020202; */
+    background-color: #020202;
     z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #buscar {
 
-}
-
-header > form > input[type=text] {
-    width: 100%;
-}
-
-header > form > input[type=text], header > form > button {
-    background: none;
-    border: none;
-    color: var(--font_clr);
-}
-
-header > form > input[type=text]:focus-visible {
-    outline: none;
 }
 
 #creacion-cuenta {
@@ -284,12 +272,30 @@ header figure {
     margin: 0;
 }
 
-header > form {
+header form {
     display: flex;
     padding: 0.5em;
     background: var(--articulos_clr);
     border-radius: 0.5em;
-    width: 25%;
+    width: 15em;
+}
+
+header form > input[type=text] {
+    width: 100%;
+}
+
+header form > input[type=text], header form > button {
+    background: none;
+    border: none;
+    color: var(--font_clr);
+}
+
+header form > input[type=text]:focus-visible {
+    outline: none;
+}
+
+header > form {
+    display: none;
 }
 
 header li:hover {
@@ -336,7 +342,7 @@ nav {
     justify-content: flex-start;
 }
 
-nav i::before {
+nav a i::before {
     font-size: xx-large;
 }
 
@@ -347,13 +353,13 @@ nav ul {
     display: flex;
 }
 
-nav li {
+nav li, nav li > div > a {
     flex-grow: 1;
     text-align: center;
     background: var(--footer_clr);
     border-radius: 0.5em;
     margin: 0.25em;
-    width: 8em;
+    width: 4em;
 }
 
 nav li:hover {
@@ -364,11 +370,23 @@ nav li span {
     color: inherit;
 }
 
-nav li a {
+nav li a, nav li > div {
     display: flex;
     padding: 1em;
     font-weight: bold;
     justify-content: center;
+}
+
+nav li > div > i::before {
+    font-size: xx-large;
+}
+
+#nav-texto {
+    display: none;
+}
+
+#nav-iconos {
+    display: flex;
 }
 
 #reg_2 h3 {
