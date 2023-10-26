@@ -18,7 +18,7 @@
     width: 12.5em;
     padding: 1em;
     text-align: center;
-    background-color: var(--body_clr); /* En principio el color es blanco, pero las letras se ven blancas */
+    background-color: var(--body_clr);
     cursor: pointer;
 }
 

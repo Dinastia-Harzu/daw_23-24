@@ -98,13 +98,11 @@ header > figure img {
 
 .grid-img, .grid-img-sin-user {
     display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-    justify-items: center;
-    gap: 3em;
+    grid-template-columns: repeat(auto-fit, calc(383px + 2em));
+    gap: 2em;
     border-top: 0.25em solid var(--blanco);
     padding: 2em;
-    margin-top: 0.5em;
+    justify-items: center;
 }
 
 .grid-img article {
@@ -281,13 +279,6 @@ select, input[type=date] {
 .text-google a:hover {
     color: var(--gris_oscuro);
 }
-
-/* .text-slogan {
-    font-size: large;
-    text-align: center;
-    margin-top: 0;
-    margin-left: 1em;
-} */
 
 .titulo-dialog {
     margin-top: 0.3em;
