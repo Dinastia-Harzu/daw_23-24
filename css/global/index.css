@@ -18,12 +18,12 @@
     width: 12.5em;
     padding: 1em;
     text-align: center;
-    background-color: var(--body_clr);
+    background-color: var(--footer_clr);
     cursor: pointer;
 }
 
 #tab-login li:hover {
-    background-color: var(--articulos_clr);
+    background-color: var(--body_clr);
 }
 
 #tab-login a {

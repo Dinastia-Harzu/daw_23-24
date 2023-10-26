@@ -103,6 +103,7 @@ header > figure img {
     border-top: 0.25em solid var(--blanco);
     padding: 2em;
     justify-items: center;
+    justify-content: center;
 }
 
 .grid-img article {
@@ -178,10 +179,6 @@ header form > input[type=text]:focus-visible {
 
 header > form {
     display: none;
-}
-
-header li:hover {
-    background-color: var(--articulos_clr);
 }
 
 input[name="pfp"] {
