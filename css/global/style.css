@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+article h2 {
+    margin-top: 0;
+}
+
 p, a, h1, h2, h3, time, i {
     color: var(--font_clr);
 }
@@ -102,8 +106,8 @@ header > figure img {
 
 .grid-img, .grid-img-sin-user {
     display: grid;
-    grid-template-columns: repeat(auto-fit, calc(383px + 2em));
-    gap: 2em;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 1em;
     border-top: 0.25em solid var(--blanco);
     padding: 2em;
     justify-items: center;
@@ -112,7 +116,7 @@ header > figure img {
 
 .grid-img article {
     background-color: var(--articulos_clr);
-    padding: 1em 2em 2em 2em;
+    padding: 1.5em;
     color: var(--blanco);
 } 
 
