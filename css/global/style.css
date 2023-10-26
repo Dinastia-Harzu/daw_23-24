@@ -104,7 +104,7 @@ header > figure img {
     border-radius: 50%;
 }
 
-.grid-img, .grid-img-sin-user {
+.grid-img {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
     gap: 1em;
@@ -120,12 +120,7 @@ header > figure img {
     color: var(--blanco);
 } 
 
-.grid-img-sin-user article {
-    background-color: var(--articulos_clr);
-    padding: 2em;
-}
-
-.grid-img article img, .grid-img-sin-user article img {
+.grid-img article img {
     background-color: var(--articulos_clr);
 }
 
@@ -296,7 +291,7 @@ select, input[type=date] {
 
 /* MEDIA QUERYS */
 /* @media screen and (max-width: 1500px) {
-    .grid-img, .grid-img-sin-user{
+    .grid-img, .grid-img{
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
@@ -325,7 +320,7 @@ select, input[type=date] {
         padding-right: 2em;
     }
 
-    .grid-img, .grid-img-sin-user{
+    .grid-img, .grid-img{
         display: grid;
         grid-template-columns: auto;
         align-items: center;
