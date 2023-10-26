@@ -29,6 +29,10 @@ body {
     background-color: var(--body_clr);
 }
 
+body > figure {
+    display: none;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;

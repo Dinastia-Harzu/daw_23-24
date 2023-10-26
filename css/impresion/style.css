@@ -2,6 +2,7 @@ header {
     display: none;
 }
 
-#logo {
-    display: block;
+body > figure {
+    display: flex;
+    justify-content: center;
 }
