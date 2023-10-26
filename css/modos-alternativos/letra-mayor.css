@@ -38,14 +38,11 @@ a, p {
     width: 37.5em;
 }
 
-.tab-busc input[type="text"], .tab-busc input[type="date"], .tab-busc input[type="submit"], .tab-busc select {
+.tab-busc input[type="text"], .tab-busc input[type="date"], .tab-busc input[type="submit"], .tab-busc select, 
+#tab-reg input, #tab-reg input[type="submit"], #tab-reg select {
     font-size: 1.05em;
 }
 
 #tab-reg{
-    width: 1200px;
-}
-
-#tab-reg input, #tab-reg input[type="submit"], #tab-reg select {
-    font-size: 1.05em;
+    width: 75em;
 }
