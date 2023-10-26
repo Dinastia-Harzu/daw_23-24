@@ -6,3 +6,17 @@ body > figure {
     display: flex;
     justify-content: center;
 }
+
+footer {
+    display: none;
+}
+
+.titulo-index {
+    display: none;
+}
+
+@media print {
+    article {
+        page-break-after: always;
+    }
+}
