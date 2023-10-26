@@ -106,7 +106,7 @@ header > figure img {
 
 .grid-img {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, calc(400px + 0.5em + 0.25em));
     gap: 1em;
     border-top: 0.25em solid var(--blanco);
     padding: 2em;
@@ -115,13 +115,14 @@ header > figure img {
 }
 
 .grid-img article {
+    border: var(--negro) solid 0.2em;
     background-color: var(--articulos_clr);
     padding: 1.5em;
     color: var(--blanco);
-} 
+}
 
 .grid-img article img {
-    background-color: var(--articulos_clr);
+    border: var(--negro) solid 0.1em;
 }
 
 .grid-img article p, .grid-img article time {
@@ -290,15 +291,7 @@ select, input[type=date] {
 }
 
 /* MEDIA QUERYS */
-/* @media screen and (max-width: 1500px) {
-    .grid-img, .grid-img{
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-        justify-items: center;
-        border-top: 0.25em solid var(--blanco);
-    } 
-}
+/*
 
 @media screen and (max-width: 1000px) {
     header {

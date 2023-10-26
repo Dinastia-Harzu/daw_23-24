@@ -69,23 +69,23 @@
                 <section id="reg-1">
                     <h2>Introduce tus datos para registarte:</h2>
                     <p>
-                        <p><label for="name">Nombre: *</label></p>
+                        <label for="name">Nombre: *</label>
                         <input type="text" name="name" id="name" placeholder="Introduce tu nombre">
                     </p>
                     <p>
-                        <p><label for="pass">Contraseña: *</label></p>
+                        <label for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="pass" placeholder="Introduce la contraseña">
                     </p>
                     <p>
-                        <p><label for="pass2">Repetir contraseña: *</label></p>
+                        <label for="pass2">Repetir contraseña: *</label>
                         <input type="password" name="pass2" id="pass2" placeholder="Repite la contraseña">
                     </p>
                     <p>
-                        <p><label for="email">Correo electrónico: *</label></p>
+                        <label for="email">Correo electrónico: *</label>
                         <input type="email" name="email" id="email" placeholder="Introduce tu correo">
                     </p>
                     <p>
-                        <p><label for="sexo">Sexo:</label></p>
+                        <label for="sexo">Sexo:</label>
                         <select name="sexo" id="sexo">
                             <option value="cod_U">Prefiero no revelarlo</option>
                             <option value="cod_M">Masculino</option>
@@ -93,15 +93,15 @@
                         </select>
                     </p>
                     <p>
-                        <p><label for="fecha">Fecha de nacimiento:</label></p> 
+                        <label for="fecha">Fecha de nacimiento:</label> 
                         <input type="date" name="fecha" id="fecha">
                     </p>
                     <p>
-                        <p><label for="ciudad">Ciudad:</label></p> 
+                        <label for="ciudad">Ciudad:</label> 
                         <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
                     </p>
                     <p>
-                        <p><label for="paises">País:</label></p>
+                        <label for="paises">País:</label>
                         <select name="paises" id="paises">
                             <option value="cod_es">España</option>
                             <option value="cod_fr">Francia</option>
@@ -129,7 +129,8 @@
                             <img src="img/placeholder_grande.png" alt="Foto de perfil">
                         </label>
                     </p>
-                    <label for="pfp"><p><i class="fa fa-folder folder"></i></p></label>
+                    <label for="pfp"><i class="fa fa-folder acciones-fichero"></i></label>
+                    <button type="reset" for="pfp"><i class="fa fa-trash acciones-fichero"></i></button>
                     <input type="file" name="pfp" id="pfp">
                 </section>
             </form>
