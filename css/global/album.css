@@ -12,6 +12,10 @@
     margin-top: 0;
 }
 
+fieldset {
+    margin-bottom: 1em;
+}
+
 table {
     border-collapse: collapse;
 }

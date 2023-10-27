@@ -453,6 +453,7 @@ div.omrs-input-group {
 .omrs-input-underlined > input:disabled + .omrs-input-label,
 .omrs-input-underlined > input:disabled ~ .omrs-input-helper{
 	color: var(--omrs-color-ink-low-contrast);
+    fill: var(--omrs-color-ink-low-contrast);
 }
 
 .omrs-input-underlined > input:disabled ~ svg {
@@ -476,7 +477,8 @@ div.omrs-input-group {
 }
 
 .omrs-input-underlined > input, .omrs-input-underlined > textarea {
-	background: var(--omrs-color-bg-high-contrast);
+	background: none;
+	color: var(--font_clr);
 }
 .omrs-input-filled > input, .omrs-input-filled > textarea {
 	background: none;
