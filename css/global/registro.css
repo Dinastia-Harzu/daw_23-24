@@ -13,13 +13,13 @@
 }
 
 main section p {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 0.5em; */
 }
 
 #pfp-query {
-    display: none;
+    /* display: none; */
 }
 
 #reg-2 button {
@@ -33,6 +33,10 @@ main section p {
     background-color: var(--body_clr);
 }
 
+#reg-2 label {
+    cursor: pointer;
+}
+
 #reg-2 h3 {
     margin-top: 1.35em;
 }
@@ -44,17 +48,20 @@ main section p {
     align-items: center;
 }
 
+#tab-google p > a {
+}
+
+#tab-google p > a:hover {
+}
+
 #tab-reg {
     display: flex;
     justify-content: center;
-    gap: 5.5em;
+    gap: 0 5.5em;
     width: 900px;
-    padding-bottom: 1.5em;
+    /* padding-bottom: 1.5em; */
     background-color: var(--articulos_clr);
-}
-
-#tab-reg input, #tab-reg select {
-    font-size: 15px;
+    flex-wrap: wrap;
 }
 
 #tab-reg input[type=submit] {

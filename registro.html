@@ -68,71 +68,89 @@
             <form action="index.html" method="post" id="tab-reg">
                 <section id="reg-1">
                     <h2>Introduce tus datos para registarte:</h2>
-                    <p>
-                        <label for="name">Nombre: *</label>
-                        <input type="text" name="name" id="name" placeholder="Introduce tu nombre">
-                    </p>
-                    <p>
-                        <label for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="pass" placeholder="Introduce la contraseña">
-                    </p>
-                    <p>
-                        <label for="pass2">Repetir contraseña: *</label>
-                        <input type="password" name="pass2" id="pass2" placeholder="Repite la contraseña">
-                    </p>
-                    <p>
-                        <label for="email">Correo electrónico: *</label>
-                        <input type="email" name="email" id="email" placeholder="Introduce tu correo">
-                    </p>
-                    <p>
-                        <label for="sexo">Sexo:</label>
-                        <select name="sexo" id="sexo">
-                            <option value="cod_U">Prefiero no revelarlo</option>
-                            <option value="cod_M">Masculino</option>
-                            <option value="cod_F">Femenino</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="fecha">Fecha de nacimiento:</label> 
-                        <input type="date" name="fecha" id="fecha">
-                    </p>
-                    <p>
-                        <label for="ciudad">Ciudad:</label> 
-                        <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
-                    </p>
-                    <p>
-                        <label for="paises">País:</label>
-                        <select name="paises" id="paises">
-                            <option value="cod_es">España</option>
-                            <option value="cod_fr">Francia</option>
-                            <option value="cod_uk">Reino Unido</option>
-                            <option value="cod_al">Alemania</option>
-                            <option value="cod_it">Italia</option>
-                            <option value="cod_bel">Bélgica</option>
-                            <option value="cod_chi">China</option>
-                            <option value="cod_sui">Suiza</option>
-                            <option value="cod_pol">Polonia</option>
-                            <option value="cod_usa">Estados Unidos</option>
-                        </select>
-                    </p>
-                    <div id="pfp-query">
-                        <label for="pfp">Foto de perfil:</label>
-                        <label for="pfp"><p><i class="fa fa-folder folder"></i></p></label>
-                        <input type="file" name="pfp" id="pfp">
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="nombre" id="nombre" required>
+                            <span class="omrs-input-label">Nombre</span>
+                        </label>
                     </div>
-                    <input type="submit" value="Crear usuario">
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="password" placeholder=" " name="contraseña" id="contraseña" required>
+                            <span class="omrs-input-label">Contraseña</span>
+                            <span class="omrs-input-helper">Introduce al menos 8 caracteres</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="password" placeholder=" " name="confirmar-contraseña" id="confirmar-contraseña" required>
+                            <span class="omrs-input-label">Confirmar contraseña</span>
+                            <span class="omrs-input-helper">Repite lo que has puesto arriba</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="email" placeholder=" " name="correo" id="correo" required>
+                            <span class="omrs-input-label">Correo electrónico</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <select name="sexo" id="sexo">
+                                <option disabled selected value>-- Selecciona una opción --</option>
+                                <option value="cod-H">Hombre</option>
+                                <option value="cod-M">Mujer</option>
+                            </select>
+                            <span class="omrs-input-label">Sexo</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="date" name="fecha-nacimiento" id="fecha-nacimiento">
+                            <span class="omrs-input-label">Fecha de nacimiento</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="ciudad" id="ciudad">
+                            <span class="omrs-input-label">Ciudad</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <select name="pais" id="pais">
+                                <option disabled selected value>-- Selecciona una opción --</option>
+                                <option value="ESP">España</option>
+                                <option value="FRA">Francia</option>
+                                <option value="GBR">Reino Unido</option>
+                                <option value="DEU">Alemania</option>
+                                <option value="ITA">Italia</option>
+                                <option value="BEL">Bélgica</option>
+                                <option value="CHN">China</option>
+                                <option value="CHE">Suiza</option>
+                                <option value="POL">Polonia</option>
+                                <option value="USA">Estados Unidos</option>
+                            </select>
+                            <span class="omrs-input-label">País</span>
+                        </label>
+                    </div>
                 </section>
                 <section id="reg-2">
                     <h3>Introduce tu foto de perfil:</h3>
-                    <p>
+                    <div>
                         <label for="pfp">
                             <img src="img/placeholder_grande.png" alt="Foto de perfil">
                         </label>
-                    </p>
-                    <label for="pfp"><i class="fa fa-folder acciones-fichero"></i></label>
-                    <button type="reset" for="pfp"><i class="fa fa-trash acciones-fichero"></i></button>
-                    <input type="file" name="pfp" id="pfp">
+                        <div id="pfp-query">
+                            <label for="pfp"><i class="fa fa-folder acciones-fichero"></i></label>
+                            <label><i class="fa fa-remove acciones-fichero"></i></label>
+                            <input type="file" name="pfp" id="pfp" accept="image/*">
+                        </div>
+                    </div>
                 </section>
+                <div class="campo-boton-submit">
+                    <button type="submit">Registrarse</button>
+                </div>
             </form>
         </div>
         <section id="tab-google">
@@ -145,27 +163,35 @@
                 </svg>
                 Inicia sesión con Google
             </a>
-        <section>
-            <p>¿Ya tienes una cuenta? <a href="#login">Inicia sesión</a></p>
+            <p>¿Ya tienes una cuenta?</p>
+            <p class="enlace-simple">
+                <a href="#login">Inicia sesión</a>
+            </p>
+        </section>
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
         <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
     </footer>
-    <dialog open id="login">
+    <dialog id="login">
         <p class="titulo-dialog">Iniciar sesión</p>
         <form action="index.html">
-            <p>
-                <label for="user">Usuario:</label>
-                <input type="text" id="user" placeholder="Introduce tu nombre de usuario">
-            </p>
-            <p>
-                <label for="pass">Contraseña:</label>
-                <input type="password" id="pass-dialog" placeholder="Introduce tu contraseña">
-            </p>
-            <p>
-                <input type="submit" value="Iniciar sesión">
-            </p>
+            <div class="omrs-input-group">
+                <label class="omrs-input-filled">
+                    <input type="text" placeholder=" " name="user" id="user" required>
+                    <span class="omrs-input-label">Nombre</span>
+                </label>
+            </div>
+            <div class="omrs-input-group">
+                <label class="omrs-input-filled">
+                    <input type="password" placeholder=" " name="password" id="password" required>
+                    <span class="omrs-input-label">Contraseña</span>
+                    <span class="omrs-input-helper">Introduce al menos 8 caracteres</span>
+                </label>
+            </div>
+            <div class="campo-boton-submit">
+                <button type="submit">Registrarse</button>
+            </div>
             <hr>
             <p class="text-google">...o continúa con Google</p>
             <a href="https://accounts.google.com" class="google-login">
@@ -177,6 +203,9 @@
                 Inicia sesión con Google
             </a>
         </form>
+        <p class="enlace-simple">
+            <a href="#!">Volver</a>
+        </p>
     </dialog>
 </body>
 </html>

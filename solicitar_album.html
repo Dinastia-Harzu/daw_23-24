@@ -70,109 +70,160 @@
     <main>
         <h1>Solicitud de impresión de álbum</h1>
         <p>Mediante esta opción puedes solicitar la impresión y envío de uso de tus álbumes a todo color, toda resolución.</p>
-        <aside>
-            <h2>Tarifas</h2>
-            <table>
-                <tr>
-                    <th>Concepto</th>
-                    <th>Tarifa</th>
-                </tr>
-                <tr>
-                    <td>&lt; 5 páginas</td>
-                    <td>0.10€ por pág.</td>
-                </tr>
-                <tr>
-                    <td>entre 5 y 11 páginas</td>
-                    <td>0.08€ por pág.</td>
-                </tr>
-                <tr>
-                    <td>&gt; 11 páginas</td>
-                    <td>0.07€ por pág.</td>
-                </tr>
-                <tr>
-                    <td>Blanco y negro</td>
-                    <td>0€</td>
-                </tr>
-                <tr>
-                    <td>A color</td>
-                    <td>0.05€ por foto</td>
-                </tr>
-                <tr>
-                    <td>Resolución mayor a 300 dpi</td>
-                    <td>0.02€ por foto</td>
-                </tr>
-            </table>
-        </aside>
-        <section>
-            <h2>Formulario de solicitud</h2>
-            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-            <form action="respuesta_album.html" oninput="dpi.value = parseInt(resolucion.value);">
-                <p>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre">
-                    <span class="campo_obligatorio">*</span>
-                </p>
-                <p>
-                    <label for="titulo">Título:</label>
-                    <input type="text" name="titulo" id="titulo">
-                    <span class="campo_obligatorio">*</span>
-                </p>
-                <p>
-                    <label for="texto">Texto adicional:</label>
-                    <textarea name="texto" id="texto" cols="30" rows="10" maxlength="4000"></textarea>
-                </p>
-                <p>
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" name="correo" id="correo">
-                    <span class="campo_obligatorio">*</span>
-                </p>
-                <p>
+        <div class="central">
+            <aside>
+                <h2>Tarifas</h2>
+                <table>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Tarifa</th>
+                    </tr>
+                    <tr>
+                        <td>&lt; 5 páginas</td>
+                        <td>0.10€ por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>entre 5 y 11 páginas</td>
+                        <td>0.08€ por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 11 páginas</td>
+                        <td>0.07€ por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>Blanco y negro</td>
+                        <td>0€</td>
+                    </tr>
+                    <tr>
+                        <td>A color</td>
+                        <td>0.05€ por foto</td>
+                    </tr>
+                    <tr>
+                        <td>Resolución mayor a 300 dpi</td>
+                        <td>0.02€ por foto</td>
+                    </tr>
+                </table>
+            </aside>
+            <section>
+                <h2>Formulario de solicitud</h2>
+                <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
+                <form action="respuesta_album.html" oninput="dpi.value = parseInt(resolucion.value);">
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="nombre" id="nombre" required>
+                            <span class="omrs-input-label">Nombre</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="titulo" id="titulo" required>
+                            <span class="omrs-input-label">Título</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <textarea placeholder=" " name="texto-adicional" id="texto-adicional" cols="30" rows="10" maxlength="4000"></textarea>
+                            <span class="omrs-input-label">Texto adicional</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="email" placeholder=" " name="correo" id="correo" required>
+                            <span class="omrs-input-label">Correo electrónico</span>
+                        </label>
+                    </div>
                     <fieldset>
-                        <legend>Dirección:</legend>
-                        <input type="text" name="direccion" id="direccion">
-                        <input type="number" name="numero" id="numero">
-                        <input type="number" name="cp" id="cp">
-                        <input type="text" name="ciudad" id="ciudad">
-                        <input type="text" name="provincia" id="provincia">
-                        <input type="text" name="pais" id="pais">
+                        <legend>Dirección</legend>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="text" name="direccion" id="direccion" placeholder=" ">
+                                <span class="omrs-input-label">Dirección</span>
+                            </label>
+                        </div>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="number" name="numero" id="numero" placeholder=" ">
+                                <span class="omrs-input-label">Número</span>
+                            </label>
+                        </div>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="number" name="cp" id="cp" placeholder=" ">
+                                <span class="omrs-input-label">Código postal</span>
+                            </label>
+                        </div>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="text" name="ciudad" id="ciudad" placeholder=" ">
+                                <span class="omrs-input-label">Ciudad</span>
+                            </label>
+                        </div>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="text" name="provincia" id="provincia" placeholder=" ">
+                                <span class="omrs-input-label">Provincia</span>
+                            </label>
+                        </div>
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-filled">
+                                <input type="text" name="pais" id="pais" placeholder=" ">
+                                <span class="omrs-input-label">País</span>
+                            </label>
+                        </div>
                     </fieldset>
-                    <span class="campo_obligatorio">*</span>
-                </p>
-                <p>
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" name="telefono" id="telefono">
-                </p>
-                <p>
-                    <label for="color">Color de la portada:</label>
-                    <input type="color" name="color" id="color">
-                </p>
-                <p>
-                    <label for="copias">Número de copias:</label>
-                    <input type="number" name="copias" id="copias">
-                </p>
-                <p>
-                    <label for="resolucion">Resolución de impresión:</label>
-                    <input type="range" name="resolucion" id="resolucion" step="150" min="150" max="900" value="150">
-                    <output name="dpi" for="resolucion">150</output> dpi
-                </p>
-                <p>
-                    <label for="album">Álbum de Masthermatika:</label>
-                    <select name="album" id="album">
-                        <option value="0">Mis álbumes</option>
-                    </select>
-                    <span class="campo_obligatorio">*</span>
-                </p>
-                <p>
-                    <label for="recepcion">Fecha recepción:</label>
-                    <input type="date" name="recepcion" id="recepcion">
-                </p>
-                <p>
-                    <label for="impresion_color">Impresión a color:</label>
-                    <input type="checkbox" name="impresion_color" id="impresion_color">
-                </p>
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="tel" placeholder=" " name="telefono" id="telefono">
+                            <span class="omrs-input-label">Teléfono</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="color" placeholder=" " name="color" id="color">
+                            <span class="omrs-input-label">Color</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="number" placeholder=" " name="copias" id="copias">
+                            <span class="omrs-input-label">Número de copias</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="range" placeholder=" " name="resolucion" id="resolucion" step="150" min="150" max="900" value="150">
+                            <span class="omrs-input-label">Resolución de impresión</span>
+                            <output name="dpi" for="resolucion">150</output>
+                            <span class="texto-cualquiera">dpi</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <select name="album" id="album" required>
+                                <option disabled selected value>-- Selecciona una opción --</option>
+                                <option value="0">Mis álbumes</option>
+                            </select>
+                            <span class="omrs-input-label">Álbum de Masthermatika</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="date" name="fecha-recepcion" id="fecha-recepcion">
+                            <span class="omrs-input-label">Fecha recepción</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="checkbox" name="impresion-color" id="impresion-color">
+                            <span class="omrs-input-label">Impresión a color</span>
+                        </label>
+                    </div>
+                    <div class="campo-boton-submit">
+                        <button type="submit">Solicitar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>

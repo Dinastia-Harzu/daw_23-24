@@ -21,12 +21,50 @@ article h2 {
     margin-top: 0;
 }
 
-p, a, h1, h2, h3, time, i {
+p, a, h1, h2, h3, time, i, legend, output, .texto-cualquiera {
     color: var(--font_clr);
 }
 
+.campo-boton-submit {display: flex;justify-content: center;margin: 2em;}
+
+.campo-boton-submit > button {
+    padding: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--footer_clr);
+    cursor: pointer;
+    color: var(--font_clr);
+}
+
+.campo-boton-submit > button:hover {
+    background-color: var(--body_clr);
+}
+
+dialog {
+    display: flex;
+    background-color: var(--articulos_clr);
+    flex-direction: column;
+}
+
+dialog:not(:target):not([open]) {
+    display: none;
+}
+
 dialog p, dialog a, dialog h3{
-    color: var(--negro);
+    /* color: var(--negro); */
+}
+
+.enlace-simple {
+    display: flex;
+    justify-content: center;
+}
+
+.enlace-simple a {
+    color: var(--cian_grisaceo_claro);
+}
+
+.enlace-simple a:hover {
+    text-decoration: underline;
 }
 
 body {
@@ -288,6 +326,144 @@ select, input[type=date] {
 
 .titulo-index {
     margin-left: 1.05em;
+}
+
+/*********************************************************************/
+
+/** BEGIN: Non Openmrs CSS **/
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+div.container {
+	display: flex;
+	margin-top: 30px;
+	border: 1px solid whitesmoke;
+	padding: 21px;
+	border-radius: 4px;
+	align-items: flex-start;
+}
+h4.title {
+	text-align: center;
+	margin-bottom: 45px;
+}
+:root {
+	--omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+	--omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+	--omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+	--omrs-color-interaction: #1e4bd1;
+	--omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+	--omrs-color-danger: #b50706;
+	--omrs-color-bg-low-contrast: #eff1f2;
+	--omrs-color-ink-high-contrast: #121212;
+	--omrs-color-bg-high-contrast: #ffffff;
+	
+}
+/** END: Non Openmrs CSS **/
+div.omrs-input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 20em;
+}
+
+/* Input*/
+.omrs-input-underlined > input,
+.omrs-input-filled > input {
+	border: none;
+	border-bottom: 0.125rem solid var(--cian-grisaceo);
+	width: 91%;
+	height: 2rem;
+	font-size: 1.0625rem;
+	padding-left: 0.875rem;
+	line-height: 147.6%;
+	padding-top: 0.825rem;
+	padding-bottom: 0.5rem;
+	padding-right: 0.875em;
+}
+
+.omrs-input-underlined > input:focus,
+.omrs-input-filled > input:focus {
+	outline: none;
+}
+
+.omrs-input-underlined > .omrs-input-label,
+.omrs-input-filled > .omrs-input-label {
+	position: absolute;
+	top: 0.9375rem;
+	left: 0.875rem;
+	line-height: 147.6%;
+	color: var(--gris_normal);
+	transition: top .2s;
+}
+
+.omrs-input-underlined > .omrs-input-helper,
+.omrs-input-filled > .omrs-input-helper {
+	font-size: 0.75em;
+	color: var(--font_clr);
+	margin-left: 1em;
+}
+
+.omrs-input-underlined > input:hover,
+.omrs-input-filled > input:hover {
+	background: var(--body_clr);
+	border-color: var(--cian_grisaceo_claro);
+}
+
+.omrs-input-underlined > input:focus + .omrs-input-label,
+.omrs-input-underlined > input:valid + .omrs-input-label,
+.omrs-input-filled > input:focus + .omrs-input-label,
+.omrs-input-filled > input:not(:placeholder-shown) + .omrs-input-label {
+	top: 0;
+	font-size: 0.9375rem;
+	margin-bottom: 32px;
+}
+
+.omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+.omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+	color: var(--ceruleo_grisaceo_mas_claro);
+}
+
+.omrs-input-underlined:not(.omrs-input-danger) > input:focus,
+.omrs-input-filled:not(.omrs-input-danger) > input:focus {
+	border-color: var(--ceruleo_grisaceo_mas_claro);
+}
+
+/** DISABLED **/
+
+.omrs-input-underlined > input:disabled {
+	background: var(--omrs-color-bg-low-contrast);
+	cursor: not-allowed;
+}
+
+.omrs-input-underlined > input:disabled + .omrs-input-label,
+.omrs-input-underlined > input:disabled ~ .omrs-input-helper{
+	color: var(--omrs-color-ink-low-contrast);
+}
+
+.omrs-input-underlined > input:disabled ~ svg {
+	fill: var(--omrs-color-ink-low-contrast);
+}
+
+
+/** DANGER **/
+
+.omrs-input-underlined.omrs-input-danger > .omrs-input-label, .omrs-input-underlined.omrs-input-danger > .omrs-input-helper,
+.omrs-input-filled.omrs-input-danger > .omrs-input-label, .omrs-input-filled.omrs-input-danger > .omrs-input-helper{
+	color: var(--omrs-color-danger);
+}
+
+.omrs-input-danger > svg {
+	fill: var(--omrs-color-danger);
+}
+
+.omrs-input-danger > input {
+	border-color: var(--omrs-color-danger);
+}
+
+.omrs-input-underlined > input {
+	background: var(--omrs-color-bg-high-contrast);
+}
+.omrs-input-filled > input {
+	background: none;
+	color: var(--blanco);
 }
 
 /* MEDIA QUERYS */
