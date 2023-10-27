@@ -153,7 +153,7 @@ header > figure img {
 }
 
 .grid-img article {
-    border: var(--negro) solid 0.2em;
+    border: var(--font_clr) solid 0.2em;
     background-color: var(--articulos_clr);
     padding: 1.5em;
     color: var(--blanco);
