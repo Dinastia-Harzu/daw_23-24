@@ -319,6 +319,10 @@ select, input[type=date] {
     color: var(--gris_oscuro);
 }
 
+textarea {
+    resize: none;
+}
+
 .titulo-dialog {
     margin-top: 0.3em;
     font-size: large;
@@ -365,9 +369,9 @@ div.omrs-input-group {
 }
 
 /* Input*/
-.omrs-input-underlined > input,
-.omrs-input-filled > input {
-	border: none;
+.omrs-input-underlined > input, .omrs-input-underlined > textarea,
+.omrs-input-filled > input, .omrs-input-filled > textarea {
+    border: none;
 	border-bottom: 0.125rem solid var(--cian-grisaceo);
 	width: 91%;
 	height: 2rem;
@@ -379,8 +383,13 @@ div.omrs-input-group {
 	padding-right: 0.875em;
 }
 
-.omrs-input-underlined > input:focus,
-.omrs-input-filled > input:focus {
+.omrs-input-underlined > textarea,
+.omrs-input-filled > textarea {
+    height: auto;
+}
+
+.omrs-input-underlined > input:focus, .omrs-input-underlined > textarea:focus,
+.omrs-input-filled > input:focus, .omrs-input-filled > textarea:focus {
 	outline: none;
 }
 
@@ -401,8 +410,8 @@ div.omrs-input-group {
 	margin-left: 1em;
 }
 
-.omrs-input-underlined > input:hover,
-.omrs-input-filled > input:hover {
+.omrs-input-underlined > input:hover, .omrs-input-underlined > textarea:hover,
+.omrs-input-filled > input:hover, .omrs-input-filled > textarea:hover {
 	background: var(--body_clr);
 	border-color: var(--cian_grisaceo_claro);
 }
@@ -410,19 +419,27 @@ div.omrs-input-group {
 .omrs-input-underlined > input:focus + .omrs-input-label,
 .omrs-input-underlined > input:valid + .omrs-input-label,
 .omrs-input-filled > input:focus + .omrs-input-label,
-.omrs-input-filled > input:not(:placeholder-shown) + .omrs-input-label {
+.omrs-input-filled > input:not(:placeholder-shown) + .omrs-input-label,
+.omrs-input-underlined > textarea:focus + .omrs-input-label,
+.omrs-input-underlined > textarea:valid + .omrs-input-label,
+.omrs-input-filled > textarea:focus + .omrs-input-label,
+.omrs-input-filled > textarea:not(:placeholder-shown) + .omrs-input-label {
 	top: 0;
 	font-size: 0.9375rem;
 	margin-bottom: 32px;
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
-.omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+.omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+.omrs-input-underlined:not(.omrs-input-danger) > textarea:focus + .omrs-input-label,
+.omrs-input-filled:not(.omrs-input-danger) > textarea:focus + .omrs-input-label {
 	color: var(--ceruleo_grisaceo_mas_claro);
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
-.omrs-input-filled:not(.omrs-input-danger) > input:focus {
+.omrs-input-filled:not(.omrs-input-danger) > input:focus,
+.omrs-input-underlined:not(.omrs-input-danger) > textarea:focus,
+.omrs-input-filled:not(.omrs-input-danger) > textarea:focus {
 	border-color: var(--ceruleo_grisaceo_mas_claro);
 }
 
@@ -458,10 +475,10 @@ div.omrs-input-group {
 	border-color: var(--omrs-color-danger);
 }
 
-.omrs-input-underlined > input {
+.omrs-input-underlined > input, .omrs-input-underlined > textarea {
 	background: var(--omrs-color-bg-high-contrast);
 }
-.omrs-input-filled > input {
+.omrs-input-filled > input, .omrs-input-filled > textarea {
 	background: none;
 	color: var(--blanco);
 }
