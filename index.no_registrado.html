@@ -17,6 +17,7 @@
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="javascript/index.js"></script>
     <title>Masthermatika</title>
 </head>
 <body>
@@ -66,7 +67,7 @@
         <div id="tab-login">
             <ul>
                 <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <li class="iniciar_sesion"><a href="#login">Iniciar sesión</a></li>
+                <li class="iniciar_sesion" onclick="abrirDialogo();">Iniciar sesión</li>
                 <li><a href="registro.html">Registrarse</a></li>
             </ul>
         </div>
@@ -111,20 +112,25 @@
             <a href="accesibilidad.html">Declaración de accesibilidad</a>
         </p>
     </footer>
-    <dialog open id="login">
+    <dialog id="login">
         <p class="titulo-dialog">Iniciar sesión</p>
         <form action="index.html">
-            <p>
-                <label for="user">Usuario:</label>
-                <input type="text" id="user" placeholder="Introduce tu nombre de usuario">
-            </p>
-            <p>
-                <label for="pass">Contraseña:</label>
-                <input type="password" id="pass" placeholder="Introduce tu contraseña">
-            </p>
-            <p>
-                <input type="submit" value="Iniciar sesión">
-            </p>
+            <div class="omrs-input-group">
+                <label class="omrs-input-filled">
+                    <input type="text" placeholder=" " name="nombre" id="nombre" required>
+                    <span class="omrs-input-label">Introduce tu nombre de usuario</span>
+                </label>
+            </div>
+            <div class="omrs-input-group">
+                <label class="omrs-input-filled">
+                    <input type="password" placeholder=" " name="contraseña" id="contraseña" required>
+                    <span class="omrs-input-label">Contraseña</span>
+                    <span class="omrs-input-helper">Introduce tu contraseña</span>
+                </label>
+            </div>
+            <div class="campo-boton-submit">
+                <button type="submit">Registrarse</button>
+            </div>
             <hr>
             <p class="text-google">...o continúa con Google</p>
             <a href="https://accounts.google.com" class="google-login">
@@ -138,13 +144,16 @@
             <hr>
             <p class="text-google">No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
         </form>
+        <p class="enlace-simple">
+            <a href="#!">Volver</a>
+        </p>
     </dialog>
 
     <!-- ESTO ESTÁ FATAL, BORRAR NADA MÁS COMENZAR CON CSS -->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
     <!-- ESTO ES ÚNICA Y EXCLUSIVAMENTE PARA QUE SE MUESTREN LOS DOS DIALOG SIN QUE SE SOLAPEN -->
 
-    <dialog open id="error">
+    <dialog id="error">
         <img src="img/advertencia.svg" alt="Advertencia">
         <p class="titulo-dialog">Inicia sesión o regístrate para poder ver las fotografías en todo su esplendor</p>
         <ul>
@@ -152,6 +161,9 @@
             <li class="iniciar_sesion"><a href="#login">Iniciar sesión</a></li>
             <li><a href="registro.html">Registrarse</a></li>
         </ul>
+        <p class="enlace-simple">
+            <a href="#!">Volver</a>
+        </p>
     </dialog>
 </body>
 </html>

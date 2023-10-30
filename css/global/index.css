@@ -20,6 +20,7 @@
     text-align: center;
     background-color: var(--footer_clr);
     cursor: pointer;
+    color: var(--font_clr);
 }
 
 #tab-login li:hover {
