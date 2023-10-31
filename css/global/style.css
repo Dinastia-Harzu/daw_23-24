@@ -51,7 +51,6 @@ dialog:not(:target):not([open]) {
 }
 
 dialog p, dialog a, dialog h3{
-    /* color: var(--negro); */
 }
 
 .enlace-simple {
@@ -174,10 +173,13 @@ header > figure img {
     gap: 0.5em;
     padding: 1em;
     background-color: var(--blanco);
-    color: var(--negro);
     text-decoration: none;
     border: 0.15em solid var(--negro);
-}    
+}
+
+.google-login p {
+    color: var(--negro);
+}
 
 header {
     display: flex;
