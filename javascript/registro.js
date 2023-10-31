@@ -114,5 +114,54 @@ function validarCorreo(cor){
     let partes_correo = cor.split('@');
     console.log(partes_correo);
 
+    // Si no hay arroba o hay mas de una, el formato es valido
+    if(partes_correo.length != 2) return false;
+
+    // Comprobamos ambas partes del correo por separado
+    // ------------------- Parte local -------------------------
+    let local = partes_correo[0];
+
+    // Comprobamos tamaño adecuado
+    if(local.length == 0 || local.length > 64) return false;
+
+    // Comprobamos que no tiene un punto al principio, al final o varias veces seguidas
+    let partes_local = local.split('.');
+    for (const subcadena of partes_local) {
+        if(subcadena.length == 0) return false;
+    }
+    
+    // Comprobamos que local tiene las letras bien
+    const caracteresValidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_!#$%&'*+/=?^`{|}~.";
+    const subcaracteresValidos = caracteresValidos.substring(0, 63);
+
+    for (let i = 0; i < local.length; i++) {
+        if (caracteresValidos.indexOf(local[i]) === -1) return false;   
+    }
+    // -------------------------------------------------------
+    // ------------------- Parte dominio ---------------------
+    let dominio = partes_correo[1];
+
+    // Comprobamos tamaño adecuado
+    if(dominio.length == 0 || dominio.length > 255) return false;
+
+    // Separamos los dominios en subdominios
+    let partes_dominio = dominio.split('.');
+
+    // Comprobamos que cada subdominio tiene la longitud adecuada, los caracteres adecuados y lo del guion
+    for (const subdominio of partes_dominio) {
+
+        // Longitud adecuada
+        if(subdominio.length == 0 || subdominio.length > 63) return false;
+
+        // Guion al principio o al final
+        if(subdominio[0] == '-' || subdominio[subdominio.length - 1] == '-') return false;
+
+        // Caracteres validos
+        for (let i = 0; i < subdominio.length; i++) {
+            if (subcaracteresValidos.indexOf(subdominio[i]) === -1) return false;   
+        }
+    }
+    // -------------------------------------------------------
+
     return true;
 }
