@@ -2,6 +2,8 @@ let nombre_valido = false;
 let contrasenya_valida = false;
 let contrasenya_rep_valida = false;
 let correo_valido = false;
+let fecha_valida = false;
+
 
 // Pillamos los inputs del registro
 window.addEventListener('load', () => {
@@ -9,6 +11,7 @@ window.addEventListener('load', () => {
     let contrasenya_input = document.getElementById('contraseña');
     let contrasenya_rep_input = document.getElementById('confirmar-contraseña');
     let correo_input = document.getElementById('correo');
+    let fecha_input = document.getElementById('fecha-nacimiento');
 
 // ---------- VALIDAMOS LOS DATOS DEL REGISTRO ---------------------
 nombre_input.addEventListener('blur', () => {
@@ -36,6 +39,13 @@ correo_input.addEventListener('blur', () => {
     let correo = correo_input.value;
     correo_valido = validarCorreo(correo);
     console.log(correo_valido); 
+});
+
+fecha_input.addEventListener('blur', () => {
+    let fecha = fecha_input.value;
+    fecha_valida = validarFecha(fecha);
+    console.log(fecha); 
+    console.log(fecha_valida); 
 });
 
 });
@@ -163,5 +173,10 @@ function validarCorreo(cor){
     }
     // -------------------------------------------------------
 
+    return true;
+}
+
+// VALIDAR FECHA
+function validarFecha(fec){
     return true;
 }
