@@ -44,7 +44,6 @@ correo_input.addEventListener('blur', () => {
 fecha_input.addEventListener('blur', () => {
     let fecha = fecha_input.value;
     fecha_valida = validarFecha(fecha);
-    console.log(fecha); 
     console.log(fecha_valida); 
 });
 
@@ -177,6 +176,25 @@ function validarCorreo(cor){
 }
 
 // VALIDAR FECHA
+/**
+ * 
+ * @param {string} fec 
+ * @returns 
+ */
 function validarFecha(fec){
+    let partes_fecha = fec.split('/');
+
+    // Comprobar que hay tres partes
+    if(partes_fecha.length != 3) return false;
+
+    // Reordenar fecha y comprobar que es valida
+    let fecha = partes_fecha.reverse().join('-');
+
+    let fechaValida = Date.parse(fecha);
+    if(isNaN(fechaValida)) return false;
+
+    // Comprobamos si el usuario es mayor de edad
+    if(new Date().getFullYear() - partes_fecha[0] < 18) return false;
+
     return true;
 }
