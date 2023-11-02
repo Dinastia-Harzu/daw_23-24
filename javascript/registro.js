@@ -36,18 +36,7 @@ window.addEventListener('load', () => {
         console.log(fecha_valida); 
     });
 
-    document.querySelector('#tab-google > p.enlace-simple').addEventListener('click', () => console.log(input({
-        value: 'MyValue',
-        placeholder: 'MyPlaceholder',
-        name: 'MyName',
-        title: 'MyTitle',
-        className: 'MyClass',
-        list: 'browsers',
-        type: 'search',
-        pattern: '[a-z]+',
-        required: true,
-        autocomplete: 'off'
-    })));
+    document.querySelector('#tab-google > p.enlace-simple').addEventListener('click', () => abrirDialogo(crearDialogoLogin));
 });
 
 // FUNCIONES PARA VALIDAR LOS DATOS
