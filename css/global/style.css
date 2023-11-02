@@ -175,6 +175,7 @@ header > figure img {
     background-color: var(--blanco);
     text-decoration: none;
     border: 0.15em solid var(--negro);
+    color: var(--negro);
 }
 
 .google-login p {
