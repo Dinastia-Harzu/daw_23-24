@@ -5,6 +5,10 @@ window.addEventListener('load', () => {
     const fpp = 2;
 
     tabla
+        .createCaption()
+            .appendChild(document.createTextNode('Tabla de precios calculada'))
+        .parentElement
+    .parentElement
         .insertRow()
             .appendChild(crearElemento('th', {colSpan: 2}))
                 .appendChild(document.createTextNode(`${fpp} fotos por página`))
@@ -75,7 +79,11 @@ window.addEventListener('load', () => {
 function calcularTarifa(paginas, extra_color = 0, extra_resolucion = 0) {
     let precio = 0;
     for(let i = 1; i <= paginas; i++) {
-        precio += i < 5 ? 0.10 : (i > 11 ? 0.07 : 0.08);
+        if(precio < 5) {
+            precio += 0.10;
+        } else {
+            precio += i > 11 ? 0.07 : 0.08;
+        }
     }
     return `${(precio + (0.05 * extra_color + 0.02 * extra_resolucion) * 3 * paginas).toFixed(2)}€`;
 }
