@@ -1,70 +1,89 @@
 // Pillamos los inputs del registro
 window.addEventListener('load', () => {
-    const campos_validos = [false, false, false, false];
+    const campos_validos = [false, false, false, false, false];
     const nombre_input = $('nombre');
     const contrasenya_input = $('contraseña');
     const contrasenya_rep_input = $('confirmar-contraseña');
     const correo_input = $('correo');
     const fecha_input = $('fecha-nacimiento');
 
-        let boton_registro = document.getElementById('btn-registro');
-// ---------- LISTENERS DE LOS INPUTS ---------------------
+    // ---------- LISTENERS DE LOS INPUTS ---------------------
     // NOMBRE
-nombre_input.addEventListener('blur', () => {
+    nombre_input.addEventListener('blur', () => {
         campos_validos[0] = validarNombre(nombre_input.value);
         console.log(campos_validos[0]);
     
-    // Mostramos mensaje
-    if(!nombre_valido) ponerMensaje(0,"El nombre de usuario no es válido");
-});
+        // Mostramos mensaje
+        if(!campos_validos[0]) {
+            ponerMensaje(0, 'El nombre de usuario no es válido')
+        };
+    });
 
-nombre_input.addEventListener('click', () => {
-    borrarMensaje(nombre_input);
-});
+    nombre_input.addEventListener('click', () => {
+        borrarMensaje(nombre_input);
+    });
 
-contrasenya_input.addEventListener('blur', () => {
-    let contrasenya = contrasenya_input.value;
-    contrasenya_valida = validarContrasenya(contrasenya);
-    console.log(contrasenya_valida);
-});
+    // CONTRASEÑA
+    contrasenya_input.addEventListener('blur', () => {
+        campos_validos[1] = validarContrasenya(contrasenya_input.value);
+        console.log(campos_validos[1]);
+
+        if(!campos_validos[1]) {
+            ponerMensaje(1, 'La contraseña no es correcta');
+        }
+    });
+
+    contrasenya_input.addEventListener('click', () => {
+        borrarMensaje(contrasenya_input);
+    })
 
     // REPETIR CONTRASEÑA
-contrasenya_rep_input.addEventListener('blur', () => {
-        campos_validos[1] = contrasenya_input.value === contrasenya_rep_input.value;
+    contrasenya_rep_input.addEventListener('blur', () => {
+        campos_validos[2] = contrasenya_input.value === contrasenya_rep_input.value;
     
-    // Mostramos mensaje
-    if(!contrasenya_rep_valida) ponerMensaje(2,"Repite lo que has puesto arriba");
+        // Mostramos mensaje
+        if(!campos_validos[2]) {
+            ponerMensaje(2, 'Repite lo que has puesto arriba');
+        };
 
-    console.log(campos_validos[1]);
+        console.log(campos_validos[2]);
     });
 
     contrasenya_rep_input.addEventListener('click', () => {
-    borrarMensaje(contrasenya_rep_input);
-});
+        borrarMensaje(contrasenya_rep_input);
+    });
 
-// CORREO
-correo_input.addEventListener('blur', () => {
-        campos_validos[2] = validarCorreo(correo_input.value);
-        console.log(campos_validos[2]); 
-    
-    // Mostramos mensaje
-    if(!correo_valido) ponerMensaje(3,"El formato debe ser parte-local@dominio");
-});
+    // CORREO
+    correo_input.addEventListener('blur', () => {
+        campos_validos[3] = validarCorreo(correo_input.value);
+        console.log(campos_validos[3]); 
 
-correo_input.addEventListener('click', () => {
-    borrarMensaje(correo_input);
-});
+        // Mostramos mensaje
+        if(!campos_validos[3]) {
+            ponerMensaje(3, 'El formato debe ser parte-local@dominio')
+        };
+    });
 
-fecha_input.addEventListener('blur', () => {
-    campos_validos[3] = validarFecha(fecha_input.value);
-    console.log(campos_validos[3]); 
-});
+    correo_input.addEventListener('click', () => {
+        borrarMensaje(correo_input);
+    });
 
-$('tab-reg').addEventListener('submit', evt => {
-    if(campos_validos.some(valido => !valido)) {
-        evt.preventDefault();
-    }
-});
+    // FECHA
+    fecha_input.addEventListener('blur', () => {
+        campos_validos[4] = validarFecha(fecha_input.value);
+        console.log(campos_validos[4]); 
+    });
+
+    fecha_input.addEventListener('click', () => {
+        borrarMensaje(fecha_input);
+    })
+
+    // BOTÓN ENVIAR
+    $('tab-reg').addEventListener('submit', evt => {
+        if(campos_validos.some(valido => !valido)) {
+            evt.preventDefault();
+        }
+    });
 
     document.querySelector('#tab-google > p.enlace-simple').addEventListener('click', () => abrirDialogo(crearDialogoLogin));
 });
