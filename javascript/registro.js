@@ -1,5 +1,6 @@
 // Pillamos los inputs del registro
 window.addEventListener('load', () => {
+    const campos_validos = [false, false, false];
     const nombre_input = document.getElementById('nombre');
     const contrasenya_input = document.getElementById('contraseña');
     const contrasenya_rep_input = document.getElementById('confirmar-contraseña');
@@ -8,8 +9,8 @@ window.addEventListener('load', () => {
 
     // ---------- VALIDAMOS LOS DATOS DEL REGISTRO ---------------------
     nombre_input.addEventListener('blur', () => {
-        const nombre_valido = validarNombre(nombre_input.value);
-        console.log(nombre_valido);
+        campos_validos[0] = validarNombre(nombre_input.value);
+        console.log(campos_validos[0]);
     });
 
     contrasenya_input.addEventListener('blur', () => {
@@ -18,23 +19,25 @@ window.addEventListener('load', () => {
     });
 
     contrasenya_rep_input.addEventListener('blur', () => {
-        const contrasenya = contrasenya_input.value;
-        const contrasenya_rep = contrasenya_rep_input.value;
-
-        // Hacemos la comprobacion 
-        const contrasenya_rep_valida = (contrasenya === contrasenya_rep);
-        console.log(contrasenya_rep_valida);
+        campos_validos[1] = contrasenya_input.value === contrasenya_rep_input.value;
+        console.log(campos_validos[1]);
     });
 
     correo_input.addEventListener('blur', () => {
-        const correo_valido = validarCorreo(correo_input.value);
-        console.log(correo_valido); 
+        campos_validos[2] = validarCorreo(correo_input.value);
+        console.log(campos_validos[2]); 
     });
 
     fecha_input.addEventListener('blur', () => {
         const fecha_valida = validarFecha(fecha_input.value);
         console.log(fecha_valida); 
     });
+
+    document.getElementById('tab-reg').addEventListener('submit', evt => {
+        if(campos_validos.some(valido => !valido)) {
+            evt.preventDefault();
+        }
+    })
 
     document.querySelector('#tab-google > p.enlace-simple').addEventListener('click', () => abrirDialogo(crearDialogoLogin));
 });
