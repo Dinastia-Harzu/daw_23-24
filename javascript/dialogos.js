@@ -1,22 +1,8 @@
 'use strict'
 
-function abrirDialogo(html, id, embeberHTML = () => {}) {
-    const dialogo = document.createElement('dialog');
-    dialogo.id = id;
-
-    const parser = new DOMParser();
-    const fragment = document.createDocumentFragment();
-
-    const doc = parser.parseFromString(html, 'text/html').documentElement;
-
-    const elementos = doc.querySelectorAll('body > *');
-    for(const elemento of elementos) {
-        fragment.appendChild(elemento);
-    }
-    dialogo.appendChild(fragment);
-    document.body.appendChild(dialogo);
+function abrirDialogo(crearDialogo = () => console.error('No se puede abrir un diálogo si no se especifica el método creador.')) {
+    const dialogo = crearDialogo();
     dialogo.showModal();
-
     dialogo.addEventListener('keydown', evt => {
         if(evt.key == 'Escape') {
             evt.preventDefault();
@@ -30,210 +16,97 @@ function cerrarDialogo() {
     dialogo.remove();
 }
 
-function mostrarDialogoLogin() {
-    // const elementos = [];
-    // const elementos_nivel = new Array(4);
-
-    // // > p.titulo-dialog
-    // elementos_nivel[0] = document.createElement('p');
-    // elementos_nivel[0].className = 'titulo-dialog';
-    // elementos_nivel[0].textContent = 'Iniciar sesión';
-    // elementos.push(elementos_nivel[0]);
-
-    // // > form
-    // elementos_nivel[0] = document.createElement('form');
-    // elementos_nivel[0].action = 'index.html';
-
-    // // > form > .omrs-input-group
-    // for(let i = 0; i < 2; i++) {
-    //     elementos_nivel[1] = document.createElement('div');
-    //     elementos_nivel[1].className = 'omrs-input-group';
-        
-    //     // > form > .omrs-input-group > label.omrs-input-filled
-    //     elementos_nivel[2] = document.createElement('label');
-    //     elementos_nivel[2].className = 'omrs-input-filled';
-
-    //     // > form > .omrs-input-group > label.omrs-input-filled > input
-    //     elementos_nivel[3] = document.createElement('input');
-    //     elementos_nivel[3].type = 'text';
-    //     elementos_nivel[3].placeholder = ' ';
-    //     elementos_nivel[3].required = true;
-    //     elementos_nivel[3].name = elementos_nivel[3].id = i == 0 ? 'nombre' : 'contraseña';
-    //     elementos_nivel[2].appendChild(elementos_nivel[3]);
-        
-    //     // > form > .omrs-input-group > label.omrs-input-filled > span
-    //     elementos_nivel[3] = document.createElement('span');
-    //     elementos_nivel[3].className = 'omrs-input-label';
-    //     elementos_nivel[3].textContent = `Introduce tu ${i == 0 ? 'nombre de usuario' : 'contraseña'}`;
-    //     elementos_nivel[2].appendChild(elementos_nivel[3]);
-        
-    //     // > form > .omrs-input-group > label.omrs-input-filled > span
-    //     // TODO: quizá aquí el texto informativo, pero vamos...
-
-    //     elementos_nivel[1].appendChild(elementos_nivel[2]);
-
-    //     elementos_nivel[0].appendChild(elementos_nivel[1]);
-    // }
-
-    // // > form > .campo-boton-submit
-    // elementos_nivel[1] = document.createElement('div');
-    // elementos_nivel[1].className = 'campo-boton-submit';
-
-    // // > form > .campo-boton-submit > button
-    // elementos_nivel[2] = document.createElement('button');
-    // elementos_nivel[2].type = 'submit';
-    // elementos_nivel[2].textContent = 'Registrarse';
-    // elementos_nivel[1].appendChild(elementos_nivel[2]);
-
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-    
-    // // TODO: quizá cambiar este <hr> por una regla de un estilo en CSS
-    // // > form > hr
-    // elementos_nivel[0].appendChild(document.createElement('hr'));
-
-    // // > form > p.text-google
-    // elementos_nivel[1] = document.createElement('p');
-    // elementos_nivel[1].className = 'text-google';
-    // elementos_nivel[1].textContent = '...o continúa con Google';
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-
-    
-
-    // // > form > a.google-login > img
-    // elementos_nivel[2] = document.createElement('img');
-    // elementos_nivel[2].src = 'img/google.svg';
-    // elementos_nivel[2].alt = 'Icono de Google';
-    // elementos_nivel[1].appendChild(elementos_nivel[2]);
-    
-    // // > form > a.google-login > p
-    // elementos_nivel[2] = document.createElement('p');
-    // elementos_nivel[2].textContent = 'Inicia sesión con Google';
-    // elementos_nivel[1].appendChild(elementos_nivel[2]);
-
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-
-    // // TODO: quizá cambiar este <hr> por una regla de un estilo en CSS
-    // // > form > hr
-    // elementos_nivel[0].appendChild(document.createElement('hr'));
-
-    // // > form > p.text-google
-    // elementos_nivel[1] = document.createElement('p');
-    // elementos_nivel[1].className = 'text-google';
-    // elementos_nivel[1].textContent = 'No tienes una cuenta? ';
-
-    // // > form > p.text-google > a
-    // elementos_nivel[2] = document.createElement('a');
-    // elementos_nivel[2].href = 'registro.html';
-    // elementos_nivel[2].textContent = 'Regístrate';
-    // elementos_nivel[1].appendChild(elementos_nivel[2]);
-
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-
-    // elementos.push(elementos_nivel[0]);
-
-    // // p.enlace-simple
-    // elementos_nivel[0] = document.createElement('p');
-    // elementos_nivel[0].className = 'enlace-simple';
-    // elementos_nivel[0].textContent = 'Volver';
-    // elementos_nivel[0].addEventListener('click', () => cerrarDialogo());
-    // elementos.push(elementos_nivel[0]);
-
-    // return elementos;
-
-
-    abrirDialogo(`
-        <p class="titulo-dialog">Iniciar sesión</p>
-        <form action="index.html">
-            <div class="omrs-input-group">
-                <label class="omrs-input-filled">
-                    <input type="text" placeholder=" " required id="nombre" name="nombre">
-                    <span class="omrs-input-label">Introduce tu nombre de usuario</span>
-                </label>
-            </div>
-            <div class="omrs-input-group">
-                <label class="omrs-input-filled">
-                    <input type="text" placeholder=" " required id="contraseña" name="contraseña">
-                    <span class="omrs-input-label">Introduce tu contraseña</span>
-                </label>
-            </div>
-            <div class="campo-boton-submit">
-                <button type="submit">Registrarse</button>
-            </div>
-            <hr>
-            <p class="text-google">...o continúa con Google</p>
-            <a href="https://accounts.google.com" class="google-login">
-                <img src="img/google.svg" alt="Icono de Google">
-                <p>Inicia sesión con Google</p>
-            </a>
-            <hr>
-            <p class="text-google">No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-        </form>
-        <p class="enlace-simple">Volver</p>
-    `, 'login');
-    document.querySelector('dialog > .enlace-simple').addEventListener('click', () => cerrarDialogo());
+function crearDialogoLogin() {
+    return document.body
+        .appendChild(crearElemento('dialog', {id: 'login'}))
+            .appendChild(crearElemento('p', {className: 'titulo-dialog'}))
+                .appendChild(document.createTextNode('Iniciar sesión'))
+            .parentElement
+        .parentElement
+            .appendChild(crearElemento('form', {action: 'index.html'}))
+                .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
+                    .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
+                        .appendChild(crearElemento('input', {type: 'text', placeholder: ' ', id: 'nombre', name: 'nombre'}))
+                    .parentElement
+                        .appendChild(crearElemento('span', {className: 'omrs-input-label'}))
+                            .appendChild(document.createTextNode('Introduce tu nombre de usuario'))
+                        .parentElement
+                    .parentElement
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
+                    .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
+                        .appendChild(crearElemento('input', {type: 'password', placeholder: ' ', id: 'contraseña', name: 'contraseña'}))
+                    .parentElement
+                        .appendChild(crearElemento('span', {className: 'omrs-input-label'}))
+                            .appendChild(document.createTextNode('Introduce tu contraseña'))
+                        .parentElement
+                    .parentElement
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('div', {className: 'campo-boton-submit'}))
+                    .appendChild(crearElemento('button', {type: 'submit'}))
+                        .appendChild(document.createTextNode('Registrarse'))
+                    .parentElement
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('hr', {}))
+            .parentElement
+                .appendChild(crearElemento('p', {className: 'text-google'}))
+                    .appendChild(document.createTextNode('...o continúa con Google'))
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('a', {href: 'https://accounts.google.com', className: 'google-login'}))
+                    .appendChild(crearElemento('img', {src: 'img/google.svg', alt: 'Icono de Google'}))
+                .parentElement
+                    .appendChild(crearElemento('p', {}))
+                        .appendChild(document.createTextNode('Inicia sesión con Google'))
+                    .parentElement
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('hr', {}))
+            .parentElement
+                .appendChild(crearElemento('p', {className: 'text-google'}))
+                    .appendChild(document.createTextNode('¿No tienes cuenta? '))
+                .parentElement
+                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                        .appendChild(document.createTextNode('Regístrate'))
+                    .parentElement
+                .parentElement
+            .parentElement
+        .parentElement
+            .appendChild(crearElemento('p', {className: 'enlace-simple'}, 'click', cerrarDialogo))
+                .appendChild(document.createTextNode('Volver'))
+            .parentElement
+        .parentElement;
 }
 
-function mostrarDialogoError() {
-    // const elementos = [];
-    // const elementos_nivel = new Array(3);
-
-    // // > img
-    // elementos_nivel[0] = document.createElement('img');
-    // elementos_nivel[0].src = 'img/advertencia.svg';
-    // elementos_nivel[0].alt = 'Advertencia';
-    // elementos.push(elementos_nivel[0]);
-
-    // // > p.titulo-dialog
-    // elementos_nivel[0] = document.createElement('p');
-    // elementos_nivel[0].className = 'titulo-dialog';
-    // elementos_nivel[0].textContent = 'Inicia sesión o regístrate para poder ver las fotografías en todo su esplendor';
-    // elementos.push(elementos_nivel[0]);
-
-    // // > ul
-    // elementos_nivel[0] = document.createElement('ul');
-
-    // // > ul > li[0]
-    // elementos_nivel[1] = document.createElement('li');
-    // elementos_nivel[1].textContent = 'Iniciar sesión';
-    // elementos_nivel[1].addEventListener('click', () => {
-    //     abrirDialogo(mostrarDialogoLogin, 'login');
-    //     cerrarDialogo();
-    // });
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-
-    // // > ul > li[1]
-    // elementos_nivel[1] = document.createElement('li');
-
-    // // > ul > li[1] > a
-    // elementos_nivel[2] = document.createElement('a');
-    // elementos_nivel[2].href = 'registro.html';
-    // elementos_nivel[2].textContent = 'Registrarse';
-    // elementos_nivel[1].appendChild(elementos_nivel[2]);
-
-    // elementos_nivel[0].appendChild(elementos_nivel[1]);
-
-    // elementos.push(elementos_nivel[0]);
-
-    // // > p
-    // elementos_nivel[0] = document.createElement('p');
-    // elementos_nivel[0].textContent = 'Volver';
-    // elementos_nivel[0].addEventListener('click', () => cerrarDialogo());
-    // elementos.push(elementos_nivel[0]);
-
-    // return elementos;
-
-    abrirDialogo(`
-        <img src="img/advertencia.svg" alt="Advertencia">
-        <p class="titulo-dialog">Inicia sesión o regístrate para poder ver las fotografías en todo su esplendor</p>
-        <ul>
-            <li>Iniciar sesión</li>
-            <li><a href="registro.html">Registrarse</a></li>
-        </ul>
-        <p class="enlace-simple">Volver</p>
-    `, 'error');
-    document.querySelector('dialog > ul > li').addEventListener('click', () => {
-        cerrarDialogo();
-        mostrarDialogoLogin();
-    });
-    document.querySelector('dialog > .enlace-simple').addEventListener('click', () => cerrarDialogo());
+function crearDialogoError() {
+    return document.body
+        .appendChild(crearElemento('dialog', {id: 'error'}))
+            .appendChild(crearElemento('img', {src: 'img/advertencia.svg', alt: 'Advertencia'}))
+        .parentElement
+            .appendChild(crearElemento('p', {className: 'titulo-dialog'}))
+                .appendChild(document.createTextNode('Inicia sesión o regístrate para poder ver las fotografías en todo su esplendor'))
+            .parentElement
+        .parentElement
+            .appendChild(crearElemento('ul', {}))
+                .appendChild(crearElemento('li', {}, 'click', () => {
+                    cerrarDialogo();
+                    abrirDialogo(crearDialogoLogin);
+                }))
+                    .appendChild(document.createTextNode('Iniciar sesión'))
+                .parentElement
+            .parentElement
+                .appendChild(crearElemento('li', {}))
+                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                        .appendChild(document.createTextNode('Registrarse'))
+                    .parentElement
+                .parentElement
+            .parentElement
+        .parentElement
+            .appendChild(crearElemento('p', {className: 'enlace-simple'}, 'click', cerrarDialogo))
+                .appendChild(document.createTextNode('Volver'))
+            .parentElement
+        .parentElement;
 }
