@@ -1,6 +1,6 @@
 // Pillamos los inputs del registro
 window.addEventListener('load', () => {
-    const campos_validos = [false, false, false];
+    const campos_validos = [false, false, false, false];
     const nombre_input = document.getElementById('nombre');
     const contrasenya_input = document.getElementById('contraseña');
     const contrasenya_rep_input = document.getElementById('confirmar-contraseña');
@@ -29,8 +29,8 @@ window.addEventListener('load', () => {
     });
 
     fecha_input.addEventListener('blur', () => {
-        const fecha_valida = validarFecha(fecha_input.value);
-        console.log(fecha_valida); 
+        campos_validos[3] = validarFecha(fecha_input.value);
+        console.log(campos_validos[3]); 
     });
 
     document.getElementById('tab-reg').addEventListener('submit', evt => {
