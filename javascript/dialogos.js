@@ -23,7 +23,15 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'index.html'}))
+            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', evt => {
+                for(const campo of new FormData(evt.target)) {
+                    if(campo[1].trim().length == 0) {
+                        evt.preventDefault();
+                        alert('Al menos un campo está vacío, escribe algo en ambos campos.');
+                        return;
+                    }
+                }
+            }))
                 .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
                     .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
                         .appendChild(crearElemento('input', {type: 'text', placeholder: ' ', id: 'nombre', name: 'nombre'}))
