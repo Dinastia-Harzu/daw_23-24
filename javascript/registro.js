@@ -1,11 +1,11 @@
 // Pillamos los inputs del registro
 window.addEventListener('load', () => {
     const campos_validos = [false, false, false, false];
-    const nombre_input = document.getElementById('nombre');
-    const contrasenya_input = document.getElementById('contraseña');
-    const contrasenya_rep_input = document.getElementById('confirmar-contraseña');
-    const correo_input = document.getElementById('correo');
-    const fecha_input = document.getElementById('fecha-nacimiento');
+    const nombre_input = $('nombre');
+    const contrasenya_input = $('contraseña');
+    const contrasenya_rep_input = $('confirmar-contraseña');
+    const correo_input = $('correo');
+    const fecha_input = $('fecha-nacimiento');
 
     // ---------- VALIDAMOS LOS DATOS DEL REGISTRO ---------------------
     nombre_input.addEventListener('blur', () => {
@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
         console.log(campos_validos[3]); 
     });
 
-    document.getElementById('tab-reg').addEventListener('submit', evt => {
+    $('tab-reg').addEventListener('submit', evt => {
         if(campos_validos.some(valido => !valido)) {
             evt.preventDefault();
         }

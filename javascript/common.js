@@ -17,3 +17,12 @@ function crearElemento(etiqueta, {lista, ...propiedades}, accion, reaccion) {
 
     return elemento;
 }
+
+/**
+ * 
+ * @param {string} id 
+ * @returns {HTMLElement}
+ */
+function $(id) {
+    return document.getElementById(id);
+}
