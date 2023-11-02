@@ -55,16 +55,16 @@ correo_input.addEventListener('click', () => {
     borrarMensaje(correo_input);
 });
 
-    fecha_input.addEventListener('blur', () => {
-        campos_validos[3] = validarFecha(fecha_input.value);
-        console.log(campos_validos[3]); 
-    });
+fecha_input.addEventListener('blur', () => {
+    campos_validos[3] = validarFecha(fecha_input.value);
+    console.log(campos_validos[3]); 
+});
 
-    $('tab-reg').addEventListener('submit', evt => {
-        if(campos_validos.some(valido => !valido)) {
-            evt.preventDefault();
-        }
-    })
+$('tab-reg').addEventListener('submit', evt => {
+    if(campos_validos.some(valido => !valido)) {
+        evt.preventDefault();
+    }
+});
 
     document.querySelector('#tab-google > p.enlace-simple').addEventListener('click', () => abrirDialogo(crearDialogoLogin));
 });
@@ -180,20 +180,27 @@ function validarFecha(fec){
     // Comprobar que hay tres partes
     if(partes_fecha.length != 3){
         // Mostramos mensaje de formato erroneo
-        if(!fecha_valida) ponerMensaje(5,"El formato debe ser dd/mm/yyyy");
-        {
+        ponerMensaje(5,"El formato debe ser dd/mm/yyyy");
         return false;
     }
-    }
+
     // Reordenar fecha y comprobar que es valida
     const fecha = partes_fecha.toReversed().join('-');
 
     if(isNaN(Date.parse(fecha))) {
+        ponerMensaje(5,"El formato debe ser dd/mm/yyyy");
         return false;
     }
 
     // Comprobamos si el usuario es mayor de edad
-    return new Date().getFullYear() - partes_fecha[2] >= 18;
+
+    if(new Date().getFullYear() - partes_fecha[2] < 18){
+        ponerMensaje(5, "Debes tener 18 o más años");
+        return false;
+    }
+
+    return true;
+    
 }
 
 function existeCaracter(cadena, caracter) {
