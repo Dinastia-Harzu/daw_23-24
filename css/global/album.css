@@ -1,6 +1,7 @@
 #central {
     display: flex;
     gap: 1em;
+    justify-content: center;
 }
 
 #central > aside, #central > section {
