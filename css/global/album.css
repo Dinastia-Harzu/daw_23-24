@@ -1,6 +1,7 @@
 #central {
     display: flex;
     gap: 1em;
+    justify-content: center;
 }
 
 #central > aside, #central > section {
@@ -18,6 +19,14 @@ fieldset {
 
 table {
     border-collapse: collapse;
+    margin: 1em 0;
+}
+
+table > caption {
+    background-color: var(--footer_clr);
+    color: var(--font_clr);
+    padding: 1em;
+    border: 0.1em solid var(--negro);
 }
   
 table td, table th {

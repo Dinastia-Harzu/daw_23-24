@@ -18,7 +18,9 @@
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="javascript/dialogos.js"></script>
     <script src="javascript/registro.js"></script>
+    <script src="javascript/common.js"></script>
 </head>
 <body>
     <header>
@@ -85,7 +87,6 @@
                         <label class="omrs-input-filled">
                             <input type="password" placeholder=" " name="confirmar-contraseña" id="confirmar-contraseña">
                             <span class="omrs-input-label">Confirmar contraseña</span>
-                            <!-- <span class="omrs-input-helper">Repite lo que has puesto arriba</span> -->
                         </label>
                     </div>
                     <div class="omrs-input-group">
@@ -97,7 +98,6 @@
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
                             <select name="sexo" id="sexo">
-                                <!-- <option disabled selected value>-- Selecciona una opción --</option> -->
                                 <option value="cod-X">Prefiero no decirlo</option>
                                 <option value="cod-H">Hombre</option>
                                 <option value="cod-M">Mujer</option>
@@ -165,9 +165,7 @@
                 Inicia sesión con Google
             </a>
             <p>¿Ya tienes una cuenta?</p>
-            <p class="enlace-simple">
-                <a href="#login">Inicia sesión</a>
-            </p>
+            <p class="enlace-simple">Inicia sesión</p>
         </section>
     </main>
     <footer>
@@ -177,39 +175,5 @@
             <a href="accesibilidad.html">Declaración de accesibilidad</a>
         </p>
     </footer>
-    <dialog id="login">
-        <p class="titulo-dialog">Iniciar sesión</p>
-        <form action="index.html">
-            <div class="omrs-input-group">
-                <label class="omrs-input-filled">
-                    <input type="text" placeholder=" " name="user" id="user" required>
-                    <span class="omrs-input-label">Nombre</span>
-                </label>
-            </div>
-            <div class="omrs-input-group">
-                <label class="omrs-input-filled">
-                    <input type="password" placeholder=" " name="password" id="password" required>
-                    <span class="omrs-input-label">Contraseña</span>
-                    <span class="omrs-input-helper">Introduce al menos 8 caracteres</span>
-                </label>
-            </div>
-            <div class="campo-boton-submit">
-                <button type="submit">Registrarse</button>
-            </div>
-            <hr>
-            <p class="text-google">...o continúa con Google</p>
-            <a href="https://accounts.google.com" class="google-login">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="l">
-                    <g fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M20.64 12.2c0-.63-.06-1.25-.16-1.84H12v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.61z" fill="#4285F4"></path><path d="M12 21a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.41 5.41 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 12 21z" fill="#34A853"></path><path d="M6.96 13.71a5.41 5.41 0 0 1 0-3.42V7.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M12 6.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 3.96 7.96l3 2.33A5.36 5.36 0 0 1 12 6.6z" fill="#EA4335"></path>
-                    </g>
-                </svg>
-                Inicia sesión con Google
-            </a>
-        </form>
-        <p class="enlace-simple">
-            <a href="#!">Volver</a>
-        </p>
-    </dialog>
 </body>
 </html>
