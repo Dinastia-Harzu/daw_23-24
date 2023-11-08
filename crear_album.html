@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
     <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/usuario.css">
-    <link rel="stylesheet" href="css/ordenador/usuario.css">
-    <link rel="stylesheet" href="css/tablet/usuario.css">
-    <link rel="stylesheet" href="css/movil/usuario.css">
+    <link rel="stylesheet" href="css/global/crear-album.css">
+    <link rel="stylesheet" href="css/ordenador/crear-album.css">
+    <link rel="stylesheet" href="css/tablet/crear-album.css">
+    <link rel="stylesheet" href="css/movil/crear-album.css">
     <link rel="alternate stylesheet" href="css/modos-alternativos/oscuro.css" title="Modo oscuro (predeterminado)">
     <link rel="alternate stylesheet" href="css/modos-alternativos/claro.css" title="Modo claro">
     <link rel="alternate stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">
@@ -67,33 +67,29 @@
             </a>
         </figure>
     </header>
-    <main id="tab-usuario">
-        <h1>Usuario</h1>
-        <section id="datos-usu">
-            <div>
-                <h2>Mis datos</h2>
-                <p>
-                    <p><label for="pfp"><img src="img/placeholder.png" alt="Foto de perfil"></label></p>
-                    <p><input type="file" name="pfp" id="pfp"></p>
-                    <input type="button" value="Cambiar">
-                </p>
+    <main>
+          <section id="tab-crear-album">
+            <h1>Crea tu álbum</h1>
+            <form action="usuario.html">
+                <div class="omrs-input-group">
+                    <label class="omrs-input-filled">
+                        <input type="text" placeholder=" " name="titulo" id="titulo-album">
+                        <span class="omrs-input-label">Titulo</span>
+                    </label>
+                </div>
 
-                <p>Nombre: Usuario</p>
-                <p>Correo: usu11@gmail.com</p>
-                <p>Contraseña: *******</p>
-                <p>Ciudad: Alicante</p>
-                <p>Pais: España</p>
-            </div>
+                <div class="omrs-input-group">
+                    <label class="omrs-input-filled">
+                        <textarea></textarea>
+                        <span class="omrs-input-label">Descripción</span>
+                    </label>
+                </div>
 
-            <div id="funciones">
-                <p><a href="#editar_perfil">Editar perfil</a></p>
-                <p><a href="javascript:void(0);">Mis álbumes</a></p>
-                <p><a href="crear_album.html">Crear álbum</a></p>
-                <p><a href="solicitar_album.html">Solicitar álbum</a></p>
-                <p><a href="index.no_registrado.html">Cerrar sesión</a></p>
-                <p><a href="index.html">Volver a inicio</a></p>
-            </div>
-        </section>   
+                <div>
+                    <button type="submit" id="btn-crear">Crear álbum</button>
+                </div>
+            </form>
+          </section>
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
@@ -103,41 +99,5 @@
         </p>
     </footer>
 
-    <!--Dialog con Editar Perfil-->
-    <dialog id="editar-perfil">
-
-        <h3>Edita tus datos</h3>
-
-        <form action="usuario.html">
-            <p>
-                <label for="usuario" >Usuario:</label>
-                <input type="text" id="usuario">
-            </p>
-
-            <p>
-                <label for="ciudad" >Ciudad:</label>
-                <input type="text" id="ciudad">
-            </p>
-
-            <p>
-                <label for="paises">País:</label>
-                <select name="paises" id="paises">
-                    <option value="cod_es">España</option>
-                    <option value="cod_fr">Francia</option>
-                    <option value="cod_uk">Reino Unido</option>
-                    <option value="cod_al">Alemania</option>
-                    <option value="cod_it">Italia</option>
-                    <option value="cod_bel">Bélgica</option>
-                    <option value="cod_chi">China</option>
-                    <option value="cod_sui">Suiza</option>
-                    <option value="cod_pol">Polonia</option>
-                    <option value="cod_usa">Estados Unidos</option>
-                </select>
-            </p>
-
-            <input type="submit" value="Guardar cambios">
-            <a href="usuario.html">Salir sin guardar</a>
-        </form>
-    </dialog>
 </body>
 </html>
