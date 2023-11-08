@@ -18,8 +18,6 @@
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/dialogos.js"></script>
-    <script src="javascript/registro.js"></script>
     <script src="javascript/common.js"></script>
 </head>
 <body>
@@ -68,7 +66,7 @@
     <main>
         <div id="creacion-cuenta">
             <h1>Crear cuenta</h1>
-            <form action="index.html" method="post" id="tab-reg">
+            <form action="respuesta_usuario.php" method="post" id="tab-reg">
                 <section id="reg-1">
                     <h2>Introduce tus datos para registarte:</h2>
                     <div class="omrs-input-group">
@@ -99,9 +97,9 @@
                         <label class="omrs-input-filled">
                             <p>Sexo</p>
                             <select name="sexo" id="sexo">
-                                <option value="cod-X">Prefiero no decirlo</option>
-                                <option value="cod-H">Hombre</option>
-                                <option value="cod-M">Mujer</option>
+                                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
                             </select>
                         </label>
                     </div>
