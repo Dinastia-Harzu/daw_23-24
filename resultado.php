@@ -73,32 +73,17 @@
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
     </figure>
     <main>
+<?php
+        echo <<<hereDOC
         <div class="tab-busc">
             <p>
-                <label for="titulo">Título: </label> 
-                <input type="text" name="titulo" id="titulo" placeholder="Introduce el título">
+                <label for="titulo">Título: {$_POST["titulo"]}</label>
             </p>
             <p>
-                <label for="fecha_d" class="tab-busc-fecha">Fecha entre:</label>
-                <input type="date" name="fecha_d" id="fecha_d">
-
-                <label for="fecha_h" id="tab-busc-y">y</label>
-                <input type="date" name="fecha_h" id="fecha_h">
+                <label for="fecha_d" class="tab-busc-fecha">Fecha entre: {$_POST["fecha_d"]} y {$_POST["fecha_h"]}</label>
             </p>
             <p>
-                <label for="paises">País: </label>
-                <select name="paises" id="paises">
-                    <option value="cod_al">Alemania</option>
-                    <option value="cod_bel">Bélgica</option>
-                    <option value="cod_chi">China</option>
-                    <option value="cod_es">España</option>
-                    <option value="cod_usa">Estados Unidos</option>
-                    <option value="cod_fr">Francia</option>
-                    <option value="cod_it">Italia</option>
-                    <option value="cod_pol">Polonia</option>
-                    <option value="cod_uk">Reino Unido</option>
-                    <option value="cod_sui">Suiza</option>
-                </select>
+                <label for="paises">País: {$_POST["paises"]}</label>
             </p>
         </div>
         <h1 class="titulo-index">Resultados</h1>
@@ -135,6 +120,8 @@
             </article>
         </section>
     </main>
+hereDOC;
+?>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
         <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>

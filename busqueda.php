@@ -69,7 +69,7 @@
     </header>
     <main id="grid-params">
         <h1>Descubre</h1>
-        <form action="resultado.html" method="post" class="tab-busc tab-params">
+        <form action="resultado.php" method="post" class="tab-busc tab-params">
             <section >
                 <h2>Introduce los parámetros de búsqueda:</h2>
                 <p>
@@ -86,16 +86,16 @@
                 <p>
                     <label for="paises">País: </label>
                     <select name="paises" id="paises">
-                        <option value="cod_es">España</option>
-                        <option value="cod_fr">Francia</option>
-                        <option value="cod_uk">Reino Unido</option>
-                        <option value="cod_al">Alemania</option>
-                        <option value="cod_it">Italia</option>
-                        <option value="cod_bel">Bélgica</option>
-                        <option value="cod_chi">China</option>
-                        <option value="cod_sui">Suiza</option>
-                        <option value="cod_pol">Polonia</option>
-                        <option value="cod_usa">Estados Unidos</option>
+                        <option value="España">España</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Reino Unido">Reino Unido</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Bélgica">Bélgica</option>
+                        <option value="China">China</option>
+                        <option value="Suiza">Suiza</option>
+                        <option value="Polonia">Polonia</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
                     </select>
                 </p>
             </section>
