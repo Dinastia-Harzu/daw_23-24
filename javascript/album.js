@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
 function calcularTarifa(paginas, extra_color = 0, extra_resolucion = 0) {
     let precio = 0;
     for(let i = 1; i <= paginas; i++) {
-        if(precio < 5) {
+        if(i < 5) {
             precio += 0.10;
         } else {
             precio += i > 11 ? 0.07 : 0.08;
