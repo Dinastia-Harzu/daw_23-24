@@ -73,17 +73,39 @@
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
     </figure>
     <main>
-        <section id="foto">
-            <img src="img/foto1.png" alt="Foto matemática">
-            <section id="info-foto">
-                <h1>Título imagen</h1>
-                <p>Publicado en <time>2023</time></p>
-                <p>País</p>
-                <p>Álbum</p>
-                <p>Usuario</p>
-            </section>
-        </section>
-    </main>
+<?php
+    if($_GET["id"]%2 != 0) {
+        echo <<<hereDOC
+            <section id="foto">
+                    <img src="img/foto1.png" alt="Foto matemática">
+                    <section id="info-foto">
+                        <h1>Función tridimensional en espacio cartesiano</h1>
+                        <p>Publicado en <time>2023</time></p>
+                        <p>España</p>
+                        <p>Cosas de matemáticas que me molan</p>
+                        <p>Genio_de_la_programacion11</p>
+                    </section>
+                </section>
+            </main>
+        hereDOC;
+    }
+    else {
+        echo <<<hereDOC
+            <section id="foto">
+                    <img src="img/foto2.png" alt="Foto matemática">
+                    <section id="info-foto">
+                        <h1>Ilustración de un hipercubo azulado</h1>
+                        <p>Publicado en <time>2023</time></p>
+                        <p>España</p>
+                        <p>Geometría hasta en la sopa</p>
+                        <p>Amante_de_los_Cubos47</p>
+                    </section>
+                </section>
+            </main>
+        hereDOC;
+}
+  
+?>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
         <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
