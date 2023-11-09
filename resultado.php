@@ -75,52 +75,52 @@
     <main>
 <?php
         echo <<<hereDOC
-        <div class="tab-busc">
-            <p>
-                <label for="titulo">Título: {$_POST["titulo"]}</label>
-            </p>
-            <p>
-                <label for="fecha_d" class="tab-busc-fecha">Fecha entre: {$_POST["fecha_d"]} y {$_POST["fecha_h"]}</label>
-            </p>
-            <p>
-                <label for="paises">País: {$_POST["paises"]}</label>
-            </p>
-        </div>
-        <h1 class="titulo-index">Resultados</h1>
-        <section class="grid-img">
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.html"><img src="img/foto1.png" alt="Última foto #1"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.html"><img src="img/foto2.png" alt="Última foto #2"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.html"><img src="img/foto3.png" alt="Última foto #3"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.html"><img src="img/foto4.png" alt="Última foto #4"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.html"><img src="img/foto5.png" alt="Última foto #5"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-        </section>
-    </main>
-hereDOC;
+            <div class="tab-busc">
+                <p>
+                    <label for="titulo">Título: {$_POST["titulo"]}</label>
+                </p>
+                <p>
+                    <label for="fecha_d" class="tab-busc-fecha">Fecha entre: {$_POST["fecha_d"]} y {$_POST["fecha_h"]}</label>
+                </p>
+                <p>
+                    <label for="paises">País: {$_POST["paises"]}</label>
+                </p>
+            </div>
+            <h1 class="titulo-index">Resultados</h1>
+            <section class="grid-img">
+                <article>
+                    <h2>Título imagen</h2>
+                    <a href="detalle.html"><img src="img/foto1.png" alt="Última foto #1"></a>
+                    <p>País</p>
+                    <time>2023</time>
+                </article>
+                <article>
+                    <h2>Título imagen</h2>
+                    <a href="detalle.html"><img src="img/foto2.png" alt="Última foto #2"></a>
+                    <p>País</p>
+                    <time>2023</time>
+                </article>
+                <article>
+                    <h2>Título imagen</h2>
+                    <a href="detalle.html"><img src="img/foto3.png" alt="Última foto #3"></a>
+                    <p>País</p>
+                    <time>2023</time>
+                </article>
+                <article>
+                    <h2>Título imagen</h2>
+                    <a href="detalle.html"><img src="img/foto4.png" alt="Última foto #4"></a>
+                    <p>País</p>
+                    <time>2023</time>
+                </article>
+                <article>
+                    <h2>Título imagen</h2>
+                    <a href="detalle.html"><img src="img/foto5.png" alt="Última foto #5"></a>
+                    <p>País</p>
+                    <time>2023</time>
+                </article>
+            </section>
+        </main>
+    hereDOC;
 ?>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>

@@ -77,7 +77,7 @@ function crearDialogoLogin() {
                 .appendChild(crearElemento('p', {className: 'text-google'}))
                     .appendChild(document.createTextNode('¿No tienes cuenta? '))
                 .parentElement
-                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                    .appendChild(crearElemento('a', {href: 'registro.php'}))
                         .appendChild(document.createTextNode('Regístrate'))
                     .parentElement
                 .parentElement

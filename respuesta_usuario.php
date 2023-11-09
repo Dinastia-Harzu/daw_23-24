@@ -73,47 +73,48 @@
     {
         echo <<<hereDOC
         <h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>
-hereDOC;
+        hereDOC;
         // Mostramos mensajes de error
         if($_POST["nombre"] == "")
-        echo<<<hereDOC
-        <p class="error-datos-usuario">No se ha introducido un nombre de usuario</p>
-hereDOC;
+            echo<<<hereDOC
+                <p class="error-datos-usuario">No se ha introducido un nombre de usuario</p>
+            hereDOC;
 
         if($_POST["contraseña"] == "")
-        echo<<<hereDOC
-        <p class="error-datos-usuario">No se ha introducido la contraseña</p>
-hereDOC;
+            echo<<<hereDOC
+                <p class="error-datos-usuario">No se ha introducido la contraseña</p>
+            hereDOC;
 
         if($_POST["confirmar-contraseña"] == "")
-                echo<<<hereDOC
-                <p class="error-datos-usuario">No se ha introducido por segunda vez la contraseña</p>
-hereDOC;
+            echo<<<hereDOC
+            <p class="error-datos-usuario">No se ha introducido por segunda vez la contraseña</p>
+            hereDOC;
 
         if($_POST["contraseña"] != $_POST["confirmar-contraseña"])
-                echo<<<hereDOC
+            echo<<<hereDOC
                 <p class="error-datos-usuario">La contraseña y la confirmación de contraseña no coinciden</p>
-hereDOC;
-                echo<<<hereDOC
-                <a href="registro.php" id="btn-volver-registro">Volver al registro</a>
-hereDOC;
+            hereDOC;
+            
+        echo<<<hereDOC
+            <a href="registro.php" id="btn-volver-registro">Volver al registro</a>
+        hereDOC;
     }
 
     // Si los datos estan bien, mostramos un mensaje de confirmacion y mostramos todos los datos del usuario
     else{
         echo <<<hereDOC
-        <section>
-        <h1>Inserción realizada, tus datos son:</h1>
-            <div id="datos-usuario">
-                <p>Nombre de usuario: {$_POST["nombre"]}</p>
-                <p>Contraseña: {$_POST["contraseña"]}</p>
-                <p>Correo: {$_POST["correo"]}</p>
-                <p>Sexo: {$_POST["sexo"]}</p>
-                <p>Fecha de nacimiento: {$_POST["fecha-nacimiento"]}</p>
-                <p>Ciudad: {$_POST["ciudad"]}</p>
-            </div>
-        </section>
-hereDOC;
+            <section>
+            <h1>Inserción realizada, tus datos son:</h1>
+                <div id="datos-usuario">
+                    <p>Nombre de usuario: {$_POST["nombre"]}</p>
+                    <p>Contraseña: {$_POST["contraseña"]}</p>
+                    <p>Correo: {$_POST["correo"]}</p>
+                    <p>Sexo: {$_POST["sexo"]}</p>
+                    <p>Fecha de nacimiento: {$_POST["fecha-nacimiento"]}</p>
+                    <p>Ciudad: {$_POST["ciudad"]}</p>
+                </div>
+            </section>
+        hereDOC;
     }
     
 ?>
