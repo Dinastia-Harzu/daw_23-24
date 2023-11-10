@@ -17,63 +17,14 @@
     <link rel="alternate stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
-    <link rel="stylesheet" href="css/impresion/style.css" media="print">
-    <link rel="stylesheet" href="css/impresion/respuesta_album.css" media="print">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/album.js"></script>
     <script src="javascript/common.js"></script>
+    <script src="javascript/album.js"></script>
 </head>
 <body>
-    <header>
-        <aside>
-            <figure>
-                <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika" id="logo">
-            </figure>
-            <nav>
-                <ul id="nav-texto">
-                    <li>
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="busqueda.html">Descubrir</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">Publicar</a>
-                    </li>
-                </ul>
-                <ul id="nav-iconos">
-                    <li>
-                        <a href="index.html"><i class="fa fa-home"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <div class="dropdown-button"><i class="fa fa-search"></i></div>
-                        <div class="dropdown-content">
-                            <a href="busqueda.html">Descubrir</a>
-                            <form action="resultado.html">
-                                <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="fa fa-upload"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <form action="resultado.html" id="busqueda-rapida">
-            <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <figure>
-            <a href="usuario.html">
-                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-            </a>
-        </figure>
-    </header>
-    <figure>
-        <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
-    </figure>
+<?php
+    include("inc/header_reg.php");
+?>
     <main>
         <h1>Solicitud de impresión de álbum</h1>
         <p>Mediante esta opción puedes solicitar la impresión y envío de uso de tus álbumes a todo color, toda resolución.</p>
@@ -115,97 +66,97 @@
             <section>
                 <h2>Formulario de solicitud</h2>
                 <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-                <form action="#">
+                <form action="respuesta_album.php" oninput="dpi.value = parseInt(resolucion.value);">
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="nombre" id="nombre" disabled value="Mi nuevo álbum">
+                        <label class="omrs-input-underlined">
+                            <input type="text" placeholder=" " name="nombre" id="nombre" required>
                             <span class="omrs-input-label">Nombre</span>
                             <span class="omrs-input-helper">Tu nombre</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="titulo" id="titulo" disabled value="Inserta texto">
+                        <label class="omrs-input-underlined">
+                            <input type="text" placeholder=" " name="titulo" id="titulo" required>
                             <span class="omrs-input-label">Título</span>
                             <span class="omrs-input-helper">El título para el álbum impreso</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <textarea placeholder=" " name="texto-adicional" id="texto-adicional" rows="10" maxlength="4000" disabled value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, neque itaque atque quae qui saepe doloribus assumenda sint exercitationem ullam dolor distinctio aspernatur alias natus, cum numquam minima, amet recusandae."></textarea>
+                        <label class="omrs-input-underlined">
+                            <textarea placeholder=" " name="texto-adicional" id="texto-adicional" rows="10" maxlength="4000"></textarea>
                             <span class="omrs-input-label">Texto adicional</span>
                             <span class="omrs-input-helper">Hasta 4000 caracteres</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="email" placeholder=" " name="correo" id="correo" disabled value="debug@correo.es">
+                        <label class="omrs-input-underlined">
+                            <input type="email" placeholder=" " name="correo" id="correo" required>
                             <span class="omrs-input-label">Correo electrónico</span>
                         </label>
                     </div>
                     <fieldset>
                         <legend>Dirección</legend>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="text" name="direccion" id="direccion" placeholder=" " disabled value="Bulevard del plà">
+                            <label class="omrs-input-underlined">
+                                <input type="text" name="direccion" id="direccion" placeholder=" ">
                                 <span class="omrs-input-label">Dirección</span>
                                 <span class="omrs-input-helper">La calle, avenida, bulevar, etc.</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="number" name="numero" id="numero" placeholder=" " disabled value="23">
+                            <label class="omrs-input-underlined">
+                                <input type="number" name="numero" id="numero" placeholder=" ">
                                 <span class="omrs-input-label">Número</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="text" name="cp" id="cp" placeholder=" " disabled value="01205">
+                            <label class="omrs-input-underlined">
+                                <input type="text" name="cp" id="cp" placeholder=" ">
                                 <span class="omrs-input-label">Código postal</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="text" name="ciudad" id="ciudad" placeholder=" " disabled value="Elche">
+                            <label class="omrs-input-underlined">
+                                <input type="text" name="ciudad" id="ciudad" placeholder=" ">
                                 <span class="omrs-input-label">Ciudad</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="text" name="provincia" id="provincia" placeholder=" " disabled value="Alicante">
+                            <label class="omrs-input-underlined">
+                                <input type="text" name="provincia" id="provincia" placeholder=" ">
                                 <span class="omrs-input-label">Provincia</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
-                            <label class="omrs-input-filled">
-                                <input type="text" name="pais" id="pais" placeholder=" " disabled value="España">
+                            <label class="omrs-input-underlined">
+                                <input type="text" name="pais" id="pais" placeholder=" ">
                                 <span class="omrs-input-label">País</span>
                             </label>
                         </div>
                     </fieldset>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="tel" placeholder=" " name="telefono" id="telefono" disabled value="+34 965903400 x 2962">
+                        <label class="omrs-input-underlined">
+                            <input type="tel" placeholder=" " name="telefono" id="telefono">
                             <span class="omrs-input-label">Teléfono</span>
                             <span class="omrs-input-helper">El número de teléfono al que contactar</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled" id="swatch">
-                            <input type="color" id="color" name="color" disabled>
+                        <label class="omrs-input-underlined" id="swatch">
+                            <input type="color" id="color" name="color">
                             <span class="omrs-input-label">Color de la portada</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="number" placeholder=" " name="copias" id="copias" min="1" value="1" disabled>
+                        <label class="omrs-input-underlined">
+                            <input type="number" placeholder=" " name="copias" id="copias" min="1" value="1">
                             <span class="omrs-input-label">Número de copias</span>
                             <span class="omrs-input-helper">Mínimo una copia</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="range" placeholder=" " name="resolucion" id="resolucion" step="150" min="150" max="900" value="150" disabled>
+                        <label class="omrs-input-underlined">
+                            <input type="range" placeholder=" " name="resolucion" id="resolucion" step="150" min="150" max="900" value="150">
                             <span class="omrs-input-label">Resolución de impresión</span>
                             <div>
                                 <output name="dpi" for="resolucion">150</output>
@@ -215,41 +166,41 @@
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <select name="album" id="album" disabled>
-                                <option disabled value>-- Selecciona una opción --</option>
-                                <option value="0" selected>Mis álbumes</option>
+                        <label class="omrs-input-underlined">
+                            <select name="album" id="album" required>
+                                <option disabled selected value>-- Selecciona una opción --</option>
+                                <option value="0">Mis álbumes</option>
                             </select>
                             <span class="omrs-input-label">Álbum de Masthermatika</span>
                             <span class="omrs-input-helper">Elige uno de tus álbumes</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="date" name="fecha-recepcion" id="fecha-recepcion" disabled value="2023-10-27">
+                        <label class="omrs-input-underlined">
+                            <input type="date" name="fecha-recepcion" id="fecha-recepcion">
                             <span class="omrs-input-label">Fecha recepción</span>
                             <span class="omrs-input-helper">Establece una fecha de recepción aproximada</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
+                        <label class="omrs-input-underlined">
                             <div class="checkbox-wrapper-19">
-                                <input type="checkbox" id="cbtest-19" disabled checked>
+                                <input type="checkbox" id="cbtest-19" />
                                 <label for="cbtest-19" class="check-box"></label>
                             </div>
                             <span class="omrs-input-label">Impresión a color</span>
                         </label>
                     </div>
+
+                    <div class="campo-boton-submit">
+                        <button type="submit">Solicitar</button>
+                    </div>
                 </form>
             </section>
         </div>
     </main>
-    <footer>
-        <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
-        <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
-        <p class="enlace-simple">
-            <a href="accesibilidad.html">Declaración de accesibilidad</a>
-        </p>
-    </footer>
+<?php
+    include("inc/footer.php");
+?>
 </body>
 </html>

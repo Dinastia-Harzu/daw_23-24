@@ -20,53 +20,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header>
-        <aside>
-            <figure>
-                <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika" id="logo">
-            </figure>
-            <nav>
-                <ul id="nav-texto">
-                    <li>
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="busqueda.html">Descubrir</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">Publicar</a>
-                    </li>
-                </ul>
-                <ul id="nav-iconos">
-                    <li>
-                        <a href="index.html"><i class="fa fa-home"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <div class="dropdown-button"><i class="fa fa-search"></i></div>
-                        <div class="dropdown-content">
-                            <a href="busqueda.html">Descubrir</a>
-                            <form action="resultado.html">
-                                <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="fa fa-upload"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <form action="resultado.html" id="busqueda-rapida">
-            <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <figure>
-            <a href="usuario.html">
-                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-            </a>
-        </figure>
-    </header>
+<?php
+    include("inc/header.php");
+?>
     <main>
         <h1>Declaración de accesibilidad</h1>
         <p>El Ministerio de la Presidencia, Relaciones con las Cortes y Memoria Democrática se ha comprometido a hacer accesible este sitio web de conformidad con el Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público.</p>
@@ -130,9 +86,8 @@
             <p>Se han utilizado fuentes con tamaños relativos de forma que si el usuario prefiere una fuente mayor podrá seleccionarla a través de las opciones de tamaño de texto de su explorador, generalmente Ctrl+ (control más) para ampliar, Ctrl- (control menos) para reducir.</p>
         </section>
     </main>
-    <footer>
-        <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
-        <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
-    </footer>
+<?php
+    include("inc/footer.php");
+?>
 </body>
 </html>
