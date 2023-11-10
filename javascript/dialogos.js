@@ -23,7 +23,7 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', evt => {
+            .appendChild(crearElemento('form', {action: 'index.php'}, 'submit', evt => {
                 for(const campo of new FormData(evt.target)) {
                     if(campo[1].trim().length == 0) {
                         evt.preventDefault();
@@ -107,7 +107,7 @@ function crearDialogoError() {
                 .parentElement
             .parentElement
                 .appendChild(crearElemento('li', {}))
-                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                    .appendChild(crearElemento('a', {href: 'registro.php'}))
                         .appendChild(document.createTextNode('Registrarse'))
                     .parentElement
                 .parentElement

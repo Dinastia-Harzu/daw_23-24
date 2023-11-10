@@ -22,53 +22,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header>
-        <aside>
-            <figure>
-                <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika" id="logo">
-            </figure>
-            <nav>
-                <ul id="nav-texto">
-                    <li>
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="busqueda.html">Descubrir</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">Publicar</a>
-                    </li>
-                </ul>
-                <ul id="nav-iconos">
-                    <li>
-                        <a href="index.html"><i class="fa fa-home"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <div class="dropdown-button"><i class="fa fa-search"></i></div>
-                        <div class="dropdown-content">
-                            <a href="busqueda.html">Descubrir</a>
-                            <form action="resultado.html">
-                                <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="fa fa-upload"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <form action="resultado.html" id="busqueda-rapida">
-            <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <figure>
-            <a href="usuario.html">
-                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-            </a>
-        </figure>
-    </header>
+<?php
+    include("inc/header_reg.php");
+?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
     </figure>
@@ -109,7 +65,7 @@
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
-                <?php include_once 'tabla-album.php';?>
+                <?php include_once 'tabla-album.php'; ?>
             </aside>
             <section>
                 <h2>Formulario de solicitud</h2>
@@ -243,12 +199,8 @@
             </section>
         </div>
     </main>
-    <footer>
-        <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
-        <p>Copyright &copy; 2023 por Marta Gómez Verdú y Arturo García Richardson</p>
-        <p class="enlace-simple">
-            <a href="accesibilidad.html">Declaración de accesibilidad</a>
-        </p>
-    </footer>
+<?php
+    include("inc/footer.php");
+?>
 </body>
 </html>
