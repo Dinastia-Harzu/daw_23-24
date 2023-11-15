@@ -31,40 +31,58 @@
     if($_POST["nombre"] == "" || $_POST["contraseña"] == "" || $_POST["confirmar-contraseña"] == "" || 
     $_POST["contraseña"] != $_POST["confirmar-contraseña"])
     {
-        echo <<<hereDOC
-        <h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>
-        hereDOC;
+        echo "<h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>";
+        
         // Mostramos mensajes de error
         if($_POST["nombre"] == "")
-            echo<<<hereDOC
-                <p class="error-datos-usuario">No se ha introducido un nombre de usuario</p>
-            hereDOC;
+            echo "<p class=\"error-datos-usuario\">No se ha introducido un nombre de usuario</p>";
+    
 
         if($_POST["contraseña"] == "")
-            echo<<<hereDOC
-                <p class="error-datos-usuario">No se ha introducido la contraseña</p>
-            hereDOC;
+            echo "<p class=\"error-datos-usuario\">No se ha introducido la contraseña</p>";
+    
 
         if($_POST["confirmar-contraseña"] == "")
-            echo<<<hereDOC
-            <p class="error-datos-usuario">No se ha introducido por segunda vez la contraseña</p>
-            hereDOC;
+            echo "<p class=\"error-datos-usuario\">No se ha introducido por segunda vez la contraseña</p>";
+    
 
         if($_POST["contraseña"] != $_POST["confirmar-contraseña"])
-            echo<<<hereDOC
-                <p class="error-datos-usuario">La contraseña y la confirmación de contraseña no coinciden</p>
-            hereDOC;
+            echo "<p class=\"error-datos-usuario\">La contraseña y la confirmación de contraseña no coinciden</p>";
+    
             
-        echo<<<hereDOC
-            <a href="registro.php" id="btn-volver-registro">Volver al registro</a>
-        hereDOC;
+        echo "<a href=\"registro.php\" id=\"btn-volver-registro\">Volver al registro</a>";
+
     }
 
     // Si los datos estan bien, mostramos un mensaje de confirmacion y mostramos todos los datos del usuario
+
+    // Calculamos que mensaje deberia aparecer para el usuario
     else{
+        date_default_timezone_set('Europe/Madrid'); // Establecer la zona horaria de España
+
+        $hora_actual = date('H:i'); // Obtener la hora actual en formato HH:MM
+
+        if(isset($_COOKIE['nombre'])) 
+        $nombre_usuario = $_COOKIE['nombre'];
+
+        else 
+        $nombre_usuario = "Pepito"; // Puedes cambiar esto por el nombre que desees
+
+        if ($hora_actual >= '06:00' && $hora_actual <= '11:59') 
+            $mensaje = "Buenos días $nombre_usuario";
+
+        elseif ($hora_actual >= '12:00' && $hora_actual <= '15:59') 
+            $mensaje = "Hola $nombre_usuario";
+
+        elseif ($hora_actual >= '16:00' && $hora_actual <= '19:59') 
+            $mensaje = "Buenas tardes $nombre_usuario";
+
+        else 
+            $mensaje = "Buenas noches $nombre_usuario";
+    
         echo <<<hereDOC
             <section>
-            <h1>Inserción realizada, tus datos son:</h1>
+            <h1>$mensaje</h1>
                 <div id="datos-usuario">
                     <p>Nombre de usuario: {$_POST["nombre"]}</p>
                     <p>Contraseña: {$_POST["contraseña"]}</p>
