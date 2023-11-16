@@ -27,6 +27,12 @@
     <main> 
 <!-- Empezamos con PHP -->
 <?php
+    // Si vamos a la página mediante la URL directamente, debemos redirigir a index.no_registrado.php
+    if (!isset($_POST["nombre"])) {
+        header("Location: index.no_registrado.php");
+        exit();
+    }
+
     // Empezamos a comprobar los campos
     if($_POST["nombre"] == "" || $_POST["contraseña"] == "" || $_POST["confirmar-contraseña"] == "" || 
     $_POST["contraseña"] != $_POST["confirmar-contraseña"])
@@ -57,9 +63,8 @@
     // Si los datos estan bien, creamos la cookie (o la sesion no lo se) y la rellenamos
 
     else{
-        // ESTA COOKIE ES DE PRUEBA Y SE BORRARA AL TERMINAR
-        setcookie("nombre", $_POST["nombre"], time() + 90 * 24 * 60 * 60, "/");
         session_start();
+        $_SESSION["usuario"] = $_POST["nombre"];
 
         // Calculamos que mensaje deberia aparecer para el usuario
         date_default_timezone_set('Europe/Madrid'); 
