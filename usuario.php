@@ -51,7 +51,7 @@
                     <button type="submit" name="cerrar-sesion">Cerrar sesión</button>
                 </form>
             </div>
-        </section>   
+        </section>
     </main>
 <?php
     include_once "inc/footer.php";
