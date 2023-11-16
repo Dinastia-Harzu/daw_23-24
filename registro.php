@@ -22,7 +22,7 @@
 </head>
 <body>
 <?php
-    include("inc/header.php");
+    include_once "inc/header.php";
 ?>
     <main>
         <div id="creacion-cuenta">
@@ -128,7 +128,7 @@
         </section>
     </main>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
 ?>
 </body>
 </html>

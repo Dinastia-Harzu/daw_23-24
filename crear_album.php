@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php
-    include("inc/header_reg.php");
+    include_once "inc/header_reg.php";
 ?>
     <main>
           <section id="tab-crear-album">
@@ -48,7 +48,7 @@
           </section>
     </main>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
 ?>
 </body>
 </html>

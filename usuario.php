@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php
-    include("inc/header_reg.php");
+    include_once "inc/header_reg.php";
 ?>
     <main id="tab-usuario">
         <h1>Usuario</h1>
@@ -52,7 +52,7 @@
         </section>   
     </main>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
 ?>
     <!--Dialog con Editar Perfil-->
     <dialog id="editar-perfil">

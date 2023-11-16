@@ -23,7 +23,7 @@
 </head>
 <body>
 <?php
-    include("inc/header_reg.php");
+    include_once "inc/header_reg.php";
 ?>
     <main>
         <h1>Solicitud de impresión de álbum</h1>
@@ -201,7 +201,7 @@
         </div>
     </main>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
 ?>
 </body>
 </html>

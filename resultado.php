@@ -23,7 +23,7 @@
 </head>
 <body>
 <?php
-    include("inc/header_reg.php");
+    include_once "inc/header_reg.php";
 ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
@@ -79,7 +79,7 @@
     hereDOC;
 ?>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
 ?>
 </body>
 </html>
