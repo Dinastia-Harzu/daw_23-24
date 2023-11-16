@@ -54,19 +54,17 @@
 
     }
 
-    // Si los datos estan bien, mostramos un mensaje de confirmacion y mostramos todos los datos del usuario
+    // Si los datos estan bien, creamos la cookie (o la sesion no lo se) y la rellenamos
 
-    // Calculamos que mensaje deberia aparecer para el usuario
     else{
-        date_default_timezone_set('Europe/Madrid'); // Establecer la zona horaria de España
+        // ESTA COOKIE ES DE PRUEBA Y SE BORRARA AL TERMINAR
+        setcookie("nombre", $_POST["nombre"], time() + 90 * 24 * 60 * 60, "/");
 
-        $hora_actual = date('H:i'); // Obtener la hora actual en formato HH:MM
+        // Calculamos que mensaje deberia aparecer para el usuario
+        date_default_timezone_set('Europe/Madrid'); 
 
-        if(isset($_COOKIE['nombre'])) 
-        $nombre_usuario = $_COOKIE['nombre'];
-
-        else 
-        $nombre_usuario = "Pepito"; // Puedes cambiar esto por el nombre que desees
+        $hora_actual = date('H:i'); 
+        $nombre_usuario = $_POST["nombre"];
 
         if ($hora_actual >= '06:00' && $hora_actual <= '11:59') 
             $mensaje = "Buenos días $nombre_usuario";
@@ -78,7 +76,7 @@
             $mensaje = "Buenas tardes $nombre_usuario";
 
         else 
-            $mensaje = "Buenas noches $nombre_usuario";
+            $mensaje = "Buenas noches $nombre_usuario, estos son tus datos:";
     
         echo <<<hereDOC
             <section>
