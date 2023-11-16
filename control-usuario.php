@@ -27,7 +27,7 @@ if(isset($_POST["nombre"]) && isset($_POST["contraseña"])) {
         $pagina = 'index.no_registrado.php';
     }
     if(isset($_POST["recuerdame"])) {
-        setcookie("recuerdame", $_POST["nombre"] . "¬" . $_POST["contraseña"], time() + 24 * 60 * 60 * 90);
+        setcookie("recuerdame", $nombre . "¬" . $contraseña, time() + 24 * 60 * 60 * 90);
         echo $_COOKIE["recuerdame"];
     }
 } else {
