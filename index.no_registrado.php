@@ -17,19 +17,18 @@
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
     <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/common.js"></script>
-    <script src="javascript/dialogos.js"></script>
-    <script src="javascript/index.js"></script>
     <title>Masthermatika</title>
 </head>
 <body>
 <?php
-    include("inc/header.php");
+    include_once "inc/header.php";
 ?>
     <main>
         <div id="tab-login">
             <ul>
-                <li>Iniciar sesión</li>
+                <li>
+                    <a href="#login">Iniciar sesión</a>
+                </li>
                 <li>
                     <a href="registro.php">Registrarse</a>
                 </li>
@@ -37,25 +36,28 @@
         </div>
         <h1 class="titulo-index">Últimas imágenes</h1>
         <section class="grid-img">
-            <article>
-                <img src="img/foto1.png" alt="Última foto #1">
-            </article>
-            <article>
-                <img src="img/foto2.png" alt="Última foto #2">
-            </article>
-            <article>
-                <img src="img/foto3.png" alt="Última foto #3">
-            </article>
-            <article>
-                <img src="img/foto4.png" alt="Última foto #4">
-            </article>
-            <article>
-                <img src="img/foto5.png" alt="Última foto #5">
-            </article>
+            <?php
+                for($i = 1; $i <= 5; $i++) {
+                    echo <<<hereDOC
+                        <a href="#error">
+                            <article>
+                                <img src="img/foto$i.png" alt="Última foto #$i">
+                            </article>
+                        </a>
+                    hereDOC;
+                }
+            ?>
         </section>
     </main>
 <?php
-    include("inc/footer.php");
+    include_once "inc/footer.php";
+?>
+<?php
+    include_once "inc/dialogo-login.php";
+    for($i = 0; $i < 40; $i++) {
+        echo "<br>";
+    }
+    include_once "inc/dialogo-error.php";
 ?>
 </body>
 </html>
