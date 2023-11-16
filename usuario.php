@@ -46,8 +46,10 @@
                 <p><a href="javascript:void(0);">Mis álbumes</a></p>
                 <p><a href="crear_album.php">Crear álbum</a></p>
                 <p><a href="solicitar_album.php">Solicitar álbum</a></p>
-                <p><a href="index.no_registrado.php">Cerrar sesión</a></p>
                 <p><a href="index.php">Volver a inicio</a></p>
+                <form action="control-usuario.php">
+                    <button type="submit" name="cerrar-sesion">Cerrar sesión</button>
+                </form>
             </div>
         </section>   
     </main>

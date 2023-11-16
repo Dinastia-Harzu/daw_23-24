@@ -1,5 +1,13 @@
 <?php
 
+    // Si el usuario ha llegado a esta página a través de cerrar sesión, lo hacemos y redirigimos
+    if(isset($_POST["cerrar-sesion"])){
+        session_start();
+        session_destroy();
+        $_SESSION = array();
+        header('Location: index.no_registrado.php');
+    }
+
     $usuarios = array(
         'ADMIN' => 'ADMIN123',
         'DEBUG' => 'DEBUG',
