@@ -1,4 +1,6 @@
 *.pdf
+*.zip
+*.rar
 
 # Pon aquí los ficheros y los directorios tuyos privados
 ejercicios/

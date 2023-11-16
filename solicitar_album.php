@@ -62,6 +62,7 @@
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
+                <?php include_once 'tabla-album.php'; ?>
             </aside>
             <section>
                 <h2>Formulario de solicitud</h2>

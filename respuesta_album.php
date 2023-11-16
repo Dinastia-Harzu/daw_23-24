@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="css/impresion/style.css" media="print">
     <link rel="stylesheet" href="css/impresion/respuesta_album.css" media="print">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/album.js"></script>
-    <script src="javascript/common.js"></script>
 </head>
 <body>
 <?php
@@ -67,6 +65,7 @@
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
+                <?php include_once 'tabla-album.php'; ?>
             </aside>
             <section>
                 <h2>Formulario de solicitud</h2>
