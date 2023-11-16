@@ -59,6 +59,7 @@
     else{
         // ESTA COOKIE ES DE PRUEBA Y SE BORRARA AL TERMINAR
         setcookie("nombre", $_POST["nombre"], time() + 90 * 24 * 60 * 60, "/");
+        session_start();
 
         // Calculamos que mensaje deberia aparecer para el usuario
         date_default_timezone_set('Europe/Madrid'); 
@@ -76,7 +77,7 @@
             $mensaje = "Buenas tardes $nombre_usuario";
 
         else 
-            $mensaje = "Buenas noches $nombre_usuario, estos son tus datos:";
+            $mensaje = "Buenas noches $nombre_usuario, estos son tus datos";
     
         echo <<<hereDOC
             <section>
