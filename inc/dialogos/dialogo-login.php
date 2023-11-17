@@ -13,18 +13,12 @@
                 <span class="omrs-input-label">Introduce tu contraseña</span>
             </label>
         </div>
-        <?php
-            if(!isset($_COOKIE["recuerdame"])) {
-                echo <<<hereDOC
-                    <div class="omrs-input-group">
-                        <label class="omrs-input-filled">
-                            <input type="checkbox" id="recuerdame" name="recuerdame">
-                            <span class="omrs-input-label">Recuérdame</span>
-                        </label>
-                    </div>
-                hereDOC;
-            }
-        ?>
+        <div class="omrs-input-group">
+            <label class="omrs-input-filled">
+                <input type="checkbox" id="recuerdame" name="recuerdame">
+                <span class="omrs-input-label">Recuérdame</span>
+            </label>
+        </div>
         <div class="campo-boton-submit">
             <button type="submit">Enviar</button>
         </div>
