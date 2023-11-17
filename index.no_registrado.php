@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(isset($_SESSION["usuario"])) {
+        setcookie("ultima-vez", time(), 2 * time());
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -56,7 +59,7 @@
     include_once "inc/footer.php";
 ?>
 <?php
-    if(isset($_SESSION["usuario"])) {
+    if(isset($_COOKIE["recuerdame"])) {
         include_once "inc/dialogos/dialogo-bienvenida.php";
     } else {
         include_once "inc/dialogos/dialogo-login.php";
