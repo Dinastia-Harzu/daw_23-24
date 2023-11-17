@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,11 +56,15 @@
     include_once "inc/footer.php";
 ?>
 <?php
-    include_once "inc/dialogo-login.php";
+    if(isset($_SESSION["usuario"])) {
+        include_once "inc/dialogos/dialogo-bienvenida.php";
+    } else {
+        include_once "inc/dialogos/dialogo-login.php";
+    }
     for($i = 0; $i < 40; $i++) {
         echo "<br>";
     }
-    include_once "inc/dialogo-error.php";
+    include_once "inc/dialogos/dialogo-error.php";
 ?>
 </body>
 </html>
