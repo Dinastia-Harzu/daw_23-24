@@ -33,12 +33,15 @@
                     <p><input type="file" name="pfp" id="pfp"></p>
                     <input type="button" value="Cambiar">
                 </p>
-
-                <p>Nombre: Usuario</p>
-                <p>Correo: usu11@gmail.com</p>
+<?php
+            echo <<<hereDOC
+                <p>Nombre: {$_SESSION["usuario"]}</p>
+                <p>Correo: {$_SESSION["correo"]}</p>
                 <p>Contraseña: *******</p>
-                <p>Ciudad: Alicante</p>
-                <p>Pais: España</p>
+                <p>Ciudad: {$_SESSION["ciudad"]}</p>
+                <p>Pais: {$_SESSION["pais"]}</ps>
+        hereDOC;
+?>
             </div>
 
             <div id="funciones">
