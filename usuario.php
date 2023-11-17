@@ -47,8 +47,9 @@
                 <p><a href="crear_album.php">Crear álbum</a></p>
                 <p><a href="solicitar_album.php">Solicitar álbum</a></p>
                 <p><a href="index.php">Volver a inicio</a></p>
-                <form action="control-usuario.php">
-                    <button type="submit" name="cerrar-sesion">Cerrar sesión</button>
+                <form action="control-usuario.php" method="post">
+                    <input type="hidden" name="cerrar-sesion" value="true">
+                    <button type="submit">Cerrar sesión</button>
                 </form>
             </div>
         </section>
