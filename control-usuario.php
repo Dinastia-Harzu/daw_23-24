@@ -5,7 +5,10 @@ if(isset($_POST["cerrar-sesion"])){
     session_start();
     session_destroy();
     $_SESSION = array();
-    header('Location: solicitar_album.php');
+    setcookie("recuerdame", "", time() - 1);
+    setcookie("ultima-vez", "", time() - 1);
+    header('Location: index.no_registrado.php');
+    exit;
 }
 
 $usuarios = array(
@@ -31,19 +34,19 @@ if(isset($_POST["nombre"]) && isset($_POST["contraseña"])) {
     $contraseña = $_POST["contraseña"];
     if(isset($usuarios[$nombre]) && array_search($contraseña, $usuarios, true)) {
         $pagina = 'usuario.php';
+        session_start();
+        $_SESSION["usuario"] = $nombre;
+        $_SESSION["tema"] = $temas[$nombre];
+        if(isset($_POST["recuerdame"])) {
+            setcookie("recuerdame", $nombre . "." . $contraseña, time() + 24 * 60 * 60 * 90);
+            setcookie("ultima-vez", time(), 2 * time());
+        }
+        if(isset($_COOKIE["ultima-vez"])) {
+            setcookie("ultima-vez", time(), 2 * time());
+        }
     } else {
         $pagina = 'index.no_registrado.php';
     }
-    if(isset($_POST["recuerdame"])) {
-        setcookie("recuerdame", $nombre . "." . $contraseña, time() + 24 * 60 * 60 * 90);
-        setcookie("ultima-vez", time(), 2 * time());
-    }
-    if(isset($_COOKIE["ultima-vez"])) {
-        setcookie("ultima-vez", time(), 2 * time());
-    }
-    session_start();
-    $_SESSION["usuario"] = $nombre;
-    $_SESSION["tema"] = $temas[$nombre];
 } else {
     $pagina = 'index.no_registrado.php';
 }
