@@ -5,14 +5,22 @@ if(isset($_POST["cerrar-sesion"])){
     session_start();
     session_destroy();
     $_SESSION = array();
-    header('Location: index.no_registrado.php');
+    header('Location: solicitar_album.php');
 }
 
 $usuarios = array(
     'ADMIN' => 'ADMIN123',
     'DEBUG' => 'DEBUG',
     'agrg11' => 'clavesecreta',
-    'mgv' => 'password'
+    'mgv' => 'password',
+    'TONC' => 'GBA'
+);
+$temas = array(
+    'ADMIN' => 'letra-mayor',
+    'DEBUG' => 'alto-contraste',
+    'agrg11' => 'oscuro',
+    'mgv' => 'claro',
+    'TONC' => 'letra-mayor-y-alto-contraste'
 );
 $protocolo = 'http://';
 $host = 'localhost';
@@ -27,9 +35,15 @@ if(isset($_POST["nombre"]) && isset($_POST["contraseña"])) {
         $pagina = 'index.no_registrado.php';
     }
     if(isset($_POST["recuerdame"])) {
-        setcookie("recuerdame", $nombre . "¬" . $contraseña, time() + 24 * 60 * 60 * 90);
-        echo $_COOKIE["recuerdame"];
+        setcookie("recuerdame", $nombre . "." . $contraseña, time() + 24 * 60 * 60 * 90);
+        setcookie("ultima-vez", time(), 2 * time());
     }
+    if(isset($_COOKIE["ultima-vez"])) {
+        setcookie("ultima-vez", time(), 2 * time());
+    }
+    session_start();
+    $_SESSION["usuario"] = $nombre;
+    $_SESSION["tema"] = $temas[$nombre];
 } else {
     $pagina = 'index.no_registrado.php';
 }
