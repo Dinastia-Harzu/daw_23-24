@@ -65,6 +65,10 @@
     else{
         session_start();
         $_SESSION["usuario"] = $_POST["nombre"];
+        $_SESSION["contraseña"] = $_POST["contraseña"];
+        $_SESSION["correo"] = $_POST["correo"];
+        $_SESSION["ciudad"] = $_POST["ciudad"];
+        $_SESSION["pais"] = $_POST["pais"];
 
         // Calculamos que mensaje deberia aparecer para el usuario
         date_default_timezone_set('Europe/Madrid'); 
