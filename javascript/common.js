@@ -26,3 +26,17 @@ function crearElemento(etiqueta, {lista, ...propiedades}, accion, reaccion) {
 function $(id) {
     return document.getElementById(id);
 }
+
+/**
+ * 
+ * @param {Event} evt 
+ */
+function validarFormulariolLogin(evt) {
+    for(const campo of new FormData(evt.target)) {
+        if(campo[1].trim().length == 0) {
+            evt.preventDefault();
+            alert('Escribe algo en ambos campos.');
+            return;
+        }
+    }
+}
