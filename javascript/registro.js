@@ -4,28 +4,29 @@ window.addEventListener('load', () => {
     $('tab-reg').addEventListener('submit', evt => {
         let enviarDatos = true;
         for(const [campo, valor] of new FormData(evt.target)) {
-            const nom = 'verificarCampo' + cambiarFormato(campo);
-            if(typeof window[nom] !== 'undefined') {
-                const div = $(campo).parentElement;
-                const span = div.getElementsByClassName(helper)[0];
-                if(window[nom](valor)) {
-                    if(span) {
-                        div.classList.remove(danger);
-                        div.removeChild(span);
-                    }
-                } else {
-                    if(!span) {
-                        div.classList.add(danger);
-                        div.appendChild(crearElemento('span', {className: helper}))
-                            .appendChild(document.createTextNode({
-                                'nombre': 'El nombre de usuario no es válido',
-                                'contraseña': 'La contraseña debe contener minúsculas, mayúsculas y números',
-                                'confirmar-contraseña': 'Las contraseñas no coinciden',
-                                'correo': 'El correo electrónico no es válido'
-                            }[campo]));
-                        }
-                    enviarDatos = false;
+            const funcion = window['verificarCampo' + cambiarFormato(campo)];
+            if(typeof funcion === 'undefined') {
+                continue;
+            }
+            const div = $(campo).parentElement;
+            const span = div.getElementsByClassName(helper)[0];
+            if(funcion(valor)) {
+                if(span) {
+                    div.classList.remove(danger);
+                    div.removeChild(span);
                 }
+            } else {
+                enviarDatos = false;
+                if(!span) {
+                    div.classList.add(danger);
+                    div.appendChild(crearElemento('span', {className: helper}))
+                        .appendChild(document.createTextNode({
+                            'nombre': 'El nombre de usuario no es válido',
+                            'contraseña': 'La contraseña debe contener minúsculas, mayúsculas y números',
+                            'confirmar-contraseña': 'Las contraseñas no coinciden',
+                            'correo': 'El correo electrónico no es válido'
+                        }[campo]));
+                    }
             }
         }
         if(!enviarDatos) {
