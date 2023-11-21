@@ -123,3 +123,19 @@ function validarFormulariolLogin(evt) {
 //         document.body.firstChild
 //     );
 // });
+
+window.addEventListener('load', () => {
+    const estilos = {
+        'oscuro': 'Modo oscuro (predeterminado)',
+        'claro': 'Modo claro',
+        'alto-contraste': 'Modo de alto contraste',
+        'letra-mayor': 'Modo de tipo de letra mayor',
+        'letra-mayor-y-alto-contraste': 'Modo de letra mayor y alto contraste'
+    };
+    const select = $('busqueda-rapida').parentElement.appendChild(crearElemento('select', {}));
+    for(const estilo in estilos) {
+        select
+            .appendChild(crearElemento('option', {value: estilo}))
+                .appendChild(document.createTextNode(estilos[estilo]));
+    }
+})
