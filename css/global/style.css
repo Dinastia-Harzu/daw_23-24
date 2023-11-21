@@ -1,14 +1,3 @@
-@import url('../modos-alternativos/colores.css');
-
-:root {
-    --font_clr:      var(--blanco);
-    --body_clr:      var(--cian_grisaceo_oscuro);
-    --footer_clr:    var(--ceruleo_grisaceo_oscuro);
-    --header_clr:    var(--negro);
-    --articulos_clr: var(--ceruleo_grisaceo_mas_oscuro);
-    --botones_clr:   var(--articulos_clr);
-}
-
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
