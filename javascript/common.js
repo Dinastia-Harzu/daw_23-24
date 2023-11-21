@@ -40,3 +40,86 @@ function validarFormulariolLogin(evt) {
         }
     }
 }
+
+// const busquedaRapidaBloqueHTML =
+//     crearElemento('form', {action: 'resultado.no_registrado.html'})
+//         .appendChild(crearElemento('input', {
+//             type: 'text',
+//             name: 'busqueda-rapida',
+//             placeholder: 'Búsqueda rápida'
+//         }))
+//         .parentElement
+//             .appendChild(crearElemento('button', {type: 'submit'}))
+//                 .appendChild(crearElemento('i', {className: 'fa-fa-search'}))
+//             .parentElement
+//         .parentElement;
+
+// window.addEventListener('load', () => {
+//     console.log(busquedaRapidaBloqueHTML);
+//     document.body.insertBefore(
+//         crearElemento('header', {})
+//             .appendChild(crearElemento('aside', {}))
+//                 .appendChild(crearElemento('figure', {}))
+//                     .appendChild(crearElemento('img', {
+//                         src: 'img/logo-y-nombre.png',
+//                         alt: 'Logo, nombre y subtítulo de la página: Masthermatika',
+//                         id: 'logo'
+//                     }))
+//                 .parentElement
+//             .parentElement
+//                 .appendChild(crearElemento('nav', {}))
+//                     .appendChild(crearElemento('ul', {id: 'nav-texto'}))
+//                         .appendChild(crearElemento('li', {}))
+//                             .appendChild(crearElemento('a', {href: 'index.no_registrado.html'}))
+//                                 .appendChild(document.createTextNode('Inicio'))
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                         .appendChild(crearElemento('li', {}))
+//                             .appendChild(crearElemento('a', {href: 'busqueda.html'}))
+//                                 .appendChild(document.createTextNode('Descubrir'))
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                         .appendChild(crearElemento('li', {}))
+//                             .appendChild(crearElemento('a', {href: '#'}))
+//                                 .appendChild(document.createTextNode('Publicar'))
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                 .parentElement
+//                     .appendChild(crearElemento('ul', {id: 'nav-iconos'}))
+//                         .appendChild(crearElemento('li', {}))
+//                             .appendChild(crearElemento('a', {href: 'index.no_registrado.html'}))
+//                                 .appendChild(crearElemento('i', {className: 'fa-fa-home'}))
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                         .appendChild(crearElemento('li', {className: 'dropdown'}))
+//                             .appendChild(crearElemento('div', {className: 'dropdown-button'}))
+//                                 .appendChild(crearElemento('i', {className: 'fa-fa-search'}))
+//                             .parentElement
+//                         .parentElement
+//                             .appendChild(crearElemento('div', {className: 'dropdown-content'}))
+//                                 .appendChild(crearElemento('a', {href: 'busqueda.html'}))
+//                                     .appendChild(document.createTextNode('Descubrir'))
+//                                 .parentElement
+//                             .parentElement
+//                                 .appendChild(busquedaRapidaBloqueHTML)
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                         .appendChild(crearElemento('li', {}))
+//                             .appendChild(crearElemento('a', {href: '#'}))
+//                                 .appendChild(crearElemento('i', {className: 'fa-fa-upload'}))
+//                             .parentElement
+//                         .parentElement
+//                     .parentElement
+//                 .parentElement
+//             .parentElement
+//         .parentElement
+//             .appendChild(busquedaRapidaBloqueHTML)
+//         .parentElement,
+//         document.body.firstChild
+//     );
+// });
