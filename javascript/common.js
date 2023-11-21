@@ -132,7 +132,19 @@ window.addEventListener('load', () => {
         'letra-mayor': 'Modo de tipo de letra mayor',
         'letra-mayor-y-alto-contraste': 'Modo de letra mayor y alto contraste'
     };
-    const select = $('busqueda-rapida').parentElement.appendChild(crearElemento('select', {}));
+    const select = $('busqueda-rapida').parentElement.appendChild(crearElemento('select', {}, 'change', evt => {
+        const link = (() => {
+            for(const estilo in estilos) {
+                const etiqueta = document.querySelector(`link[href="css/modos-alternativos/${estilo}.css"]`);
+                if(etiqueta) {
+                    return etiqueta;
+                }
+            }
+            return null;
+        })();
+        const estilo = evt.target.value;
+        link.setAttribute('href', `css/modos-alternativos/${estilo}.css`);
+    }));
     for(const estilo in estilos) {
         select
             .appendChild(crearElemento('option', {value: estilo}))
