@@ -1,3 +1,5 @@
+'use strict'
+
 window.addEventListener('load', () => {
     const danger = 'omrs-input-danger';
     const helper = 'omrs-input-helper';
@@ -50,27 +52,12 @@ function cambiarFormato(cadena) {
 }
 
 function verificarCampoNombre(nombre) {
-    return (
-        nombre.length >= 3
-        &&
-        nombre.length <= 15
-        &&
-        isNaN(parseInt(nombre[0]))
-        &&
-        [...nombre].every(caracter => {
-            return 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.includes(caracter);
-        })
-    );
+    // {2,14} en lugar de {3,15} porque el primer caracter se lo come [a-zA-Z]
+    return /^[a-zA-Z][a-zA-Z0-9]{2,14}$/.test(nombre);
 }
 
 function verificarCampoContraseña(contraseña) {
-    const caracteres_validos = [
-        'abcdefghijklmnopqrstuvwxyz',
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        '0123456789'
-    ];
-    contraseña = [...contraseña];
-    return contraseña.length >= 6 && contraseña.length <= 15 && contraseña.every(caracter => caracteres_validos.join().concat('-_').includes(caracter)) && caracteres_validos.every(sub => contraseña.some(c => sub.includes(c)));
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9-_]{6,15}$/.test(contraseña);
 }
 
 function verificarCampoConfirmarContraseña(contraseña_repetida) {
@@ -83,27 +70,5 @@ function verificarCampoConfirmarContraseña(contraseña_repetida) {
  * @returns 
  */
 function verificarCampoCorreo(correo) {
-    const caracteresValidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_!#$%&'*+/=?^`{|}~.";
-    const subcaracteresValidos = caracteresValidos.substring(0, 63);
-    const [local, dominio] = correo.split('@');
-
-    return(
-        local.length > 0 && local.length <= 64
-        &&
-        local.split('.').every(sub => sub.length > 0)
-        &&
-        [...local].every(caracter => caracteresValidos.includes(caracter))
-        &&
-        (dominio?.length ?? -1) > 0 && dominio.length <= 255
-        &&
-        dominio.split('.').every(sub => {
-            return(
-                sub.length > 0 && sub.length <= 63
-                &&
-                !sub.startsWith('-') && !sub.endsWith('-')
-                &&
-                [...sub].every(caracter => subcaracteresValidos.includes(caracter))
-            );
-        })
-    );
+    return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(correo);
 }
