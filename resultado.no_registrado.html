@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/modos-alternativos/oscuro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="javascript/common.js"></script>
+    <script src="javascript/resultado.js"></script>
 </head>
 <body>
     <header>
@@ -75,6 +76,7 @@
             <p>
                 <label for="paises">País:</label>
                 <select name="paises" id="paises">
+                    <option value="NA" selected disabled>-- Selecciona una opción --</option>
                     <option value="cod_al">Alemania</option>
                     <option value="cod_bel">Bélgica</option>
                     <option value="cod_chi">China</option>
@@ -89,38 +91,8 @@
             </p>
         </div>
         <h1 class="titulo-index">Resultados</h1>
-        <div class="grid-img">
-            <article>
-                <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <a href="#error">
-                    <img src="img/foto1.png" alt="Última foto #1">
-                </a>
-            </article>
-            <article>
-                <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <a href="#error">
-                    <img src="img/foto2.png" alt="Última foto #2">
-                </a>
-            </article>
-            <article>
-                <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <a href="#error">
-                    <img src="img/foto3.png" alt="Última foto #3">
-                </a>
-            </article>
-            <article>
-                <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <a href="#error">
-                    <img src="img/foto4.png" alt="Última foto #4">
-                </a>
-            </article>
-            <article>
-                <!-- Este <a> se esfumará cuando lleguemos a JS -->
-                <a href="#error">
-                    <img src="img/foto5.png" alt="Última foto #5">
-                </a>
-            </article>
-        </div>
+        <section class="grid-img">
+        </section>
     </main>
     <footer>
         <p>DAW <time>2023</time> - Ingeniería Multimedia - Escuela Politécnica Superior - Universidad de Alicante</p>
