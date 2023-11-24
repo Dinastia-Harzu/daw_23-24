@@ -93,3 +93,17 @@ function pillarCookie(nombre) {
     }
     return "";
 }
+
+/**
+ * 
+ * @param {string} cadena 
+ */
+function cambiarFormato(cadena) {
+    const nuevaCadena = cadena.split('-');
+    for(let i = 0; i < nuevaCadena.length; i++) {
+        let palabra = nuevaCadena.shift();
+        palabra = palabra.charAt(0).toUpperCase() + palabra.slice(1);
+        nuevaCadena.push(palabra);
+    }
+    return nuevaCadena.join('');
+}

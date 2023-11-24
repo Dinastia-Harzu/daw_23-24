@@ -37,20 +37,6 @@ window.addEventListener('load', () => {
     });
 });
 
-/**
- * 
- * @param {string} cadena 
- */
-function cambiarFormato(cadena) {
-    const nuevaCadena = cadena.split('-');
-    for(let i = 0; i < nuevaCadena.length; i++) {
-        let palabra = nuevaCadena.shift();
-        palabra = palabra.charAt(0).toUpperCase() + palabra.slice(1);
-        nuevaCadena.push(palabra);
-    }
-    return nuevaCadena.join('');
-}
-
 function verificarCampoNombre(nombre) {
     // {2,14} en lugar de {3,15} porque el primer caracter se lo come [a-zA-Z]
     return /^[a-zA-Z][a-zA-Z0-9]{2,14}$/.test(nombre);
