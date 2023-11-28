@@ -23,7 +23,7 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', validarFormulariolLogin))
+            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', validarFormularioLogin))
                 .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
                     .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
                         .appendChild(crearElemento('input', {type: 'text', placeholder: ' ', id: 'nombre', name: 'nombre'}))

@@ -39,7 +39,7 @@ function $(id) {
  * 
  * @param {Event} evt 
  */
-function validarFormulariolLogin(evt) {
+function validarFormularioLogin(evt) {
     for(const campo of new FormData(evt.target)) {
         if(campo[1].trim().length == 0) {
             evt.preventDefault();
