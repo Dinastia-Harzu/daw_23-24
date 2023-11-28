@@ -24,7 +24,7 @@
     include_once "inc/header.php";
 
     // Select para obtener variables
-    $id = mysqli_connect("","root","","daw");
+    $id = mysqli_connect("", "root", "", "daw");
     if(mysqli_connect_errno()) {
         echo mysqli_connect_error();
         exit();
@@ -38,19 +38,19 @@
             <section >
                 <h2>Introduce los parámetros de búsqueda:</h2>
                 <p>
-                    <label for="titulo">Título: </label> 
+                    <label for="titulo">Título: </label>
                     <input type="text" name="titulo" id="titulo" placeholder="Introduce el título...">
                 </p>
                 <p>
-                    <label for="fecha_d" class="tab-busc-fecha">Fecha entre:</label>
-                    <input type="date" name="fecha_d" id="fecha_d">
+                    <label for="fecha-desde" class="tab-busc-fecha">Fecha entre:</label>
+                    <input type="date" name="fecha-desde" id="fecha-desde">
 
-                    <label for="fecha_h" class="tab-busc-y">y</label>
-                    <input type="date" name="fecha_h" id="fecha_h">
+                    <label for="fecha-hasta" class="tab-busc-y">y</label>
+                    <input type="date" name="fecha-hasta" id="fecha-hasta">
                 </p>
                 <p>
                     <label for="paises">País: </label>
-                    <select name="paises" id="paises">
+                    <select name="pais" id="paises">
                         <?php
                             while($row = mysqli_fetch_array($result)) {
                                 echo <<<hereDOC
