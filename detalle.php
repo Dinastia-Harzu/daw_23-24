@@ -35,14 +35,17 @@
     $result = mysqli_query($id,"
         SELECT
             f.Titulo AS TituloFoto,
-            DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha,
+            DATE_FORMAT(f.FRegistro,'%e/%c/%Y') as Fecha,
             Fichero,
             NomPais,
             f.Descripcion,
-            a.Titulo AS TituloAlbum
+            a.Titulo AS TituloAlbum,
+            IdUsuario,
+            u.NomUsuario
         FROM fotos f
         JOIN paises p ON(p.IdPais = f.Pais)
         JOIN albumes a ON(a.IdAlbum = f.Album)
+        JOIN usuarios u ON(u.IdUsuario = a.Usuario)
         WHERE f.IdFoto = {$_GET["id"]}
     ");
     $row = mysqli_fetch_assoc($result);
@@ -51,18 +54,20 @@
 <?php
         echo <<<hereDOC
             <section id="foto">
-                    <img src="{$row["Fichero"]}" alt="Foto matemática">
-                    <section id="info-foto">
-                        <h1>{$row["TituloFoto"]}</h1>
-                        <p>Publicado en <time>{$row["Fecha"]}</time></p>
-                        <p>{$row["NomPais"]}</p>
-                        <p>{$row["Descripcion"]}</p>
-                        <p>{$row["TituloAlbum"]}</p>
-                    </section>
+                <img src="{$row["Fichero"]}" alt="Foto matemática">
+                <section id="info-foto">
+                    <h1>{$row["TituloFoto"]}</h1>
+                    <p>Publicado en <time>{$row["Fecha"]}</time></p>
+                    <p>{$row["NomPais"]}</p>
+                    <p>{$row["Descripcion"]}</p>
+                    <p>{$row["TituloAlbum"]}</p>
+                    <p><a href="perfil-usuario.php?id={$row["IdUsuario"]}">{$row["NomUsuario"]}</a></p>
                 </section>
-            </main>
+            </section>
+            
         hereDOC;
 ?>
+    </main>
 <?php
     include_once "inc/footer.php";
 ?>
