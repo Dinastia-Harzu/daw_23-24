@@ -40,7 +40,7 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
         exit();
     }
 
-    $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, Pais FROM fotos");
+    $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, NomPais FROM fotos f JOIN paises p ON(p.IdPais = f.Pais);");
 ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
@@ -54,7 +54,7 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
                 <article>
                     <h2>{$row["Titulo"]}</h2>
                     <a href="detalle.php?{$row["IdFoto"]}"><img src="{$row["Fichero"]}" alt="Foto"></a>
-                    <p>{$row["Pais"]}</p>
+                    <p>{$row["NomPais"]}</p>
                     <time>{$row["Fecha"]}</time>
                 </article>
             hereDOC;
