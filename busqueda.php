@@ -22,6 +22,15 @@
 <body>
 <?php
     include_once "inc/header.php";
+
+    // Select para obtener variables
+    $id = mysqli_connect("","root","","daw");
+    if(mysqli_connect_errno()) {
+        echo mysqli_connect_error();
+        exit();
+    }
+
+    $result = mysqli_query($id,"SELECT NomPais FROM paises");
 ?>
     <main id="grid-params">
         <h1>Descubre</h1>
@@ -42,16 +51,13 @@
                 <p>
                     <label for="paises">País: </label>
                     <select name="paises" id="paises">
-                        <option value="España">España</option>
-                        <option value="Francia">Francia</option>
-                        <option value="Reino Unido">Reino Unido</option>
-                        <option value="Alemania">Alemania</option>
-                        <option value="Italia">Italia</option>
-                        <option value="Bélgica">Bélgica</option>
-                        <option value="China">China</option>
-                        <option value="Suiza">Suiza</option>
-                        <option value="Polonia">Polonia</option>
-                        <option value="Estados Unidos">Estados Unidos</option>
+                        <?php
+                            while($row = mysqli_fetch_array($result)) {
+                                echo <<<hereDOC
+                                    <option value = "{$row["NomPais"]}">{$row["NomPais"]}</option>
+                                hereDOC;
+                            }
+                        ?>
                     </select>
                 </p>
             </section>

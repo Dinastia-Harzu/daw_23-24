@@ -32,6 +32,15 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
 <body>
 <?php
     include_once "inc/header_reg.php";
+
+    // Select para obtener variables
+    $id = mysqli_connect("","root","","daw");
+    if(mysqli_connect_errno()) {
+        echo mysqli_connect_error();
+        exit();
+    }
+
+    $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, Pais FROM fotos");
 ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
@@ -39,36 +48,20 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
     <main>
         <h1 class="titulo-index">Últimas imágenes</h1>
         <div class="grid-img">
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.php?id=1"><img src="img/foto1.png" alt="Última foto #1"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.php?id=2"><img src="img/foto2.png" alt="Última foto #2"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.php?id=3"><img src="img/foto3.png" alt="Última foto #3"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.php?id=4"><img src="img/foto4.png" alt="Última foto #4"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
-            <article>
-                <h2>Título imagen</h2>
-                <a href="detalle.php?id=5"><img src="img/foto5.png" alt="Última foto #5"></a>
-                <p>País</p>
-                <time>2023</time>
-            </article>
+<?php
+        while($row = mysqli_fetch_assoc($result)) {
+            echo <<<hereDOC
+                <article>
+                    <h2>{$row["Titulo"]}</h2>
+                    <a href="detalle.php?{$row["IdFoto"]}"><img src="{$row["Fichero"]}" alt="Foto"></a>
+                    <p>{$row["Pais"]}</p>
+                    <time>{$row["Fecha"]}</time>
+                </article>
+            hereDOC;
+        }
+        mysqli_free_result($result);
+        mysqli_close($id);
+?>
         </div>
     </main>
 <?php

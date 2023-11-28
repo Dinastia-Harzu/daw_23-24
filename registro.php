@@ -23,6 +23,15 @@
 <body>
 <?php
     include_once "inc/header.php";
+
+    // Select para obtener variables
+    $id = mysqli_connect("","root","","daw");
+    if(mysqli_connect_errno()) {
+        echo mysqli_connect_error();
+        exit();
+    }
+
+    $result = mysqli_query($id,"SELECT NomPais FROM paises");
 ?>
     <main>
         <div id="creacion-cuenta">
@@ -81,16 +90,13 @@
                             <p>País</p>
                             <select name="pais" id="pais">
                                 <option disabled selected value>-- Selecciona una opción --</option>
-                                <option value="ESP">España</option>
-                                <option value="FRA">Francia</option>
-                                <option value="GBR">Reino Unido</option>
-                                <option value="DEU">Alemania</option>
-                                <option value="ITA">Italia</option>
-                                <option value="BEL">Bélgica</option>
-                                <option value="CHN">China</option>
-                                <option value="CHE">Suiza</option>
-                                <option value="POL">Polonia</option>
-                                <option value="USA">Estados Unidos</option>
+                                <?php
+                                    while($row = mysqli_fetch_array($result)) {
+                                        echo <<<hereDOC
+                                            <option value = "{$row["NomPais"]}">{$row["NomPais"]}</option>
+                                        hereDOC;
+                                    }
+                                ?>
                             </select>
                         </label>
                     </div>
