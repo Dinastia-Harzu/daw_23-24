@@ -30,7 +30,7 @@
         exit();
     }
 
-    $result = mysqli_query($id,"SELECT NomPais FROM paises");
+    $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, NomPais FROM fotos f JOIN paises p ON(p.IdPais = f.Pais);");
 ?>
     <main id="grid-params">
         <h1>Descubre</h1>

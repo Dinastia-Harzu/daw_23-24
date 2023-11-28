@@ -24,40 +24,44 @@
 <body>
 <?php
     include_once "inc/header_reg.php";
+
+    // Select para obtener variables
+    $id = mysqli_connect("","root","","daw");
+    if(mysqli_connect_errno()) {
+        echo mysqli_connect_error();
+        exit();
+    }
+
+    $result = mysqli_query($id,"
+        SELECT
+            f.Titulo AS TituloFoto,
+            DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha,
+            Fichero,
+            NomPais,
+            f.Descripcion,
+            a.Titulo AS TituloAlbum
+        FROM fotos f
+        JOIN paises p ON(p.IdPais = f.Pais)
+        JOIN albumes a ON(a.IdAlbum = f.Album)
+        WHERE f.IdFoto = {$_GET["id"]}
+    ");
+    $row = mysqli_fetch_assoc($result);
 ?>
     <main>
 <?php
-    if($_GET["id"]%2 != 0) {
         echo <<<hereDOC
             <section id="foto">
-                    <img src="img/foto1.png" alt="Foto matemática">
+                    <img src="{$row["Fichero"]}" alt="Foto matemática">
                     <section id="info-foto">
-                        <h1>Función tridimensional en espacio cartesiano</h1>
-                        <p>Publicado en <time>2023</time></p>
-                        <p>España</p>
-                        <p>Cosas de matemáticas que me molan</p>
-                        <p>Genio_de_la_programacion11</p>
+                        <h1>{$row["TituloFoto"]}</h1>
+                        <p>Publicado en <time>{$row["Fecha"]}</time></p>
+                        <p>{$row["NomPais"]}</p>
+                        <p>{$row["Descripcion"]}</p>
+                        <p>{$row["TituloAlbum"]}</p>
                     </section>
                 </section>
             </main>
         hereDOC;
-    }
-    else {
-        echo <<<hereDOC
-            <section id="foto">
-                    <img src="img/foto2.png" alt="Foto matemática">
-                    <section id="info-foto">
-                        <h1>Ilustración de un hipercubo azulado</h1>
-                        <p>Publicado en <time>2023</time></p>
-                        <p>España</p>
-                        <p>Geometría hasta en la sopa</p>
-                        <p>Amante_de_los_Cubos47</p>
-                    </section>
-                </section>
-            </main>
-        hereDOC;
-}
-  
 ?>
 <?php
     include_once "inc/footer.php";

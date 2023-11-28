@@ -53,7 +53,7 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
             echo <<<hereDOC
                 <article>
                     <h2>{$row["Titulo"]}</h2>
-                    <a href="detalle.php?{$row["IdFoto"]}"><img src="{$row["Fichero"]}" alt="Foto"></a>
+                    <a href="detalle.php?id={$row["IdFoto"]}"><img src="{$row["Fichero"]}" alt="Foto"></a>
                     <p>{$row["NomPais"]}</p>
                     <time>{$row["Fecha"]}</time>
                 </article>
