@@ -2,6 +2,8 @@
     require_once "helpers/funciones.php";
 
     generarHead();
+
+    $conexion = abrirConexion();
 ?>
 <body>
     <?php
@@ -12,12 +14,11 @@
     </figure>
     <main>
         <?php {
-            $fecha = array_fill(0, 2, "");
-            list($titulo, $fecha[0], $fecha[1], $pais) = array(
+            list($titulo, $desde, $hasta, $pais) = array(
                 $_POST["titulo"] ?? "",
                 $_POST["fecha-desde"] ?? "",
                 $_POST["fecha-hasta"] ?? "",
-                $_POST["pais"]
+                $_POST["pais"] ?? -1
             );
             $sql = "
                 SELECT f.*, a.Titulo TituloAlbum, a.Descripcion DescripcionAlbum, NomPais
@@ -29,73 +30,64 @@
             if($titulo != "") {
                 $sql .= "AND Titulo = LOWER('$titulo')";
             }
-            if($fecha[0] != "") {
-                $sql .= "AND Fecha >= '$fecha[0]'";
+            if($desde != "") {
+                $sql .= "AND Fecha >= '$desde'";
             }
-            if($fecha[1] != "") {
-                $sql .= "AND Fecha <= '$fecha[1]'";
+            if($hasta != "") {
+                $sql .= "AND Fecha <= '$hasta'";
             }
             if($pais > -1) {
                 $sql .= "AND Pais = $pais";
             }
             $sql .= ";";
+            $resultado = $conexion->query($sql);
+            $nombre_pais = pillarFila($resultado, 0)["NomPais"];
             echo <<<hereDOC
                 <div class="tab-busc">
-                    <p>
-                        <label>Título: $titulo</label>
-                    </p>
-                    <p>
-                        <label class="tab-busc-fecha">Fecha entre: {$fecha[0]} y {$fecha[1]}</label>
-                    </p>
-                    <p>
-                        <label>País: $pais</label>
-                    </p>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="titulo" id="titulo" value="$titulo" disabled>
+                            <span class="omrs-input-label">Titulo</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="date" placeholder=" " name="fecha-desde" id="fecha-desde" value="$desde" disabled>
+                            <span class="omrs-input-label">Desde</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="date" placeholder=" " name="fecha-hasta" id="fecha-hasta" value="$hasta" disabled>
+                            <span class="omrs-input-label">Hasta</span>
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <select name="pais" id="paises" disabled>
+                                <option value="$pais" selected disabled>$nombre_pais</option>
+                            </select>
+                            <span class="omrs-input-label">País</span>
+                        </label>
+                    </div>
                 </div>
                 <h1 class="titulo-index">Resultados</h1>
                 <section class="grid-img">
-                    <article>
-                        <h2>Título imagen</h2>
-                        <a href="detalle.php">
-                            <img src="img/foto1.png" alt="Última foto #1">
-                        </a>
-                        <p>País</p>
-                        <time>2023</time>
-                    </article>
-                    <article>
-                        <h2>Título imagen</h2>
-                        <a href="detalle.php">
-                            <img src="img/foto2.png" alt="Última foto #2">
-                        </a>
-                        <p>País</p>
-                        <time>2023</time>
-                    </article>
-                    <article>
-                        <h2>Título imagen</h2>
-                        <a href="detalle.php">
-                            <img src="img/foto3.png" alt="Última foto #3">
-                        </a>
-                        <p>País</p>
-                        <time>2023</time>
-                    </article>
-                    <article>
-                        <h2>Título imagen</h2>
-                        <a href="detalle.php">
-                            <img src="img/foto4.png" alt="Última foto #4">
-                        </a>
-                        <p>País</p>
-                        <time>2023</time>
-                    </article>
-                    <article>
-                        <h2>Título imagen</h2>
-                        <a href="detalle.php">
-                            <img src="img/foto5.png" alt="Última foto #5">
-                        </a>
-                        <p>País</p>
-                        <time>2023</time>
-                    </article>
-                </section>
             hereDOC;
+            while($fila = $resultado->fetch_assoc()) {
+                echo <<<hereDOC
+                    <article>
+                        <h2>{$fila["Titulo"]}</h2>
+                        <a href="detalle.php?id={$fila["IdFoto"]}">
+                            <img src="{$fila["Fichero"]}" alt="{$fila["Alternativo"]}">
+                        </a>
+                        <p>$nombre_pais</p>
+                        <time>{$fila["Fecha"]}</time>
+                    </article>
+                hereDOC;
+            }
         } ?>
+        </section>
     </main>
 <?php
     include_once "inc/footer.php";
