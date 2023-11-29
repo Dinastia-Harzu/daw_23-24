@@ -26,7 +26,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header-no-registrado.php";
 ?>
     <main id="tab-usuario">
         <h1>Usuario</h1>
@@ -73,41 +73,5 @@
 <?php
     include_once "inc/footer.php";
 ?>
-    <!--Dialog con Editar Perfil-->
-    <dialog id="editar-perfil">
-
-        <h3>Edita tus datos</h3>
-
-        <form action="usuario.php">
-            <p>
-                <label for="usuario" >Usuario:</label>
-                <input type="text" id="usuario">
-            </p>
-
-            <p>
-                <label for="ciudad" >Ciudad:</label>
-                <input type="text" id="ciudad">
-            </p>
-
-            <p>
-                <label for="paises">País:</label>
-                <select name="paises" id="paises">
-                    <option value="cod_es">España</option>
-                    <option value="cod_fr">Francia</option>
-                    <option value="cod_uk">Reino Unido</option>
-                    <option value="cod_al">Alemania</option>
-                    <option value="cod_it">Italia</option>
-                    <option value="cod_bel">Bélgica</option>
-                    <option value="cod_chi">China</option>
-                    <option value="cod_sui">Suiza</option>
-                    <option value="cod_pol">Polonia</option>
-                    <option value="cod_usa">Estados Unidos</option>
-                </select>
-            </p>
-
-            <input type="submit" value="Guardar cambios">
-            <a href="usuario.php">Salir sin guardar</a>
-        </form>
-    </dialog>
 </body>
 </html>

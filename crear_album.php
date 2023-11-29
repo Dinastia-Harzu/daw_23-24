@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header-no-registrado.php";
 ?>
     <main>
           <section id="tab-crear-album">

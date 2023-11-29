@@ -28,7 +28,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header-no-registrado.php";
 ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">

@@ -30,7 +30,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header-no-registrado.php";
 
     // Select para obtener variables
     $id = mysqli_connect("","root","","daw");
