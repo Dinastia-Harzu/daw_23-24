@@ -59,10 +59,10 @@
             <div id="funciones">
                 <p><a href="mis-datos.php?usu=agrg11">Mis datos</a></p>
                 <p><a href="mis-albumes.php?id=1">Mis álbumes</a></p>
-                <p><a href="crear_album.php">Crear álbum</a></p>
-                <p><a href="solicitar_album.php">Solicitar álbum</a></p>
+                <p><a href="crear-album.php">Crear álbum</a></p>
+                <p><a href="solicitar-album.php">Solicitar álbum</a></p>
                 <p><a href="configurar.php">Configurar estilos</a></p>
-                <p><a href="anyadir-foto.php">Añadir foto a álbum</a></p>
+                <p><a href="publicar.php">Añadir foto a álbum</a></p>
                 <p><a href="index.php">Volver a inicio</a></p>
                 <form action="control-usuario.php" method="post">
                     <input type="hidden" name="cerrar-sesion" value="true">

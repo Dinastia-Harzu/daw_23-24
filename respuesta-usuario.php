@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
     <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/ordenador/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/tablet/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/movil/respuesta_usuario.css">
+    <link rel="stylesheet" href="css/global/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/ordenador/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/tablet/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/movil/respuesta-usuario.css">
     <link rel="alternate stylesheet" href="css/modos-alternativos/oscuro.css" title="Modo oscuro (predeterminado)">
     <link rel="alternate stylesheet" href="css/modos-alternativos/claro.css" title="Modo claro">
     <link rel="alternate stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">

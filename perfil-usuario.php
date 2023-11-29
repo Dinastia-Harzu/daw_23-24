@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
     <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/ordenador/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/tablet/respuesta_usuario.css">
-    <link rel="stylesheet" href="css/movil/respuesta_usuario.css">
+    <link rel="stylesheet" href="css/global/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/ordenador/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/tablet/respuesta-usuario.css">
+    <link rel="stylesheet" href="css/movil/respuesta-usuario.css">
     <!--Añadir mas si eso luego-->
 </head>
 

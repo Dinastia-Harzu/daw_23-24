@@ -89,7 +89,7 @@
         <p>Fecha de la primera foto: {$first_row["Fecha"]}</p>
         <p>Fecha de la última foto: {$last_row["Fecha"]}</p>
         <hr>
-        <p><a href="anyadir-foto.php?id={$last_row["IdAlbum"]}">Añadir foto a álbum</a></p>
+        <p><a href="publicar.php?id={$last_row["IdAlbum"]}">Añadir foto a álbum</a></p>
             </section>
         </section>
     hereDOC;

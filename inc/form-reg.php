@@ -1,4 +1,4 @@
-<form action="respuesta_usuario.php" method="post" id="tab-reg">
+<form action="respuesta-usuario.php" method="post" id="tab-reg">
     <section id="reg-1">
         <h2>Introduce tus datos para registarte:</h2>
         <div class="omrs-input-group">
