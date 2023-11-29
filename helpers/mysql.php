@@ -8,3 +8,12 @@ function abrirConexion(string $host = null, string $usuario = "root", string $cl
     }
     return $mysql;
 }
+
+function pillarFila(mysqli_result $resultado, int $indice) {
+    $anterior = $resultado->current_field;
+    $resultado->data_seek($indice);
+    $fila = $resultado->fetch_assoc();
+    $resultado->data_seek($anterior);
+
+    return $fila;
+}
