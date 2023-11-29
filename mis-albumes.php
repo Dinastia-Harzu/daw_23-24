@@ -43,7 +43,9 @@
             <hr>
         hereDOC;
         }
-        echo '<p><a href = "mis-fotos.php">Ver todas las fotos</a></p>';
+        echo <<<hereDOC
+            <p><a href = "mis-fotos.php?id={$_GET["id"]}">Ver todas las fotos</a></p>
+        hereDOC;
         echo "</div>";
     ?>
     </main>
