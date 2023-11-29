@@ -39,13 +39,13 @@
                 <p>Correo: {$_SESSION["correo"]}</p>
                 <p>Contraseña: *******</p>
                 <p>Ciudad: {$_SESSION["ciudad"]}</p>
-                <p>Pais: {$_SESSION["pais"]}</ps>
+                <p>Pais: {$_SESSION["pais"]}</p>
         hereDOC;
 ?>
             </div>
 
             <div id="funciones">
-                <p><a href="#editar_perfil">Editar perfil</a></p>
+                <p><a href="mis-datos.php?usu=agrg11">Mis datos</a></p>
                 <p><a href="javascript:void(0);">Mis álbumes</a></p>
                 <p><a href="crear_album.php">Crear álbum</a></p>
                 <p><a href="solicitar_album.php">Solicitar álbum</a></p>
