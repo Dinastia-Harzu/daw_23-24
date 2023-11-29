@@ -49,6 +49,15 @@
 <body>
     <?php
         include_once "inc/header-no-registrado.php";
+
+        // Select para obtener variables
+        $id = mysqli_connect("","root","","daw");
+        if(mysqli_connect_errno()) {
+            echo mysqli_connect_error();
+            exit();
+        }
+
+        $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, NomPais FROM fotos f JOIN paises p ON(p.IdPais = f.Pais);");
     ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
@@ -61,10 +70,10 @@
                     echo <<<hereDOC
                         <article>
                             <h2>{$row["Titulo"]}</h2>
-                            <a href="detalle.php?{$row["IdFoto"]}">
+                            <a href="detalle.php?id={$row["IdFoto"]}">
                                 <img src="{$row["Fichero"]}" alt="Foto">
                             </a>
-                            <p>{$row["Pais"]}</p>
+                            <p>{$row["NomPais"]}</p>
                             <time>{$row["Fecha"]}</time>
                         </article>
                     hereDOC;

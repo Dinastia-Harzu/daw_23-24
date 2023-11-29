@@ -24,11 +24,23 @@
     ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="javascript/common.js"></script>
-    <script src="javascript/album.js"></script>
 </head>
 <body>
 <?php
     include_once "inc/header-no-registrado.php";
+
+        // Select para obtener variables
+        $id = mysqli_connect("","root","","daw");
+        if(mysqli_connect_errno()) {
+            echo mysqli_connect_error();
+            exit();
+        }
+    
+        $result = mysqli_query($id,"
+            SELECT 
+                Titulo 
+            FROM albumes
+        ");
 ?>
     <main>
         <h1>Solicitud de impresión de álbum</h1>
@@ -175,7 +187,13 @@
                         <label class="omrs-input-underlined">
                             <select name="album" id="album" required>
                                 <option disabled selected value>-- Selecciona una opción --</option>
-                                <option value="0">Mis álbumes</option>
+                                <?php
+                                    while($row = mysqli_fetch_array($result)) {
+                                        echo <<<hereDOC
+                                            <option value = "{$row["Titulo"]}">{$row["Titulo"]}</option>
+                                        hereDOC;
+                                    }
+                                ?>
                             </select>
                             <span class="omrs-input-label">Álbum de Masthermatika</span>
                             <span class="omrs-input-helper">Elige uno de tus álbumes</span>
