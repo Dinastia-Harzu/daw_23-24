@@ -36,7 +36,7 @@
                     <label class="omrs-input-filled">
                         <select name="pais" id="paises">
                             <option value="-1" selected disabled>-- Selecciona una opcion --</option>
-                            <?php
+                            <?php {
                                 if($resultado = $conexion->query("SELECT * FROM paises")) {
                                     while($fila = $resultado->fetch_assoc()) {
                                         $pais = $fila["NomPais"];
@@ -44,7 +44,7 @@
                                     }
                                     $resultado->free();
                                 }
-                            ?>
+                            } ?>
                         </select>
                         <span class="omrs-input-label">País</span>
                     </label>
