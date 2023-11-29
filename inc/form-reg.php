@@ -61,12 +61,20 @@
             <label class="omrs-input-filled">
                 <p>País</p>
                 <select name="pais" id="pais">
-                    <option disabled selected value>-- Selecciona una opción --</option>
+                    <option disabled value>-- Selecciona una opción --</option>
                     <?php
                         while($row = mysqli_fetch_array($result)) {
-                            echo <<<hereDOC
-                                <option value = "{$row["NomPais"]}">{$row["NomPais"]}</option>
-                            hereDOC;
+                            if($pais == $row["IdPais"]){
+                                echo <<<hereDOC
+                                    <option selected value = "{$row["IdPais"]}">{$row["NomPais"]}</option>
+                                hereDOC;
+                            }
+
+                            else{
+                                echo <<<hereDOC
+                                    <option value = "{$row["IdPais"]}">{$row["NomPais"]}</option>
+                                hereDOC;
+                            }
                         }
                     ?>
                 </select>

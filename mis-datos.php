@@ -38,10 +38,12 @@
             NomUsuario,
             Clave,
             Email,
+            Sexo,
             FNacimiento,
             Ciudad,
+            Pais,
             Foto 
-        FROM usuarios 
+        FROM usuarios
         WHERE NomUsuario = '{$_GET["usu"]}'");
 
     // Definimos las variables que iran en los campos del usuario
@@ -51,6 +53,7 @@
     $correo =  $row["Email"];
     $fecha_nac =  $row["FNacimiento"];
     $ciudad =  $row["Ciudad"];
+    $pais = $row["Pais"];
     $pfp =  $row["Foto"];
     $texto_submit = "Editar";
 ?>
