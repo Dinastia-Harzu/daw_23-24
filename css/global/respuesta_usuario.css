@@ -1,0 +1,33 @@
+#datos-usuario{
+    padding: 1em 2em 1em 2em;
+    background-color: var(--articulos_clr);
+    border-radius: 1em;
+}
+
+.error-datos-usuario{
+    padding: 1em;
+    background-color: var(--articulos_clr);
+    border-radius: 1em;
+    margin-top: 0;
+}
+
+#btn-volver-registro{
+    padding: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--footer_clr);
+    cursor: pointer;
+    color: var(--font_clr);
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0 13.5em 0;
+    align-items: center;
+}
+
+main p{
+    font-size: 18px;
+}
