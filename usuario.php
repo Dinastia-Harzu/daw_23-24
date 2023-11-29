@@ -51,7 +51,7 @@
                         <p>Nombre: $usuario</p>
                         <p>Correo: {$datos_usuario[$usuario][0]}</p>
                         <p>Ciudad: {$datos_usuario[$usuario][1]}</p>
-                        <p>Pais: {$datos_usuario[$usuario][2]}</ps>
+                        <p>Pais: {$datos_usuario[$usuario][2]}</p>
                     hereDOC;
                 ?>
             </div>
