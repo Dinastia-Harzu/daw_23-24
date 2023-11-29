@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/movil/detalle.css">
 </head>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header.php";
 
     // Consulta select para obtener los datos
     $id = mysqli_connect("","root","","daw");

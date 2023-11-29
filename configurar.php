@@ -17,7 +17,7 @@
 
 <?php
 
-    include_once "inc/header_reg.php";
+    include_once "inc/header.php";
 
     // Consulta para obtener los datos
     $id = mysqli_connect("","root","","daw");

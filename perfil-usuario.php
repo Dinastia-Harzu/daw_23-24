@@ -16,7 +16,7 @@
 </head>
 
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header.php";
 
     // Select para obtener variables
     $id = mysqli_connect("","root","","daw");
