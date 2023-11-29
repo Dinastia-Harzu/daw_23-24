@@ -31,7 +31,7 @@
         exit();
     }
 
-    $result = mysqli_query($id,"SELECT NomPais FROM paises");
+    $result = mysqli_query($id,"SELECT * FROM paises");
 
     // Definimos las variables que iran en los campos del usuario
     $nombre = "";
@@ -39,6 +39,7 @@
     $correo = "";
     $fecha_nac = "";
     $ciudad = "";
+    $pais = "";
     $pfp = "img/placeholder_grande.png";
     $texto_submit = "Registrarse";
 ?>
