@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="css/tablet/respuesta_usuario.css">
     <link rel="stylesheet" href="css/movil/respuesta_usuario.css">
 </head>
+<?php
+    include_once "inc/header.php";
+?>
 <body>
     <main>
     <?php
-        include_once "inc/header.php";
-
         //Consulta para obtener datos
         $id = mysqli_connect("","root","","daw");
         if(mysqli_connect_errno()) {
@@ -44,10 +45,10 @@
         }
         echo '<p><a href = "mis-fotos.php">Ver todas las fotos</a></p>';
         echo "</div>";
-        
-
-        include_once "inc/footer.php";
     ?>
     </main>
+<?php
+    include_once "inc/footer.php";
+?>
 </body>
 </html>
