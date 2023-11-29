@@ -39,6 +39,7 @@
             Fichero,
             NomPais,
             f.Descripcion,
+            IdAlbum,
             a.Titulo AS TituloAlbum,
             IdUsuario,
             u.NomUsuario
@@ -60,7 +61,7 @@
                     <p>Publicado en <time>{$row["Fecha"]}</time></p>
                     <p>{$row["NomPais"]}</p>
                     <p>{$row["Descripcion"]}</p>
-                    <p>{$row["TituloAlbum"]}</p>
+                    <p><a href="ver-album.php?id={$row["IdAlbum"]}">{$row["TituloAlbum"]}</a></p>
                     <p><a href="perfil-usuario.php?id={$row["IdUsuario"]}">{$row["NomUsuario"]}</a></p>
                 </section>
             </section>

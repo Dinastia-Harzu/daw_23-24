@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastermatika - Perfil usuario</title>
+    <title>Perfil usuario - Masthermatika</title>
     <link rel="stylesheet" href="css/global/style.css">
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
@@ -16,7 +16,7 @@
 </head>
 
 <?php
-    include_once "inc/header.php";
+    include_once "inc/header_reg.php";
 
     // Select para obtener variables
     $id = mysqli_connect("","root","","daw");
