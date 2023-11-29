@@ -11,9 +11,9 @@
                 <li>
                     <a href="busqueda.php">Descubrir</a>
                 </li>
-                <li>
-                    <a href="#">Publicar</a>
-                </li>
+                <?php if(isset($_SESSION["usuario"])) {
+                    echo '<li><a href="publicar.php">Publicar</a></li>';
+                } ?>
             </ul>
             <ul id="nav-iconos">
                 <li>
@@ -29,9 +29,9 @@
                         </form>
                     </div>
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-upload"></i></a>
-                </li>
+                <?php if(isset($_SESSION["usuario"])) {
+                    echo '<li><a href="publicar.php"><i class="fa fa-upload"></i></a></li>';
+                } ?>
             </ul>
         </nav>
     </aside>
@@ -39,9 +39,13 @@
         <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-    <figure>
-        <a href="usuario.php">
-            <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-        </a>
-    </figure>
+    <?php if(isset($_SESSION["usuario"])) {
+        echo <<<hereDOC
+            <figure>
+                <a href="usuario.php">
+                    <img src="img/placeholder.png" alt="Foto de perfil del usuario">
+                </a>
+            </figure>
+        hereDOC;
+    } ?>
 </header>
