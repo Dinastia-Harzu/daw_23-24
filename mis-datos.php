@@ -33,16 +33,26 @@
 
     $result = mysqli_query($id,"SELECT NomPais FROM paises");
 
-    $result_usuario = mysqli_query($id,"SELECT NomUsuario, Clave, Email, FNacimiento, Ciudad, Foto FROM usuarios WHERE IdUsuario = {$_GET["usu"]}");
+    $result_usuario = mysqli_query($id,"
+        SELECT 
+            NomUsuario,
+            Clave,
+            Email,
+            FNacimiento,
+            Ciudad,
+            Foto 
+        FROM usuarios 
+        WHERE NomUsuario = '{$_GET["usu"]}'");
 
     // Definimos las variables que iran en los campos del usuario
-    $nombre = "";
-    $contraseña = "";
-    $correo = "";
-    $fecha_nac = "";
-    $ciudad = "";
-    $pfp = "img/placeholder_grande.png";
-    $texto_submit = "Registrarse";
+    $row = mysqli_fetch_assoc($result_usuario);
+    $nombre = $row["NomUsuario"];
+    $contraseña =  $row["Clave"];
+    $correo =  $row["Email"];
+    $fecha_nac =  $row["FNacimiento"];
+    $ciudad =  $row["Ciudad"];
+    $pfp =  $row["Foto"];
+    $texto_submit = "Editar";
 ?>
     <main>
         <div id="creacion-cuenta">
