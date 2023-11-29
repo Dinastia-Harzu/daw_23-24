@@ -47,18 +47,18 @@
     <script src="javascript/dialogos.js"></script>
 </head>
 <body>
-<?php
-    include_once "inc/header_reg.php";
+    <?php
+        include_once "inc/header-no-registrado.php";
 
-    // Select para obtener variables
-    $id = mysqli_connect("","root","","daw");
-    if(mysqli_connect_errno()) {
-        echo mysqli_connect_error();
-        exit();
-    }
+        // Select para obtener variables
+        $id = mysqli_connect("","root","","daw");
+        if(mysqli_connect_errno()) {
+            echo mysqli_connect_error();
+            exit();
+        }
 
-    $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, NomPais FROM fotos f JOIN paises p ON(p.IdPais = f.Pais);");
-?>
+        $result = mysqli_query($id,"SELECT IdFoto, Titulo, DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha, Fichero, NomPais FROM fotos f JOIN paises p ON(p.IdPais = f.Pais);");
+    ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
     </figure>
