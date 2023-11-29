@@ -23,7 +23,7 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'index.php'}, 'submit', evt => {
+            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', evt => {
                 for(const campo of new FormData(evt.target)) {
                     if(campo[1].trim().length == 0) {
                         evt.preventDefault();
@@ -77,7 +77,7 @@ function crearDialogoLogin() {
                 .appendChild(crearElemento('p', {className: 'text-google'}))
                     .appendChild(document.createTextNode('¿No tienes cuenta? '))
                 .parentElement
-                    .appendChild(crearElemento('a', {href: 'registro.php'}))
+                    .appendChild(crearElemento('a', {href: 'registro.html'}))
                         .appendChild(document.createTextNode('Regístrate'))
                     .parentElement
                 .parentElement
@@ -107,7 +107,7 @@ function crearDialogoError() {
                 .parentElement
             .parentElement
                 .appendChild(crearElemento('li', {}))
-                    .appendChild(crearElemento('a', {href: 'registro.php'}))
+                    .appendChild(crearElemento('a', {href: 'registro.html'}))
                         .appendChild(document.createTextNode('Registrarse'))
                     .parentElement
                 .parentElement

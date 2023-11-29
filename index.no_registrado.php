@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(isset($_SESSION["usuario"])) {
+        setcookie("ultima-vez", time(), 2 * time());
+    }
+    $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,11 +18,9 @@
     <link rel="stylesheet" href="css/ordenador/index.css">
     <link rel="stylesheet" href="css/tablet/index.css">
     <link rel="stylesheet" href="css/movil/index.css">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/oscuro.css" title="Modo oscuro (predeterminado)">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/claro.css" title="Modo claro">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
+    <?php
+        echo '<link rel="stylesheet" href="css/modos-alternativos/' . $tema . '.css">';
+    ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Masthermatika</title>
 </head>
@@ -56,7 +58,7 @@
     include_once "inc/footer.php";
 ?>
 <?php
-    if(isset($_SESSION["usuario"])) {
+    if(isset($_COOKIE["recuerdame"])) {
         include_once "inc/dialogos/dialogo-bienvenida.php";
     } else {
         include_once "inc/dialogos/dialogo-login.php";

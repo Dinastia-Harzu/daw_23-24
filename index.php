@@ -1,18 +1,33 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["usuario"])) {
+        header("Location: index.no_registrado.php");
+    }
 
-session_start();
-if(!isset($_SESSION["usuario"])) {
-    header("Location: index.no_registrado.php");
-}
+    $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
 
-$tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
-
+    // Select para obtener variables
+    $id = mysqli_connect("", "root", "", "daw");
+    if(mysqli_connect_errno()) {
+        echo mysqli_connect_error();
+        exit();
+    }
+    $result = mysqli_query($id, "
+        SELECT
+            IdFoto,
+            Titulo,
+            DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha,
+            Fichero,
+            Pais
+        FROM fotos
+    ;");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masthermatika</title>
     <link rel="stylesheet" href="css/global/style.css">
     <link rel="stylesheet" href="css/ordenador/style.css">
     <link rel="stylesheet" href="css/tablet/style.css">
@@ -22,12 +37,14 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
     <link rel="stylesheet" href="css/tablet/index.css">
     <link rel="stylesheet" href="css/movil/index.css">
     <?php
-        echo '<link rel="stylesheet" href="css/modos-alternativos/' . $tema . '.css">';
+        echo <<<hereDOC
+            <link rel="stylesheet" href="css/modos-alternativos/$tema.css">
+        hereDOC;
     ?>
     <link rel="stylesheet" href="css/impresion/style.css" media="print">
     <link rel="stylesheet" href="css/impresion/index.css" media="print">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Masthermatika</title>
+    <script src="javascript/dialogos.js"></script>
 </head>
 <body>
 <?php
@@ -48,24 +65,26 @@ $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
     <main>
         <h1 class="titulo-index">Últimas imágenes</h1>
         <div class="grid-img">
-<?php
-        while($row = mysqli_fetch_assoc($result)) {
-            echo <<<hereDOC
-                <article>
-                    <h2>{$row["Titulo"]}</h2>
-                    <a href="detalle.php?id={$row["IdFoto"]}"><img src="{$row["Fichero"]}" alt="Foto"></a>
-                    <p>{$row["NomPais"]}</p>
-                    <time>{$row["Fecha"]}</time>
-                </article>
-            hereDOC;
-        }
-        mysqli_free_result($result);
-        mysqli_close($id);
-?>
+            <?php
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo <<<hereDOC
+                        <article>
+                            <h2>{$row["Titulo"]}</h2>
+                            <a href="detalle.php?id={$row["IdFoto"]}">
+                                <img src="{$row["Fichero"]}" alt="Foto">
+                            </a>
+                            <p>{$row["NomPais"]}</p>
+                            <time>{$row["Fecha"]}</time>
+                        </article>
+                    hereDOC;
+                }
+                mysqli_free_result($result);
+                mysqli_close($id);
+            ?>
         </div>
     </main>
-<?php
-    include_once "inc/footer.php";
-?>
+    <?php
+        include_once "inc/footer.php";
+    ?>
 </body>
 </html>

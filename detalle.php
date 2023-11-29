@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["usuario"])) {
+        header("Location: index.no_registrado.php");
+    }
+    $tema = isset($_SESSION["tema"]) ? $_SESSION["tema"] : "oscuro";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

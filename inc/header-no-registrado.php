@@ -12,7 +12,7 @@
                         <a href="busqueda.php">Descubrir</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);">Publicar</a>
+                        <a href="#">Publicar</a>
                     </li>
                 </ul>
                 <ul id="nav-iconos">
@@ -30,7 +30,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="javascript:void(0);"><i class="fa fa-upload"></i></a>
+                        <a href="#"><i class="fa fa-upload"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -39,9 +39,4 @@
             <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <figure>
-            <a href="usuario.php">
-                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-            </a>
-        </figure>
     </header>

@@ -5,6 +5,8 @@ $fechahora = $_COOKIE["ultima-vez"];
 $fecha = date("n.j.Y", $fechahora);
 $hora = date("H:i", $fechahora);
 
+
+
 echo <<<hereDOC
     <dialog id="login" open="">
         <h2>Hola, $nombre.</h2>
