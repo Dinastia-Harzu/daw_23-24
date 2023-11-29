@@ -65,7 +65,7 @@
                         <p>Publicado en <time>{$row["Fecha"]}</time></p>
                         <p>{$row["NomPais"]}</p>
                         <p>{$row["Descripcion"]}</p>
-                        <p><a href="ver-album.php?id={$row["IdAlbum"]}">{$row["TituloAlbum"]}</a></p>
+                        <p><a href="ver-album-priv.php?id={$row["IdAlbum"]}">{$row["TituloAlbum"]}</a></p>
                     </section>
                 </section>
             hereDOC;

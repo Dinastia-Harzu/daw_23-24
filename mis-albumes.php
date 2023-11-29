@@ -38,7 +38,7 @@
 
         while($row = mysqli_fetch_array($result)) {
             echo <<<hereDOC
-            <h3>{$row["Titulo"]}</h3>
+            <h3><a href = "ver-album-priv.php?id={$row["IdAlbum"]}">{$row["Titulo"]}</a></h3>
             <p>{$row["Descripcion"]}</p>
             <hr>
         hereDOC;
