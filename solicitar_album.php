@@ -28,7 +28,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header_reg.php";
+    include_once "inc/header-no-registrado.php";
 ?>
     <main>
         <h1>Solicitud de impresión de álbum</h1>
