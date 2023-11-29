@@ -58,7 +58,7 @@
 
             <div id="funciones">
                 <p><a href="mis-datos.php?usu=agrg11">Mis datos</a></p>
-                <p><a href="#">Mis álbumes</a></p>
+                <p><a href="mis-albumes.php?id=1">Mis álbumes</a></p>
                 <p><a href="crear_album.php">Crear álbum</a></p>
                 <p><a href="solicitar_album.php">Solicitar álbum</a></p>
                 <p><a href="configurar.php">Configurar estilos</a></p>

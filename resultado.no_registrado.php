@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header.php";
+    include_once "inc/header-no-registrado.php";
 ?>
     <main>
         <div class="tab-busc">
