@@ -8,7 +8,7 @@
             "type": "msedge",
             "request": "launch",
             "name": "Launch Edge against localhost",
-            "url": "http://localhost/daw_23-24/index.no_registrado.php",
+            "url": "http://localhost/daw_23-24/",
             "webRoot": "${workspaceFolder}"
         }
     ]

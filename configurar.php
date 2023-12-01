@@ -3,7 +3,7 @@
 
     $conexion = abrirConexion();
 
-    generarHead('configurar');
+    generarHead('configurar', 'respuesta-usuario');
 ?>
 <body>
     <?php

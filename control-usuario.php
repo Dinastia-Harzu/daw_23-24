@@ -7,7 +7,7 @@ if(isset($_POST["cerrar-sesion"])){
     $_SESSION = array();
     setcookie("recuerdame", "", time() - 1);
     setcookie("ultima-vez", "", time() - 1);
-    header('Location: index.no_registrado.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -46,9 +46,9 @@ if(isset($_POST["nombre"]) && isset($_POST["clave"])) {
             setcookie("ultima-vez", time(), 2 * time());
         }
     } else {
-        $pagina = 'index.no_registrado.php';
+        $pagina = 'index.php';
     }
 } else {
-    $pagina = 'index.no_registrado.php';
+    $pagina = 'index.php';
 }
 header("Location: $protocolo$host/$uri/$pagina");

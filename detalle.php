@@ -4,7 +4,7 @@
     generarHead('detalle');
 
     if(!isset($_SESSION["usuario"])) {
-        header("Location: index.no_registrado.php");
+        header("Location: index.php");
     }
 ?>
 <body>

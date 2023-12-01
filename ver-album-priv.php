@@ -26,7 +26,7 @@
                         FROM fotos f
                         JOIN albumes a ON(f.Album = a.IdAlbum)
                         WHERE f.Album = {$_GET["id"]}
-                        ORDER BY f.Fecha ASC;
+                        ORDER BY f.Fecha ASC
                     ;");
                     $paises = $conexion->query("
                         SELECT DISTINCT p.NomPais

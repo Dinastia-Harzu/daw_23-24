@@ -27,9 +27,9 @@
     <main> 
 <!-- Empezamos con PHP -->
 <?php
-    // Si vamos a la página mediante la URL directamente, debemos redirigir a index.no_registrado.php
+    // Si vamos a la página mediante la URL directamente, debemos redirigir a index.php
     if (!isset($_POST["nombre"])) {
-        header("Location: index.no_registrado.php");
+        header("Location: index.php");
         exit;
     }
 

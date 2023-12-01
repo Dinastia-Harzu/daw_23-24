@@ -4,7 +4,7 @@
     generarHead('mis-fotos', 'detalle', impresion: true);
 
     if(!isset($_SESSION["usuario"])) {
-        header("Location: index.no_registrado.php");
+        header("Location: index.php");
     }
 
     $conexion = abrirConexion();
@@ -17,14 +17,14 @@
         <?php
             $sql = "
                 SELECT
-                    f.Titulo AS TituloFoto,
-                    DATE_FORMAT(f.FRegistro,'%e/%c/%Y') as Fecha,
+                    f.Titulo TituloFoto,
+                    DATE_FORMAT(f.FRegistro, '%e/%c/%Y') Fecha,
                     f.Descripcion,
                     f.Alternativo,
                     Fichero,
                     NomPais,
                     a.IdAlbum,
-                    a.Titulo AS TituloAlbum
+                    a.Titulo TituloAlbum
                 FROM fotos f
                 JOIN paises p ON(p.IdPais = f.Pais)
                 JOIN albumes a ON(a.IdAlbum = f.Album);

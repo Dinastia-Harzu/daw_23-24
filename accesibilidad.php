@@ -5,8 +5,8 @@
 ?>
 <body>
     <?php
-        $fila = $_COOKIE["recuerdame"] ?? null;
-        if($fila && explode('.', $fila)[0] == 'sergiolujanmora') {
+        $fila = $_SESSION["usuario"] ?? null;
+        if($fila && $fila == 'sergiolujanmora') {
             echo codigoMisterioso();
         }
         require_once "inc/header.php";

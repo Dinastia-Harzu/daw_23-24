@@ -4,7 +4,7 @@
     generarHead('usuario');
 
     if(!isset($_SESSION["usuario"])) {
-        header("Location: index.no_registrado.php");
+        header("Location: index.php");
     }
 
     $conexion = abrirConexion();
@@ -33,7 +33,7 @@
                         FROM usuarios u
                         JOIN paises ON(IdPais = Pais)
                         JOIN albumes ON(Usuario = IdUsuario)
-                        WHERE NomUsuario = {$_SESSION["usuario"]}
+                        WHERE NomUsuario = '{$_SESSION["usuario"]}'
                     ;";
                     if($resultado = $conexion->query($sql)) {
                         $fila = $resultado->fetch_assoc();

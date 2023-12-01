@@ -23,7 +23,7 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'index.html'}, 'submit', evt => {
+            .appendChild(crearElemento('form', {action: 'control-usuario.php', method: 'post'}, 'submit', evt => {
                 for(const campo of new FormData(evt.target)) {
                     if(campo[1].trim().length == 0) {
                         evt.preventDefault();
@@ -44,7 +44,7 @@ function crearDialogoLogin() {
             .parentElement
                 .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
                     .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
-                        .appendChild(crearElemento('input', {type: 'password', placeholder: ' ', id: 'contraseña', name: 'contraseña'}))
+                        .appendChild(crearElemento('input', {type: 'password', placeholder: ' ', id: 'clave', name: 'clave'}))
                     .parentElement
                         .appendChild(crearElemento('span', {className: 'omrs-input-label'}))
                             .appendChild(document.createTextNode('Introduce tu contraseña'))

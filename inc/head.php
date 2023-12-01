@@ -53,7 +53,11 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
         hereDOC;
     }
     if($dialogos) {
-        echo '<script src="javascript/dialogos.js"></script>';
+        echo <<<hereDOC
+            <script src="javascript/common.js"></script>
+            <script src="javascript/dialogos.js"></script>
+            <script src="javascript/$pagina.js"></script>
+        hereDOC;
     }
     echo '</head>';
 }
