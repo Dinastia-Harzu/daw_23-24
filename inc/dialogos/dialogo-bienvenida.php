@@ -1,6 +1,6 @@
 <?php
 
-list($nombre, $contraseña) = explode(".", $_COOKIE["recuerdame"]);
+list($nombre, $clave) = explode(".", $_COOKIE["recuerdame"]);
 $fechahora = $_COOKIE["ultima-vez"];
 $fecha = date("n.j.Y", $fechahora);
 $hora = date("H:i", $fechahora);
@@ -14,7 +14,7 @@ echo <<<hereDOC
         <form action="control-usuario.php" method="post">
             <div class="campo-boton-submit">
                 <input type="hidden" name="nombre" value="$nombre">
-                <input type="hidden" name="contraseña" value="$contraseña">
+                <input type="hidden" name="clave" value="$clave">
                 <button type="submit">Entrar</button>
             </div>
         </form>

@@ -1,19 +1,16 @@
 <?php
     require_once "helpers/funciones.php";
 
-    generarHead();
+    generarHead('resultado');
 
     $conexion = abrirConexion();
 ?>
 <body>
     <?php
-        include_once "inc/header-no-registrado.php";
+        require_once "inc/header.php";
     ?>
-    <figure>
-        <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
-    </figure>
     <main>
-        <?php {
+        <?php
             list($titulo, $desde, $hasta, $pais) = array(
                 $_POST["titulo"] ?? "",
                 $_POST["fecha-desde"] ?? "",
@@ -86,11 +83,11 @@
                     </article>
                 hereDOC;
             }
-        } ?>
+        ?>
         </section>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

@@ -22,7 +22,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header-no-registrado.php";
+    require_once "inc/header.php";
 ?>
     <main> 
 <!-- Empezamos con PHP -->
@@ -34,8 +34,8 @@
     }
 
     // Empezamos a comprobar los campos
-    if($_POST["nombre"] == "" || $_POST["contraseña"] == "" || $_POST["confirmar-contraseña"] == "" || 
-    $_POST["contraseña"] != $_POST["confirmar-contraseña"])
+    if($_POST["nombre"] == "" || $_POST["clave"] == "" || $_POST["confirmar-clave"] == "" || 
+    $_POST["clave"] != $_POST["confirmar-clave"])
     {
         echo "<h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>";
         
@@ -44,15 +44,15 @@
             echo "<p class=\"error-datos-usuario\">No se ha introducido un nombre de usuario</p>";
     
 
-        if($_POST["contraseña"] == "")
+        if($_POST["clave"] == "")
             echo "<p class=\"error-datos-usuario\">No se ha introducido la contraseña</p>";
     
 
-        if($_POST["confirmar-contraseña"] == "")
+        if($_POST["confirmar-clave"] == "")
             echo "<p class=\"error-datos-usuario\">No se ha introducido por segunda vez la contraseña</p>";
     
 
-        if($_POST["contraseña"] != $_POST["confirmar-contraseña"])
+        if($_POST["clave"] != $_POST["confirmar-clave"])
             echo "<p class=\"error-datos-usuario\">La contraseña y la confirmación de contraseña no coinciden</p>";
     
             
@@ -65,7 +65,7 @@
     else {
         session_start();
         $_SESSION["usuario"] = $_POST["nombre"];
-        $_SESSION["contraseña"] = $_POST["contraseña"];
+        $_SESSION["clave"] = $_POST["clave"];
         $_SESSION["correo"] = $_POST["correo"];
         $_SESSION["ciudad"] = $_POST["ciudad"];
         $_SESSION["pais"] = isset($_POST["pais"]) ? $_POST["pais"] : 'Nowhere';
@@ -91,7 +91,7 @@
             <h1>$mensaje</h1>
                 <div id="datos-usuario">
                     <p>Nombre de usuario: {$_POST["nombre"]}</p>
-                    <p>Contraseña: {$_POST["contraseña"]}</p>
+                    <p>Contraseña: {$_POST["clave"]}</p>
                     <p>Correo: {$_POST["correo"]}</p>
                     <p>Sexo: {$_POST["sexo"]}</p>
                     <p>Fecha de nacimiento: {$_POST["fecha-nacimiento"]}</p>
@@ -103,7 +103,7 @@
 ?>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

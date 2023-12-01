@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header-no-registrado.php";
+    require_once "inc/header.php";
 ?>
     <main>
         <div class="tab-busc">
@@ -87,7 +87,7 @@
         </div>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
     <dialog open id="login">
         <p class="titulo_dialog">Iniciar sesión</p>

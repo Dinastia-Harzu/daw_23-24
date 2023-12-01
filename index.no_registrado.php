@@ -26,7 +26,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header-no-registrado.php";
+    require_once "inc/header.php";
 ?>
     <main>
         <div id="tab-login">
@@ -55,18 +55,18 @@
         </section>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 <?php
     if(isset($_COOKIE["recuerdame"])) {
-        include_once "inc/dialogos/dialogo-bienvenida.php";
+        require_once "inc/dialogos/dialogo-bienvenida.php";
     } else {
-        include_once "inc/dialogos/dialogo-login.php";
+        require_once "inc/dialogos/dialogo-login.php";
     }
     for($i = 0; $i < 40; $i++) {
         echo "<br>";
     }
-    include_once "inc/dialogos/dialogo-error.php";
+    require_once "inc/dialogos/dialogo-error.php";
 ?>
 </body>
 </html>

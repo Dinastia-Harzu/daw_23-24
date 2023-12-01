@@ -1,23 +1,59 @@
 <?php
 
-function generarHead(string $titulo = 'Masthermatika', string $estilo = 'oscuro') {
+function generarHead(string $pagina, string $estilo = null, bool $dialogos = false, bool $impresion = false) {
+    if(!$estilo) {
+        $estilo = $pagina;
+    }
+    session_start();
+    $titulo = array(
+        'accesibilidad' => 'Accesibilidad',
+        'busqueda' => 'Descubrir',
+        'configurar' => 'Configurar estilos',
+        'control-usuario' => 'Control usuario',
+        'crear-album' => 'Crear álbum',
+        'detalle' => 'Título imagen',  // TODO
+        'index' => 'Masthermatika',
+        'mis-albumes' => 'Mis álbumes',
+        'mis-datos' => 'Mis datos',
+        'mis-fotos' => 'Mis fotos',
+        'perfil-usuario' => 'Usuario',  // TODO
+        'publicar' => 'Publicar',
+        'registro' => 'Registro',
+        'respuesta-album' => 'Respuesta a la solicitud de álbum',
+        'resultado' => 'Resultado de la búsqueda',
+        'solicitar-album' => 'Solicitar állbum',
+        'tabla-album' => 'Tabla del álbum',
+        'usuario' => 'Usuario',  // TODO
+        'ver-album' => 'Ver álbum',
+        'ver-album-priv' => 'Ver álbum'
+    );
+    $tema = $_SESSION["tema"] ?? 'oscuro';
     echo <<<hereDOC
         <!DOCTYPE html>
         <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>$titulo</title>
+            <title>{$titulo[$pagina]}</title>
             <link rel="stylesheet" href="css/global/style.css">
             <link rel="stylesheet" href="css/ordenador/style.css">
             <link rel="stylesheet" href="css/tablet/style.css">
             <link rel="stylesheet" href="css/movil/style.css">
-            <link rel="stylesheet" href="css/global/busqueda.css">
-            <link rel="stylesheet" href="css/ordenador/busqueda.css">
-            <link rel="stylesheet" href="css/tablet/busqueda.css">
-            <link rel="stylesheet" href="css/movil/busqueda.css">
-            <link rel="stylesheet" href="css/modos-alternativos/$estilo.css">
+            <link rel="stylesheet" href="css/global/$estilo.css">
+            <link rel="stylesheet" href="css/ordenador/$estilo.css">
+            <link rel="stylesheet" href="css/tablet/$estilo.css">
+            <link rel="stylesheet" href="css/movil/$estilo.css">
+            <link rel="stylesheet" href="css/modos-alternativos/$tema.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        </head>
     hereDOC;
+    if($impresion) {
+        echo <<<hereDOC
+            <link rel="stylesheet" href="css/impresion/style.css" media="print">
+            <link rel="stylesheet" href="css/impresion/$estilo.css" media="print">
+        hereDOC;
+    }
+    if($dialogos) {
+        echo '<script src="javascript/dialogos.js"></script>';
+    }
+    echo '</head>';
 }

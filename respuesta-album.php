@@ -28,7 +28,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header-no-registrado.php";
+    require_once "inc/header.php";
 ?>
     <figure>
         <img src="img/logo-y-nombre.png" alt="Logo, nombre y subtítulo de la página: Masthermatika">
@@ -70,7 +70,7 @@
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
-                <?php include_once 'tabla-album.php'; ?>
+                <?php require_once 'tabla-album.php'; ?>
             </aside>
             <section>
                 <h2>Formulario de solicitud</h2>
@@ -205,7 +205,7 @@
         </div>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

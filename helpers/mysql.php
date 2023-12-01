@@ -17,3 +17,8 @@ function pillarFila(mysqli_result $resultado, int $indice) {
 
     return $fila;
 }
+
+function cerrarConexion(mysqli_result $resultado, mysqli $conexion) {
+    $resultado->close();
+    $conexion->close();
+}

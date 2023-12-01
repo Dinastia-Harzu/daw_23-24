@@ -27,7 +27,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header-no-registrado.php";
+    require_once "inc/header.php";
 
         // Select para obtener variables
         $id = mysqli_connect("","root","","daw");
@@ -36,7 +36,7 @@
             exit();
         }
     
-        $result = mysqli_query($id,"
+        $resultado = mysqli_query($id,"
             SELECT 
                 Titulo 
             FROM albumes
@@ -79,7 +79,7 @@
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
-                <?php include_once 'tabla-album.php'; ?>
+                <?php require_once 'tabla-album.php'; ?>
             </aside>
             <section>
                 <h2>Formulario de solicitud</h2>
@@ -188,9 +188,9 @@
                             <select name="album" id="album" required>
                                 <option disabled selected value>-- Selecciona una opción --</option>
                                 <?php
-                                    while($row = mysqli_fetch_array($result)) {
+                                    while($fila = $resultado->fetch_assoc()) {
                                         echo <<<hereDOC
-                                            <option value = "{$row["Titulo"]}">{$row["Titulo"]}</option>
+                                            <option value = "{$fila["Titulo"]}">{$fila["Titulo"]}</option>
                                         hereDOC;
                                     }
                                 ?>
@@ -224,7 +224,7 @@
         </div>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

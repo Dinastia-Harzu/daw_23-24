@@ -1,56 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurar estilos - Masthermatika</title>
-    <link rel="stylesheet" href="css/global/style.css">
-    <link rel="stylesheet" href="css/ordenador/style.css">
-    <link rel="stylesheet" href="css/tablet/style.css">
-    <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/respuesta-usuario.css">
-    <link rel="stylesheet" href="css/ordenador/respuesta-usuario.css">
-    <link rel="stylesheet" href="css/tablet/respuesta-usuario.css">
-    <link rel="stylesheet" href="css/movil/respuesta-usuario.css">
-
-</head>
-
 <?php
+    require_once "helpers/funciones.php";
 
-    include_once "inc/header.php";
+    $conexion = abrirConexion();
 
-    // Consulta para obtener los datos
-    $id = mysqli_connect("","root","","daw");
-    if(mysqli_connect_errno()) {
-        echo mysqli_connect_error();
-        exit();
-    }
-
-    $result = mysqli_query($id, "
-        SELECT * 
-        FROM estilos
-    ");
-
-    echo <<<hereDOC
-        <body>
-        <main>
-            <h2>Elige el estilo de la página</h2>
-            <div id ="datos-usuario">
-    hereDOC;
-    
-    while($row = mysqli_fetch_assoc($result)) {
-        echo <<<hereDOC
-            <p>{$row["Descripcion"]}</p>
-        hereDOC;
-    }
-
-    echo <<<hereDOC
+    generarHead('configurar');
+?>
+<body>
+    <?php
+        require_once "inc/header.php";
+    ?>
+    <main>
+        <h2>Elige el estilo de la página</h2>
+        <div id ="datos-usuario">
+            <?php
+                if($resultado = $conexion->query("SELECT * FROM estilos")) {
+                    while($fila = $resultado->fetch_assoc()) {
+                        echo '<p>' . $fila["Descripcion"] . '</p>';
+                    }
+                }
+            ?>
         </div>
     </main>
-    </body>
-    hereDOC;
-
-    include_once "inc/footer.php";
-
-?>
+    <?php
+        require_once "inc/footer.php";
+    ?>
+</body>
 </html>

@@ -3,11 +3,11 @@
 
     $conexion = abrirConexion();
 
-    generarHead('Descubrir - Masthermatika', 'oscuro');
+    generarHead('busqueda');
 ?>
 <body>
     <?php
-        include_once "inc/header.php";
+        require_once "inc/header.php";
     ?>
     <main id="grid-params">
         <h1>Descubre</h1>
@@ -56,7 +56,7 @@
         </form>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

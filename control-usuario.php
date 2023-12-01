@@ -16,7 +16,8 @@ $usuarios = array(
     'DEBUG' => 'DEBUG',
     'agrg11' => 'clavesecreta',
     'mgv' => 'password',
-    'TONC' => 'GBA'
+    'TONC' => 'GBA',
+    'sergiolujanmora' => 'accesibilidad'
 );
 $temas = array(
     'ADMIN' => 'letra-mayor',
@@ -29,16 +30,16 @@ $protocolo = 'http://';
 $host = 'localhost';
 $uri = 'daw_23-24';
 
-if(isset($_POST["nombre"]) && isset($_POST["contraseña"])) {
+if(isset($_POST["nombre"]) && isset($_POST["clave"])) {
     $nombre = $_POST["nombre"];
-    $contraseña = $_POST["contraseña"];
-    if(isset($usuarios[$nombre]) && array_search($contraseña, $usuarios, true)) {
+    $clave = $_POST["clave"];
+    if(isset($usuarios[$nombre]) && array_search($clave, $usuarios, true)) {
         $pagina = 'usuario.php';
         session_start();
         $_SESSION["usuario"] = $nombre;
         $_SESSION["tema"] = $temas[$nombre];
         if(isset($_POST["recuerdame"])) {
-            setcookie("recuerdame", $nombre . "." . $contraseña, time() + 24 * 60 * 60 * 90);
+            setcookie("recuerdame", $nombre . "." . $clave, time() + 24 * 60 * 60 * 90);
             setcookie("ultima-vez", time(), 2 * time());
         }
         if(isset($_COOKIE["ultima-vez"])) {
@@ -51,5 +52,3 @@ if(isset($_POST["nombre"]) && isset($_POST["contraseña"])) {
     $pagina = 'index.no_registrado.php';
 }
 header("Location: $protocolo$host/$uri/$pagina");
-
-?>

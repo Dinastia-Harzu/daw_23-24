@@ -22,7 +22,7 @@
 </head>
 <body>
 <?php
-    include_once "inc/header.php";
+    require_once "inc/header.php";
 
     // Select para obtener variables
     $id = mysqli_connect("","root","","daw");
@@ -31,7 +31,7 @@
         exit();
     }
 
-    $result = mysqli_query($id,"SELECT NomPais FROM paises");
+    $resultado = mysqli_query($id,"SELECT NomPais FROM paises");
 
     $result_usuario = mysqli_query($id,"
         SELECT 
@@ -47,26 +47,26 @@
         WHERE NomUsuario = '{$_GET["usu"]}'");
 
     // Definimos las variables que iran en los campos del usuario
-    $row = mysqli_fetch_assoc($result_usuario);
-    $nombre = $row["NomUsuario"];
-    $contraseña =  $row["Clave"];
-    $correo =  $row["Email"];
-    $fecha_nac =  $row["FNacimiento"];
-    $ciudad =  $row["Ciudad"];
-    $pais = $row["Pais"];
-    $pfp =  $row["Foto"];
+    $fila = mysqli_fetch_assoc($result_usuario);
+    $nombre = $fila["NomUsuario"];
+    $clave =  $fila["Clave"];
+    $correo =  $fila["Email"];
+    $fecha_nac =  $fila["FNacimiento"];
+    $ciudad =  $fila["Ciudad"];
+    $pais = $fila["Pais"];
+    $pfp =  $fila["Foto"];
     $texto_submit = "Editar";
 ?>
     <main>
         <div id="creacion-cuenta">
             <h1>Edita tus datos: </h1>
             <?php
-            include_once "inc/form-reg.php";      
+            require_once "inc/form-reg.php";      
             ?>
         </div>
     </main>
 <?php
-    include_once "inc/footer.php";
+    require_once "inc/footer.php";
 ?>
 </body>
 </html>

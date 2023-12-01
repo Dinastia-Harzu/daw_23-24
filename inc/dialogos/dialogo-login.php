@@ -9,7 +9,7 @@
         </div>
         <div class="omrs-input-group">
             <label class="omrs-input-filled">
-                <input type="password" placeholder=" " id="contraseña" name="contraseña">
+                <input type="password" placeholder=" " id="clave" name="clave">
                 <span class="omrs-input-label">Introduce tu contraseña</span>
             </label>
         </div>

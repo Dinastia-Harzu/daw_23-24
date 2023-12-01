@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título imagen - Masthermatika</title>
-    <link rel="stylesheet" href="css/global/style.css">
-    <link rel="stylesheet" href="css/ordenador/style.css">
-    <link rel="stylesheet" href="css/tablet/style.css">
-    <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/accesibilidad.css">
-    <link rel="stylesheet" href="css/ordenador/accesibilidad.css">
-    <link rel="stylesheet" href="css/tablet/accesibilidad.css">
-    <link rel="stylesheet" href="css/movil/accesibilidad.css">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/oscuro.css" title="Modo oscuro (predeterminado)">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/claro.css" title="Modo claro">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/alto-contraste.css" title="Modo de alto contraste">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor.css" title="Modo de tipo de letra mayor">
-    <link rel="alternate stylesheet" href="css/modos-alternativos/letra-mayor-y-alto-contraste.css" title="Modo de letra mayor y alto contraste">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
 <?php
-    include_once "inc/header.php";
+    require_once "helpers/funciones.php";
+
+    generarHead('accesibilidad');
 ?>
+<body>
+    <?php
+        $fila = $_COOKIE["recuerdame"] ?? null;
+        if($fila && explode('.', $fila)[0] == 'sergiolujanmora') {
+            echo codigoMisterioso();
+        }
+        require_once "inc/header.php";
+    ?>
     <main>
         <h1>Declaración de accesibilidad</h1>
         <p>El Ministerio de la Presidencia, Relaciones con las Cortes y Memoria Democrática se ha comprometido a hacer accesible este sitio web de conformidad con el Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público.</p>
@@ -86,8 +74,8 @@
             <p>Se han utilizado fuentes con tamaños relativos de forma que si el usuario prefiere una fuente mayor podrá seleccionarla a través de las opciones de tamaño de texto de su explorador, generalmente Ctrl+ (control más) para ampliar, Ctrl- (control menos) para reducir.</p>
         </section>
     </main>
-<?php
-    include_once "inc/footer.php";
-?>
+    <?php
+        require_once "inc/footer.php";
+    ?>
 </body>
 </html>
