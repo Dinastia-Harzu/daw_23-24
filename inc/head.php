@@ -4,7 +4,6 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
     if(!$estilo) {
         $estilo = $pagina;
     }
-    session_start();
     $titulo = array(
         'accesibilidad' => 'Accesibilidad',
         'busqueda' => 'Descubrir',

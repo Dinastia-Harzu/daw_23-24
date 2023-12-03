@@ -1,6 +1,6 @@
 <?php
 
-function abrirConexion(string $host = null, string $usuario = "root", string $clave = "", string $bd = "daw") {
+function abrirConexion(string $host = SERVER, string $usuario = USER, string $clave = PASSWORD, string $bd = DB) {
     $mysql = new mysqli($host, $usuario, $clave, $bd);
     if($errno = $mysql->connect_errno) {
         echo '(ERROR ' . $errno . '): No se pudo conectar a la base de datos: ' . $mysql->connect_error;

@@ -1,6 +1,7 @@
 <?php
 
     require_once "helpers/funciones.php";
+    session_start();
 
     generarHead('index', dialogos: true);
 

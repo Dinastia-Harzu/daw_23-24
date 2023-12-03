@@ -1,5 +1,6 @@
 <?php
 
+require_once "inc/config.php";
 require_once "mysql.php";
 require_once "inc/head.php";
 require_once "inc/form-reg.php";
@@ -24,4 +25,22 @@ function codigoMisterioso() {
     }
     curl_close($c);
     return $html;
+}
+
+function redirigir(string $url, bool $relativo = true) {
+    header('Location: ' . $url);
+    exit;
+}
+
+function crearCookie(string $nombre, string $valor, int $dias = 90) {
+    setcookie($nombre, $valor, time() + 24 * 60 * 60 * $dias);
+}
+
+function borrarCookie(string $cookie, string $ruta = '') {
+    setcookie($cookie, '', time() - 1, $ruta);
+}
+
+function borrarSesion() {
+    session_destroy();
+    $_SESSION = array();
 }

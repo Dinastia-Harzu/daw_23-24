@@ -1,10 +1,11 @@
 <?php
     require_once "helpers/funciones.php";
+    session_start();
 
     generarHead('usuario');
 
     if(!isset($_SESSION["usuario"])) {
-        header("Location: index.php");
+        redirigir('index.php');
     }
 
     $conexion = abrirConexion();
@@ -25,14 +26,13 @@
                     <p>
                         <input type="file" name="pfp" id="pfp">
                     </p>
-                    <button type="button">"Cambiar"</button>
+                    <button type="button">Cambiar</button>
                 </p>
                 <?php
                     $sql = "
-                        SELECT u.*, NomPais, IdAlbum
+                        SELECT u.*, NomPais
                         FROM usuarios u
                         JOIN paises ON(IdPais = Pais)
-                        JOIN albumes ON(Usuario = IdUsuario)
                         WHERE NomUsuario = '{$_SESSION["usuario"]}'
                     ;";
                     if($resultado = $conexion->query($sql)) {
@@ -48,7 +48,7 @@
                                     <a href="mis-datos.php?usu={$fila["NomUsuario"]}">Mis datos</a>
                                 </p>
                                 <p>
-                                    <a href="mis-albumes.php?id={$fila["IdAlbum"]}">Mis álbumes</a>
+                                    <a href="mis-albumes.php?id={$fila["IdUsuario"]}">Mis álbumes</a>
                                 </p>
                                 <p>
                                     <a href="crear-album.php">Crear álbum</a>

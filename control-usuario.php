@@ -1,14 +1,15 @@
 <?php
 
-// Si el usuario ha llegado a esta página a través de cerrar sesión, lo hacemos y redirigimos
-if(isset($_POST["cerrar-sesion"])){
+require_once "helpers/funciones.php";
     session_start();
-    session_destroy();
-    $_SESSION = array();
-    setcookie("recuerdame", "", time() - 1);
-    setcookie("ultima-vez", "", time() - 1);
-    header('Location: index.php');
-    exit;
+
+session_start();
+
+if(isset($_POST["cerrar-sesion"])) {
+    borrarSesion();
+    borrarCookie('recuerdame');
+    borrarCookie('ultima-vez');
+    redirigir('index.php');
 }
 
 $usuarios = array(
@@ -26,29 +27,32 @@ $temas = array(
     'mgv' => 'claro',
     'TONC' => 'letra-mayor-y-alto-contraste'
 );
-$protocolo = 'http://';
-$host = 'localhost';
-$uri = 'daw_23-24';
 
-if(isset($_POST["nombre"]) && isset($_POST["clave"])) {
-    $nombre = $_POST["nombre"];
-    $clave = $_POST["clave"];
+$nombre = $_POST["nombre"] ?? false;
+$clave = $_POST["clave"] ?? false;
+$pagina = 'index.php';
+if($nombre && $clave) {
+    $conexion = abrirConexion();
+    $resultado = $conexion->query("
+        SELECT *
+        FROM usuarios
+        WHERE NomUsuario = '$nombre'
+        AND Clave = '$clave'
+    ;");
+    if($resultado && $resultado->num_rows) {
+        $pagina = 'usuario.php';
+        $_SESSION["usuario"] = $nombre;
+    }
     if(isset($usuarios[$nombre]) && array_search($clave, $usuarios, true)) {
         $pagina = 'usuario.php';
-        session_start();
         $_SESSION["usuario"] = $nombre;
-        $_SESSION["tema"] = $temas[$nombre];
         if(isset($_POST["recuerdame"])) {
-            setcookie("recuerdame", $nombre . "." . $clave, time() + 24 * 60 * 60 * 90);
-            setcookie("ultima-vez", time(), 2 * time());
+            crearCookie('recuerdame', $nombre . '.' . $clave);
+            crearCookie('ultima-vez', time());
         }
         if(isset($_COOKIE["ultima-vez"])) {
-            setcookie("ultima-vez", time(), 2 * time());
+            crearCookie('ultima-vez', time());
         }
-    } else {
-        $pagina = 'index.php';
     }
-} else {
-    $pagina = 'index.php';
 }
-header("Location: $protocolo$host/$uri/$pagina");
+header("Location: $pagina");

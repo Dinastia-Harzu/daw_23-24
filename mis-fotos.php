@@ -1,5 +1,6 @@
 <?php
     require_once "helpers/funciones.php";
+    session_start();
 
     generarHead('mis-fotos', 'detalle', impresion: true);
 
