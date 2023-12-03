@@ -1,7 +1,7 @@
+# Escribe aquí todas las extensiones extensiones de archivos que no hayan de subirse al repositorio
 *.pdf
 *.zip
 *.rar
 
-# Pon aquí los ficheros y los directorios tuyos privados
-ejercicios/
-css-php/
+# Pon en esta carpeta los ficheros y directorios tuyos privados para que no se suban al repositorio
+privado/
