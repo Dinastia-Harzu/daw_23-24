@@ -1,5 +1,4 @@
 <?php
-
     require_once "helpers/funciones.php";
     session_start();
 
