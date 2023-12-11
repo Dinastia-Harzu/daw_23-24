@@ -39,7 +39,6 @@
                                     $pais = $fila["NomPais"];
                                     echo '<option value="' . $fila["IdPais"] . '">' . $pais . '</option>';
                                 }
-                                $resultado->free(); 
                              ?>
                         </select>
                         <span class="omrs-input-label">País</span>
