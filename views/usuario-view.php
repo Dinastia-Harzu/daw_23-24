@@ -57,7 +57,7 @@
                                     <a href="configurar.php">Configurar estilos</a>
                                 </p>
                                 <p>
-                                    <a href="publicar.php">Añadir foto a álbum</a>
+                                    <a href="publicar.php?id={$fila["IdUsuario"]}">Añadir foto a álbum</a>
                                 </p>
                                 <p>
                                     <a href="index.php">Volver a inicio</a>
