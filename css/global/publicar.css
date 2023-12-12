@@ -1,0 +1,74 @@
+#creacion-cuenta {
+    display: grid;
+    justify-content: center;
+}
+
+#creacion-cuenta h1 {
+    margin-bottom: 0.5em;
+}
+
+.folder:hover{
+    background-color: var(--footer_clr);
+    cursor: pointer;
+}
+
+main section p {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 0.5em; */
+}
+
+#pfp-query {
+    /* display: none; */
+}
+
+#reg-2 button {
+    background: none;
+    border: none;
+}
+
+#reg-2 .acciones-fichero {
+    font-size: x-large;
+    padding: 0.5em;
+    background-color: var(--body_clr);
+}
+
+#reg-2 label {
+    cursor: pointer;
+}
+
+#reg-2 h3 {
+    margin-top: 1.35em;
+}
+
+#tab-google {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tab-google p > a {
+}
+
+#tab-google p > a:hover {
+}
+
+#tab-reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 5.5em;
+    width: 900px;
+    background-color: var(--articulos_clr);
+    flex-wrap: wrap;
+}
+
+#tab-reg input[type=submit] {
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+#tab-reg img {
+    width: 15.56em;
+}

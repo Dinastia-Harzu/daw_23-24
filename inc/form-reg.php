@@ -8,7 +8,7 @@ function generarFormularioRegistro(
     string $ciudad = '',
     string $pfp = 'img/placeholder_grande.png',
     int $pais = -1,
-    mysqli_result|bool $resultado = false
+    array $resultado_pais = array()
 ) {
     echo <<<hereDOC
         <form action="respuesta-usuario.php" method="post" id="tab-reg">
@@ -16,13 +16,13 @@ function generarFormularioRegistro(
                 <h2>Introduce tus datos para registarte:</h2>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="nombre" id="nombre" value="$nombre">;
+                        <input type="text" placeholder=" " name="nombre" id="nombre" value="$nombre">
                         <span class="omrs-input-label">Nombre</span>
                     </label>
                 </div>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="clave" id="clave" value="$clave">;
+                        <input type="text" placeholder=" " name="clave" id="clave" value="$clave">
                         <span class="omrs-input-label">Contraseña</span>
                     </label>
                 </div>
@@ -34,7 +34,7 @@ function generarFormularioRegistro(
                 </div>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="correo" id="correo" value="$correo">;
+                        <input type="text" placeholder=" " name="correo" id="correo" value="$correo">
                         <span class="omrs-input-label">Correo electrónico</span>
                     </label>
                 </div>
@@ -50,13 +50,13 @@ function generarFormularioRegistro(
                 </div>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                    <input type="text" name="fecha-nacimiento" id="fecha-nacimiento" value="$fecha">;
+                    <input type="text" name="fecha-nacimiento" id="fecha-nacimiento" value="$fecha">
                         <span class="omrs-input-label">Fecha de nacimiento</span>
                     </label>
                 </div>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="ciudad" id="ciudad" value="$ciudad">;
+                        <input type="text" placeholder=" " name="ciudad" id="ciudad" value="$ciudad">
                         <span class="omrs-input-label">Ciudad</span>
                     </label>
                 </div>
@@ -66,7 +66,7 @@ function generarFormularioRegistro(
                         <select name="pais" id="pais">
                             <option disabled value>-- Selecciona una opción --</option>
     hereDOC;
-    while($fila = $resultado->fetch_assoc()) {
+    foreach($resultado_pais as $fila) {
         $predeterminado = $pais == $fila["IdPais"] ? 'selected' : '';
         echo '<option ' . $predeterminado . ' value="' . $fila["IdPais"] . '">' . $fila["NomPais"] . '</option>';
     }
