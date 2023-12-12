@@ -3,8 +3,6 @@
     session_start();
 
     generarHead('index', dialogos: true);
-
-    $conexion = abrirConexion();
 ?>
 <body>
     <?php
