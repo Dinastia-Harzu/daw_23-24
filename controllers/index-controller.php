@@ -8,12 +8,14 @@ try {
     $resultado_foto = $foto->get_data("
     SELECT
         IdFoto,
-        Titulo,
+        f.Titulo,
         DATE_FORMAT(FRegistro,'%e/%c/%Y') as Fecha,
         Fichero,
         Pais,
-        Alternativo
-    FROM fotos
+        Alternativo,
+        NomPais
+    FROM fotos f
+    JOIN paises p ON(f.Pais = p.IdPais)
 ;");
 } catch(Exception $e) {
     header("Location: ./404.php");
