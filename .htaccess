@@ -1,5 +1,5 @@
 ErrorDocument 404 /daw_23-24/404.php
-Options -MultiViews
-RewriteEngine On
-RewriteCond %{REQUEST_FILENIME} !-f
-RewriteRule ^ index.php [QSA,L]
+#Options -MultiViews
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENIME} !-f
+#RewriteRule ^ index.php [QSA,L]
