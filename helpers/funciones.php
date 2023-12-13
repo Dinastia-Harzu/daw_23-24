@@ -160,7 +160,8 @@ function RegistrarOEditarUsuario(){
             )
             ;");
         } catch(Exception $e){
-            echo $e;
+            header("Location: ./404.php");
+            exit();
         }
     }
 }

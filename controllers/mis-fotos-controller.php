@@ -18,6 +18,7 @@ try {
     FROM fotos f
     JOIN paises p ON(p.IdPais = f.Pais)
     JOIN albumes a ON(a.IdAlbum = f.Album)
+    WHERE a.Usuario = {$_GET["id"]}
 ;");
 } catch(Exception $e) {
     header("Location: ./404.php");
