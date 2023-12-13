@@ -24,7 +24,7 @@
             <h1>Edita tus datos: </h1>
             <?php
             require_once "inc/form-reg.php"; 
-            generarFormularioRegistro($nombre, $clave, $correo, $fecha_nac, $ciudad, $pfp, $pais, $resultado_pais_misdatos);     
+            generarFormularioRegistro($nombre, $clave, $correo, $fecha_nac, $ciudad, $pfp, $pais, $resultado_pais_misdatos, false);     
             ?>
         </div>
     </main>

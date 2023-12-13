@@ -8,7 +8,8 @@ function generarFormularioRegistro(
     string $ciudad = '',
     string $pfp = 'img/placeholder_grande.png',
     int $pais = -1,
-    array $resultado_pais = array()
+    array $resultado_pais = array(),
+    bool $nuevo = true
 ) {
     echo <<<hereDOC
         <form action="respuesta-usuario.php" method="post" id="tab-reg">
@@ -26,12 +27,27 @@ function generarFormularioRegistro(
                         <span class="omrs-input-label">Contraseña</span>
                     </label>
                 </div>
-                <div class="omrs-input-group">
-                    <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="confirmar-clave" id="confirmar-clave">
-                        <span class="omrs-input-label">Confirmar contraseña</span>
-                    </label>
-                </div>
+    hereDOC;
+            if($nuevo) {
+                echo <<<hereDOC
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="confirmar-clave" id="confirmar-clave">
+                            <span class="omrs-input-label">Confirmar contraseña</span>
+                        </label>
+                    </div>
+                hereDOC;
+            } else {
+                echo <<<hereDOC
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="text" placeholder=" " name="nueva-clave" id="nueva-clave">
+                            <span class="omrs-input-label">Nueva contraseña</span>
+                        </label>
+                    </div>
+                hereDOC;
+            }
+            echo <<<hereDOC
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
                         <input type="text" placeholder=" " name="correo" id="correo" value="$correo">
@@ -65,7 +81,7 @@ function generarFormularioRegistro(
                         <p>País</p>
                         <select name="pais" id="pais">
                             <option disabled value>-- Selecciona una opción --</option>
-    hereDOC;
+            hereDOC;
     foreach($resultado_pais as $fila) {
         $predeterminado = $pais == $fila["IdPais"] ? 'selected' : '';
         echo '<option ' . $predeterminado . ' value="' . $fila["IdPais"] . '">' . $fila["NomPais"] . '</option>';
