@@ -46,6 +46,13 @@
                             <time>{$ultima_fila["Fecha"]}</time>
                         </p>
                     hereDOC;
+
+                    if(isset($_SESSION["usuario"])){
+                        echo <<<hereDOC
+                            <hr>
+                            <p><a href = "publicar.php?id={$_GET["id"]}"</a>Añadir foto a álbum</p>
+                        hereDOC;
+                    }
                 ?>
             </section>
         </section>
