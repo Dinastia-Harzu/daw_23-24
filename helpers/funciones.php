@@ -44,3 +44,8 @@ function borrarSesion() {
     session_destroy();
     $_SESSION = array();
 }
+
+// Funcion para la validacion del registro
+function validarRegistro() {
+
+}
