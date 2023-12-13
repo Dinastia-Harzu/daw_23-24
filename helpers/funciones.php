@@ -109,3 +109,58 @@ function validarRegistro(bool $nuevo = true) {
 
     return $lista_errores;
 }
+
+function RegistrarOEditarUsuario(){
+    require_once "db/db.php";
+    require_once "models/usuario-model.php";
+
+    // Registrar usuario
+    if(!isset($_GET["usu"])){
+        $usuario = new Usuario();
+
+        // Vemos el Sexo
+        $sexo_num = -1;
+        if($_POST["sexo"] == "Hombre") {
+            $sexo_num = 0;
+        }
+
+        else if($_POST["sexo"] == "Mujer"){
+            $sexo_num = 1;
+        }
+
+        // Vemos el pais
+        $pais = isset($_POST["pais"]) ? $_POST["pais"] : 'Nowhere';
+
+        // Vemos la fecha de registro
+
+        try{
+            $usuario->insert_update_data("
+            INSERT INTO usuarios( 
+                NomUsuario, 
+                Clave, 
+                Email, 
+                Sexo, 
+                FNacimiento, 
+                Ciudad, 
+                Pais, 
+                Foto, 
+                FRegistro, 
+                Estilo) 
+            VALUES (
+                '{$_POST["nombre"]}',
+                '{$_POST["clave"]}',
+                '{$_POST["correo"]}',
+                 $sexo_num,
+                 STR_TO_DATE('{$_POST["fecha-nacimiento"]}', '%d/%m/%Y'),
+                '{$_POST["ciudad"]}',
+                '$pais',
+                'img/placeholder_grande.png',
+                 DATE_FORMAT(CURDATE(), '%Y-%m-%d'),
+                 1
+            )
+            ;");
+        } catch(Exception $e){
+            echo $e;
+        }
+    }
+}

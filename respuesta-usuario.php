@@ -70,6 +70,9 @@
                 </div>
             </section>
         hereDOC;
+
+        // Llamamos a las funciones para hacer INSERT o UPDATE (dependiendo de si estamos registrando o editando)
+        RegistrarOEditarUsuario();
     }
 ?>
     </main>
