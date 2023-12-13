@@ -18,31 +18,17 @@
         exit;
     }
 
-    // Empezamos a comprobar los campos
-    if($_POST["nombre"] == "" || $_POST["clave"] == "" || $_POST["confirmar-clave"] == "" || 
-    $_POST["clave"] != $_POST["confirmar-clave"])
-    {
-        echo "<h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>";
-        
-        // Mostramos mensajes de error
-        if($_POST["nombre"] == "")
-            echo "<p class=\"error-datos-usuario\">No se ha introducido un nombre de usuario</p>";
-    
-
-        if($_POST["clave"] == "")
-            echo "<p class=\"error-datos-usuario\">No se ha introducido la contraseña</p>";
-    
-
-        if($_POST["confirmar-clave"] == "")
-            echo "<p class=\"error-datos-usuario\">No se ha introducido por segunda vez la contraseña</p>";
-    
-
-        if($_POST["clave"] != $_POST["confirmar-clave"])
-            echo "<p class=\"error-datos-usuario\">La contraseña y la confirmación de contraseña no coinciden</p>";
-    
-            
-        echo "<a href=\"registro.php\" id=\"btn-volver-registro\">Volver al registro</a>";
-
+    // Validamos
+    $mensaje = validarRegistro();
+    if(count($mensaje) != 0) {
+        echo <<<hereDOC
+            <h2>Lo sentimos, ha habido un error en los siguientes datos del registro:</h2>
+            <div id="datos-usuario">
+        hereDOC;
+        foreach ($mensaje as $fila) {
+            echo $fila;
+        }
+        echo '</div>';
     }
 
     // Si los datos estan bien, creamos la cookie (o la sesion no lo se) y la rellenamos
