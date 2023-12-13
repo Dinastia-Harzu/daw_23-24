@@ -52,7 +52,7 @@
             <section>
                 <h2>Formulario de solicitud</h2>
                 <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-                <form action="respuesta-album.php" oninput="dpi.value = parseInt(resolucion.value);">
+                <form action="respuesta-album.php" oninput="dpi.value = parseInt(resolucion.value);" method="post">
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input type="text" placeholder=" " name="nombre" id="nombre" required>

@@ -19,6 +19,7 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
         'publicar' => 'Publicar',
         'registro' => 'Registro',
         'respuesta-album' => 'Respuesta a la solicitud de álbum',
+        'respuesta-usuario' => 'Respuesta al registro de usuario',
         'resultado' => 'Resultado de la búsqueda',
         'solicitar-album' => 'Solicitar állbum',
         'tabla-album' => 'Tabla del álbum',
