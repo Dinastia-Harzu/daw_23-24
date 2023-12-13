@@ -72,9 +72,18 @@ function generarFormularioRegistro(
                         </select>
                     </label>
                 </div>
+            hereDOC;
+            // Formateamos la fecha
+            if($fecha != '') {
+                $fechaObjeto = new DateTime($fecha);
+                $fechaFormateada = $fechaObjeto->format('d/m/Y');
+            } else {
+                $fechaFormateada = '';
+            }
+            echo <<<hereDOC
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                    <input type="text" name="fecha-nacimiento" id="fecha-nacimiento" value="$fecha">
+                    <input type="text" name="fecha-nacimiento" id="fecha-nacimiento" value="$fechaFormateada">
                         <span class="omrs-input-label">Fecha de nacimiento</span>
                     </label>
                 </div>
