@@ -57,13 +57,35 @@ function validarRegistro(bool $nuevo = true) {
 
     // Contraseña
     $patron_pass = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9-_]{6,15}$#";
-    if(!preg_match($patron_pass, $_POST["clave"])) {
-        array_push($lista_errores, "<p>La contraseña no es correcta</p>");
-    }
 
-    // Confirmacion de contraseña
-    if($_POST["clave"] != $_POST["confirmar-clave"]) {
-        array_push($lista_errores, "<p>Las contraseñas no coinciden</p>");
+    // En caso de haber entrado por registro
+    if(!isset($_GET["usu"])){
+        if(!preg_match($patron_pass, $_POST["clave"])) {
+            array_push($lista_errores, "<p>La contraseña no es correcta</p>");
+        }
+
+        // Confirmacion de contraseña (si viene desde regsitro)
+        if($_POST["clave"] != $_POST["confirmar-clave"]) {
+            array_push($lista_errores, "<p>Las contraseñas no coinciden</p>");
+        }
+    } else {
+        // En caso de haber entrado desde mis datos
+        require_once "db/db.php";
+        require_once "models/usuario-model.php";
+        $usuario = new Usuario();
+        $resultado_clave_usuario = $usuario->get_data("
+        SELECT Clave 
+        FROM usuarios
+        WHERE NomUsuario = '{$_GET["usu"]}'
+        ;");
+
+        if($_POST["clave"] != $resultado_clave_usuario[0]["Clave"]) {
+            array_push($lista_errores, "<p>Las contraseña actual es incorrecta</p>");
+        }
+
+        if(!preg_match($patron_pass, $_POST["nueva-clave"])) {
+            array_push($lista_errores, "<p>La contraseña nueva no es correcta</p>");
+        }
     }
 
     // Correo

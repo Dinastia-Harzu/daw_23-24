@@ -11,8 +11,16 @@ function generarFormularioRegistro(
     array $resultado_pais = array(),
     bool $nuevo = true
 ) {
-    echo <<<hereDOC
-        <form action="respuesta-usuario.php" method="post" id="tab-reg">
+    if($nuevo) {
+        echo <<<hereDOC
+                <form action="respuesta-usuario.php" method="post" id="tab-reg">
+            hereDOC;
+    } else {
+        echo <<<hereDOC
+            <form action="respuesta-usuario.php?usu={$_GET["usu"]}" method="post" id="tab-reg">
+        hereDOC;
+    }
+        echo <<<hereDOC
             <section id="reg-1">
                 <h2>Introduce tus datos para registarte:</h2>
                 <div class="omrs-input-group">
