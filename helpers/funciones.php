@@ -59,7 +59,7 @@ function validarRegistro(bool $nuevo = true) {
     $patron_pass = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9-_]{6,15}$#";
 
     // En caso de haber entrado por registro
-    if(!isset($_GET["usu"])){
+    if(!isset($_GET["id"])){
         if(!preg_match($patron_pass, $_POST["clave"])) {
             array_push($lista_errores, "<p>La contraseña no es correcta</p>");
         }
@@ -76,7 +76,7 @@ function validarRegistro(bool $nuevo = true) {
         $resultado_clave_usuario = $usuario->get_data("
         SELECT Clave 
         FROM usuarios
-        WHERE NomUsuario = '{$_GET["usu"]}'
+        WHERE IdUsuario = '{$_GET["id"]}'
         ;");
 
         if($_POST["clave"] != $resultado_clave_usuario[0]["Clave"]) {
@@ -114,25 +114,24 @@ function RegistrarOEditarUsuario(){
     require_once "db/db.php";
     require_once "models/usuario-model.php";
 
-    // Registrar usuario
-    if(!isset($_GET["usu"])){
-        $usuario = new Usuario();
+    // Editamos algunos valores para el registro/modificacion
+    $usuario = new Usuario();
 
-        // Vemos el Sexo
-        $sexo_num = -1;
-        if($_POST["sexo"] == "Hombre") {
-            $sexo_num = 0;
-        }
+    // Vemos el Sexo
+    $sexo_num = -1;
+    if($_POST["sexo"] == "Hombre") {
+        $sexo_num = 0;
+    }
 
-        else if($_POST["sexo"] == "Mujer"){
-            $sexo_num = 1;
-        }
+    else if($_POST["sexo"] == "Mujer"){
+        $sexo_num = 1;
+    }
 
-        // Vemos el pais
-        $pais = isset($_POST["pais"]) ? $_POST["pais"] : 'Nowhere';
+    // Vemos el pais
+    $pais = isset($_POST["pais"]) ? $_POST["pais"] : 'Nowhere';
 
-        // Vemos la fecha de registro
-
+    // Caso de Registro
+    if(!isset($_GET["id"])){
         try{
             $usuario->insert_update_data("
             INSERT INTO usuarios( 
@@ -162,6 +161,27 @@ function RegistrarOEditarUsuario(){
         } catch(Exception $e){
             header("Location: ./404.php");
             exit();
+        }
+    }
+
+    // Caso de Modificacion
+    else {
+        try{
+            $usuario->insert_update_data("
+            UPDATE usuarios
+            SET 
+                NomUsuario = '{$_POST["nombre"]}',
+                Clave = '{$_POST["nueva-clave"]}',
+                Email = '{$_POST["correo"]}',
+                Sexo = $sexo_num,
+                FNacimiento = STR_TO_DATE('{$_POST["fecha-nacimiento"]}', '%d/%m/%Y'),
+                Ciudad = '{$_POST["ciudad"]}',
+                Pais = '$pais',
+                Foto = 'img/placeholder_grande.png'
+            WHERE IdUsuario = {$_GET["id"]}
+            ;");
+        } catch(Exception $e){
+            header("Location: ./404.php");
         }
     }
 }

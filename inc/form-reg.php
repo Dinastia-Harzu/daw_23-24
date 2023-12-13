@@ -1,6 +1,7 @@
 <?php
 
 function generarFormularioRegistro(
+    int $id = 0,
     string $nombre = '',
     string $clave = '',
     string $correo = '',
@@ -17,12 +18,12 @@ function generarFormularioRegistro(
             hereDOC;
     } else {
         echo <<<hereDOC
-            <form action="respuesta-usuario.php?usu={$_GET["usu"]}" method="post" id="tab-reg">
+            <form action="respuesta-usuario.php?id=$id" method="post" id="tab-reg">
         hereDOC;
     }
         echo <<<hereDOC
             <section id="reg-1">
-                <h2>Introduce tus datos para registarte:</h2>
+                <h2>Introduce tus datos personales:</h2>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
                         <input type="text" placeholder=" " name="nombre" id="nombre" value="$nombre">

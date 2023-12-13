@@ -9,6 +9,7 @@ $pais = new Pais();
 try {
     $resultado_usuario_misdatos = $usuario->get_data("
     SELECT
+        IdUsuario,
         NomUsuario,
         Clave,
         Email,

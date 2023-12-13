@@ -10,6 +10,7 @@
 
     // Definimos las variables que iran en los campos del usuario
     $fila = $resultado_usuario_misdatos[0];
+    $id = $fila["IdUsuario"];
     $nombre = $fila["NomUsuario"];
     $clave =  $fila["Clave"];
     $correo =  $fila["Email"];
@@ -24,7 +25,7 @@
             <h1>Edita tus datos: </h1>
             <?php
             require_once "inc/form-reg.php"; 
-            generarFormularioRegistro($nombre, $clave, $correo, $fecha_nac, $ciudad, $pfp, $pais, $resultado_pais_misdatos, false);     
+            generarFormularioRegistro($id, $nombre, $clave, $correo, $fecha_nac, $ciudad, $pfp, $pais, $resultado_pais_misdatos, false);     
             ?>
         </div>
     </main>
