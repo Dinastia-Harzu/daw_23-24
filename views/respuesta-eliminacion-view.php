@@ -8,15 +8,22 @@
     <?php
         require_once "inc/header.php";
     
-        $mensaje = "Se ha borrado tu cuenta correctamente";
+        $mensaje = "<h2>La contraseña es incorrecta, no se ha borrado la cuenta</h2>";
+        $enlace = "<a href=\"eliminar-cuenta.php?id={$_GET["id"]}\">Volver atrás</a>";
 
-        if($_POST["clave"] != $resultado_usuario_clave[0]["Clave"]) {
-            $mensaje = "La contraseña es incorrecta, no se ha borrado la cuenta";
+        if($_POST["clave"] == $resultado_usuario_clave[0]["Clave"]) {
+            // Borramos la cuenta del usuario
+            BorrarUsuario();
+            $mensaje = "<h2>Se ha borrado tu cuenta correctamente</h2>";
+            $enlace = "<a href=\"index.php\">Volver a la página principal</a>";
+            session_destroy();
+            $_SESSION = array();
         }
 
     ?>
         <main>
-        <h2><?= $mensaje ?><h2>
+        <?= $mensaje ?>
+        <?= $enlace ?>
         </main>
 
     <?php

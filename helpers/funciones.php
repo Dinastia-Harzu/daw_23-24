@@ -159,7 +159,7 @@ function RegistrarOEditarUsuario(){
             )
             ;");
         } catch(Exception $e){
-            header("Location: ./404.php");
+            echo $e;
             exit();
         }
     }
@@ -181,7 +181,25 @@ function RegistrarOEditarUsuario(){
             WHERE IdUsuario = {$_GET["id"]}
             ;");
         } catch(Exception $e){
-            header("Location: ./404.php");
+            echo $e;
+            exit();
         }
     }
+}
+
+function BorrarUsuario(){
+    require_once "db/db.php";
+    require_once "models/usuario-model.php";
+    $usuario = new Usuario();
+
+    try{
+        $usuario->delete_data("
+            DELETE FROM usuarios
+            WHERE IdUsuario = {$_GET["id"]}
+        ;");
+    } catch(Exception $e){
+        echo $e;
+        exit();
+    }
+
 }
