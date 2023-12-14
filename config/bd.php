@@ -1,7 +1,7 @@
 <?php
 
 // Cabría poner esto en algún otro fichero
-define('RUTA_APP', '/daw_23-24/');
+define('RUTA_APP', './');
 
 define('SERVIDOR', '');
 define('USUARIO', 'root');
