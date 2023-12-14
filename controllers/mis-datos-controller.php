@@ -19,7 +19,7 @@ try {
         Pais,
         Foto
     FROM usuarios
-    WHERE NomUsuario = '{$_GET["usu"]}'
+    WHERE IdUsuario = {$_GET["id"]}
 ;");
 
     $resultado_pais_misdatos = $pais->get_data("

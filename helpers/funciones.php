@@ -203,3 +203,29 @@ function BorrarUsuario(){
     }
 
 }
+
+function cambiarEstiloUsuario(){
+    require_once "db/db.php";
+    require_once "models/usuario-model.php";
+    require_once "models/estilo-model.php";
+    $usuario = new Usuario();
+    $estilo = new Estilo();
+
+    try{
+        $tema_id = $estilo->get_data("
+            SELECT 
+                IdEstilo 
+            FROM estilos
+            WHERE Nombre = '{$_POST["tema"]}'
+        ;");
+
+        $usuario->insert_update_data("
+            UPDATE usuarios SET 
+                Estilo = {$tema_id[0]["IdEstilo"]}
+            WHERE IdUsuario = {$_GET["id"]}
+        ;");
+    } catch(Exception $e){
+        echo $e;
+        exit();
+    }
+}
