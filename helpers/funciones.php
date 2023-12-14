@@ -2,7 +2,6 @@
 
 require_once "inc/config.php";
 require_once "mysql.php";
-require_once "inc/head.php";
 require_once "inc/form-reg.php";
 
 function formatearFecha(string $fecha, bool $inverso = true) {

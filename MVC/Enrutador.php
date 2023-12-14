@@ -1,6 +1,7 @@
 <?php
 
 namespace MVC;
+use MVC\Controladores\Controlador;
 
 class Enrutador {
     private static $rutas = array();
@@ -14,16 +15,17 @@ class Enrutador {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = trim($uri, '/');
         $uri = explode('/', $uri);
-        $uri = array_slice($uri, 0);
+        $uri = array_slice($uri, 1);
         $uri = implode('/', $uri);
 
-        $metodo = $_SERVER['REQUEST_METHOD'];   
+        $metodo = $_SERVER['REQUEST_METHOD'];
 
         foreach(self::$rutas[$metodo] as $ruta => $cb) {
             if(strpos($ruta, ':') !== false) {
                 $ruta = preg_replace('#:[\w]+#', '([\w]+)', $ruta);
             }
 
+            // echo "$ruta<br>";
             if(preg_match("#^$ruta$#", $uri, $coincide)) {
                 $parametros = array_slice($coincide, 1);
                 if(is_callable($cb)) {
@@ -42,6 +44,6 @@ class Enrutador {
             }
         }
 
-        echo '404 Not Found';
+        echo (new Controlador)->error();
     }
 }

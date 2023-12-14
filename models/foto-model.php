@@ -5,7 +5,7 @@ class Foto {
     private $data;
 
     public function __construct() {
-        $this->db = Conexion::conexion();
+        $this->db = Conexion::conectar();
         $this->data = array();
     }
 

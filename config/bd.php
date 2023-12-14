@@ -1,5 +1,8 @@
 <?php
 
+// Cabría poner esto en algún otro fichero
+define('RUTA_APP', '/daw_23-24/');
+
 define('SERVIDOR', '');
 define('USUARIO', 'root');
 define('CLAVE', '');
@@ -15,3 +18,13 @@ define('ESTILO_CLARO', 2);
 define('ESTILO_ALTO_CONTRASTE', 3);
 define('ESTILO_LETRA_MAYOR', 4);
 define('ESTILO_ALTO_CONTRASTE_Y_LETRA_MAYOR', 5);
+
+class Conexion {
+    public function __construct() {
+        $this->conectar();
+    }
+
+    public static function conectar() {
+        return new mysqli(SERVIDOR, USUARIO, CLAVE, BD);
+    }
+}

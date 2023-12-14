@@ -5,5 +5,5 @@ use mysqli;
 
 class Usuario extends Modelo {
     protected $tabla = 'usuarios';
-    protected $idTabla = 'IdUsuario';
+    protected $nombreIdTabla = 'IdUsuario';
 }
