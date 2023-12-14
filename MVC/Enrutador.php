@@ -25,7 +25,6 @@ class Enrutador {
                 $ruta = preg_replace('#:[\w]+#', '([\w]+)', $ruta);
             }
 
-            // echo "$ruta<br>";
             if(preg_match("#^$ruta$#", $uri, $coincide)) {
                 $parametros = array_slice($coincide, 1);
                 if(is_callable($cb)) {
