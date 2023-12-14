@@ -16,7 +16,7 @@
                     <h2>Introduce la información de la foto:</h2>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="titulo" id="titulo">
+                            <input type="text" placeholder=" " name="titulo" id="titulo" required>
                             <span class="omrs-input-label">Titulo</span>
                         </label>
                     </div>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="text" name="texalt" id="texalt">
+                            <input type="text" name="texalt" id="texalt" pattern="^(?!foto|imagen).{10,}$">
                             <span class="omrs-input-label">Texto Alternativo</span>
                         </label>
                     </div>

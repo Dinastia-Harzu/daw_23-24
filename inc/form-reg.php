@@ -36,7 +36,7 @@ function generarFormularioRegistro(
                         <span class="omrs-input-label">Contraseña</span>
                     </label>
                 </div>
-    hereDOC;
+        hereDOC;
             if($nuevo) {
                 echo <<<hereDOC
                     <div class="omrs-input-group">
