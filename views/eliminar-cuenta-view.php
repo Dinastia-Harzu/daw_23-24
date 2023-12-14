@@ -21,6 +21,18 @@
                     }
                     echo '<p>' . 'Fotos totales: ' . $num_fotos_total . '</p>';
                 ?>
+                <hr>
+                <form action="respuesta-eliminacion.php" method="post">
+                    <p>Introduce tu contraseña para confirmar:</p>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-filled">
+                            <input type="passsword" placeholder=" " name="clave" id="clave">
+                        </label>
+                    </div>
+                    <div class="campo-boton-submit">
+                        <button type="submit" id="btn-registro">Confirmar</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
