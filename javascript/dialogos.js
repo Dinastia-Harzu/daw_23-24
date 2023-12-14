@@ -23,7 +23,7 @@ function crearDialogoLogin() {
                 .appendChild(document.createTextNode('Iniciar sesión'))
             .parentElement
         .parentElement
-            .appendChild(crearElemento('form', {action: 'control-usuario.php', method: 'post'}, 'submit', evt => {
+            .appendChild(crearElemento('form', {action: 'usuario/control', method: 'post'}, 'submit', evt => {
                 for(const campo of new FormData(evt.target)) {
                     if(campo[1].trim().length == 0) {
                         evt.preventDefault();
@@ -52,9 +52,19 @@ function crearDialogoLogin() {
                     .parentElement
                 .parentElement
             .parentElement
+                .appendChild(crearElemento('div', {className: 'omrs-input-group'}))
+                    .appendChild(crearElemento('label', {className: 'omrs-input-filled'}))
+                        .appendChild(crearElemento('input', {type: 'checkbox', id: 'recuerdame', name: 'recuerdame'}))
+                    .parentElement
+                        .appendChild(crearElemento('span', {className: 'omrs-input-label'}))
+                            .appendChild(document.createTextNode('Recuérdame'))
+                        .parentElement
+                    .parentElement
+                .parentElement
+            .parentElement
                 .appendChild(crearElemento('div', {className: 'campo-boton-submit'}))
                     .appendChild(crearElemento('button', {type: 'submit'}))
-                        .appendChild(document.createTextNode('Registrarse'))
+                        .appendChild(document.createTextNode('Enviar'))
                     .parentElement
                 .parentElement
             .parentElement
@@ -77,7 +87,7 @@ function crearDialogoLogin() {
                 .appendChild(crearElemento('p', {className: 'text-google'}))
                     .appendChild(document.createTextNode('¿No tienes cuenta? '))
                 .parentElement
-                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                    .appendChild(crearElemento('a', {href: 'registro'}))
                         .appendChild(document.createTextNode('Regístrate'))
                     .parentElement
                 .parentElement
@@ -107,7 +117,7 @@ function crearDialogoError() {
                 .parentElement
             .parentElement
                 .appendChild(crearElemento('li', {}))
-                    .appendChild(crearElemento('a', {href: 'registro.html'}))
+                    .appendChild(crearElemento('a', {href: 'registro'}))
                         .appendChild(document.createTextNode('Registrarse'))
                     .parentElement
                 .parentElement
