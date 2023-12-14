@@ -11,7 +11,7 @@
     <main>
         <div id="creacion-cuenta">
             <h1>Añadir foto</h1>
-            <form action="gestionar-subidas.php" method="post" id="tab-reg">
+            <form action="respuesta-publicar.php" method="post" id="tab-reg">
                 <section id="reg-1">
                     <h2>Introduce la información de la foto:</h2>
                     <div class="omrs-input-group">
@@ -33,9 +33,15 @@
                         </label>
                     </div>
                     <div class="omrs-input-group">
+                        <p>País</p>
                         <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="pais" id="pais">
-                            <span class="omrs-input-label">País</span>
+                            <select name="pais" id="pais">
+                                <?php
+                                foreach ($resultado_pais_publicar as $fila) {
+                                    echo '<option value="' . $fila["IdPais"] . '">' . $fila["NomPais"] . '</option>';
+                                }
+                                ?>
+                            </select>
                         </label>
                     </div>
                     <div class="omrs-input-group">
@@ -55,7 +61,7 @@
                                     }
                                     foreach($resultado_album_publicar as $fila) {
                                         $predeterminado = $fila["IdAlbum"] == $id ? 'selected' : '';
-                                        echo '<option ' . $predeterminado . ' value="' . $fila["Titulo"] . '">' . $fila["Titulo"] . '</option>';
+                                        echo '<option ' . $predeterminado . ' value="' . $fila["IdAlbum"] . '">' . $fila["Titulo"] . '</option>';
                                     }
                                 ?>
                             </select>
