@@ -4,13 +4,16 @@ use MVC\Enrutador;
 use MVC\Controladores\Controlador;
 use MVC\Controladores\ControladorIndex;
 use MVC\Controladores\ControladorBusqueda;
-use MVC\Controladores\ControladorEstilos;
 use MVC\Controladores\ControladorUsuario;
 use MVC\Controladores\ControladorAlbum;
 use MVC\Controladores\ControladorFoto;
 
+// --- GET ---
 // index.php
 Enrutador::agregarRutaMetodo('GET', '/', [ControladorIndex::class, 'index']);
+
+// resultado.php
+Enrutador::agregarRutaMetodo('GET', '/resultados', [ControladorIndex::class, 'respuesta']);
 
 // accesibilidad.php
 Enrutador::agregarRutaMetodo('GET', '/accesibilidad', [Controlador::class, 'accesibilidad']);
@@ -19,7 +22,7 @@ Enrutador::agregarRutaMetodo('GET', '/accesibilidad', [Controlador::class, 'acce
 Enrutador::agregarRutaMetodo('GET', '/busqueda', [ControladorBusqueda::class, 'busqueda']);
 
 // configurar.php
-Enrutador::agregarRutaMetodo('GET', '/estilos', [ControladorEstilos::class, 'configurar']);
+Enrutador::agregarRutaMetodo('GET', '/usuario/estilos', [ControladorUsuario::class, 'configurar']);
 
 // control-usuario.php
 Enrutador::agregarRutaMetodo('GET', '/usuario/control', [ControladorUsuario::class, 'controlUsuario']);
@@ -27,32 +30,11 @@ Enrutador::agregarRutaMetodo('GET', '/usuario/control', [ControladorUsuario::cla
 // crear-album.php
 Enrutador::agregarRutaMetodo('GET', '/album/crear', [ControladorAlbum::class, 'crearAlbum']);
 
-// detalle.php
-Enrutador::agregarRutaMetodo('GET', '/foto/:id', [ControladorFoto::class, 'detalle']);
-
 // mis-albumes.php
 Enrutador::agregarRutaMetodo('GET', '/album/mio', [ControladorAlbum::class, 'misAlbumes']);
 
-// mis-datos.php
-Enrutador::agregarRutaMetodo('GET', '/usuario/datos', [ControladorUsuario::class, 'misDatos']);
-
-// perfil-usuario.php
-Enrutador::agregarRutaMetodo('GET', '/usuario/perfil', [ControladorUsuario::class, 'perfilUsuario']);
-
-// publicar.php
-Enrutador::agregarRutaMetodo('GET', '/foto/publicar', [ControladorFoto::class, 'publicar']);
-
-// registro.php
-Enrutador::agregarRutaMetodo('GET', '/usuario/registro', [ControladorUsuario::class, 'registro']);
-
 // respuesta-album.php
 Enrutador::agregarRutaMetodo('GET', '/album/respuesta', [ControladorAlbum::class, 'respuestaAlbum']);
-
-// respuesta-usuario.php
-Enrutador::agregarRutaMetodo('GET', '/usuario/respuesta', [ControladorUsuario::class, 'respuestaUsuario']);
-
-// resultado.php
-Enrutador::agregarRutaMetodo('GET', '/resultados', [ControladorIndex::class, 'respuesta']);
 
 // solicitar-album.php
 Enrutador::agregarRutaMetodo('GET', '/album/solicitar', [ControladorAlbum::class, 'solicitarAlbum']);
@@ -60,7 +42,33 @@ Enrutador::agregarRutaMetodo('GET', '/album/solicitar', [ControladorAlbum::class
 // tabla-album.php
 Enrutador::agregarRutaMetodo('GET', '/album/tabla', [ControladorAlbum::class, 'tablaAlbum']);
 
+// detalle.php
+Enrutador::agregarRutaMetodo('GET', '/foto/:id', [ControladorFoto::class, 'detalle']);
+
+// publicar.php
+Enrutador::agregarRutaMetodo('GET', '/foto/publicar', [ControladorFoto::class, 'publicar']);
+
 // usuario.php
 Enrutador::agregarRutaMetodo('GET', '/usuario', [ControladorUsuario::class, 'usuario']);
 
+// mis-datos.php
+Enrutador::agregarRutaMetodo('GET', '/usuario/datos', [ControladorUsuario::class, 'misDatos']);
+
+// perfil-usuario.php
+Enrutador::agregarRutaMetodo('GET', '/usuario/perfil', [ControladorUsuario::class, 'perfilUsuario']);
+
+// registro.php
+Enrutador::agregarRutaMetodo('GET', '/usuario/registro', [ControladorUsuario::class, 'registro']);
+
+// respuesta-usuario.php
+Enrutador::agregarRutaMetodo('GET', '/usuario/respuesta', [ControladorUsuario::class, 'respuestaUsuario']);
+
+// --- POST ---
+
+// --- PUT ---
+
+// --- DELETE ---
+
+
+// Final
 Enrutador::despachar();
