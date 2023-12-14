@@ -224,7 +224,52 @@ function cambiarEstiloUsuario(){
                 Estilo = {$tema_id[0]["IdEstilo"]}
             WHERE IdUsuario = {$_GET["id"]}
         ;");
-    } catch(Exception $e){
+    } catch(Exception $e) {
+        echo $e;
+        exit();
+    }
+}
+
+function anyadirSolicitud(){
+    require_once "db/db.php";
+    require_once "models/solicitud-model.php";
+    require_once "models/album-model.php";
+    $solicitud = new Solicitud();
+    $album = new Album();
+    
+
+    // Si IColor no esta definido (no se ha marcado la casilla) cambiamos el valor
+    if(!isset($_POST["IColor"])) {
+        $_POST["IColor"] = false;
+    }
+
+    try{
+        // Vemos el id del album a partir del nombre
+        $album_id = $album->get_data("
+            SELECT 
+                IdAlbum
+            FROM albumes
+            WHERE Titulo = '{$_POST["album"]}'
+        ;");
+
+        $solicitud->insert_data("
+            INSERT INTO solicitudes VALUES(
+                null,
+                 {$album_id[0]["IdAlbum"]},
+                '{$_POST["nombre"]}',
+                '{$_POST["titulo"]}',
+                '{$_POST["texto-adicional"]}',
+                '{$_POST["correo"]}',
+                '{$_POST["direccion"]}',
+                '{$_POST["color"]}',
+                 {$_POST["copias"]},
+                 {$_POST["resolucion"]},
+                 {$_POST["fecha-recepcion"]},
+                 {$_POST["IColor"]},
+                 CURRENT_TIMESTAMP(),
+                 0.0
+        ;");
+    } catch(Exception $e) {
         echo $e;
         exit();
     }

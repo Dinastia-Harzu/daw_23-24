@@ -11,6 +11,9 @@
     require_once "helpers/funciones.php";
 
     generarHead(pagina:'respuesta-album', estilo:'album');
+
+    // Hacemos el insert
+    anyadirSolicitud();
 ?>
 <body>
 <?php

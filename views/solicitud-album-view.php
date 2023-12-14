@@ -177,7 +177,7 @@
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <div class="checkbox-wrapper-19">
-                                <input type="checkbox" id="cbtest-19" />
+                                <input type="checkbox" id="cbtest-19" name="IColor">
                                 <label for="cbtest-19" class="check-box"></label>
                             </div>
                             <span class="omrs-input-label">Impresión a color</span>
