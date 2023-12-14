@@ -22,7 +22,7 @@
                     echo '<p>' . 'Fotos totales: ' . $num_fotos_total . '</p>';
                 ?>
                 <hr>
-                <form action="respuesta-eliminacion.php" method="post">
+                <form action="respuesta-eliminacion.php?id=<?= $_GET["id"] ?>" method="post">
                     <p>Introduce tu contraseña para confirmar:</p>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
