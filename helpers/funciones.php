@@ -239,8 +239,10 @@ function anyadirSolicitud(){
     
 
     // Si IColor no esta definido (no se ha marcado la casilla) cambiamos el valor
+    $color = 1;
+
     if(!isset($_POST["IColor"])) {
-        $_POST["IColor"] = false;
+        $color = 0;
     }
 
     try{
@@ -254,7 +256,7 @@ function anyadirSolicitud(){
 
         $solicitud->insert_data("
             INSERT INTO solicitudes VALUES(
-                null,
+                NULL,
                  {$album_id[0]["IdAlbum"]},
                 '{$_POST["nombre"]}',
                 '{$_POST["titulo"]}',
@@ -264,10 +266,11 @@ function anyadirSolicitud(){
                 '{$_POST["color"]}',
                  {$_POST["copias"]},
                  {$_POST["resolucion"]},
-                 {$_POST["fecha-recepcion"]},
-                 {$_POST["IColor"]},
+                 '{$_POST["fecha-recepcion"]}',
+                  $color,
                  CURRENT_TIMESTAMP(),
-                 0.0
+                 0
+            )
         ;");
     } catch(Exception $e) {
         echo $e;
