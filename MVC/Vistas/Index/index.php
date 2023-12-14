@@ -6,7 +6,7 @@
                     <a href="#login">Iniciar sesión</a>
                 </li>
                 <li>
-                    <a href="/usuario/registro">Registrarse</a>
+                    <a href="usuario/registro">Registrarse</a>
                 </li>
             </ul>
         </div>
@@ -17,7 +17,7 @@
             <article>
                 <?php if(isset($_SESSION['usuario'])): ?>
                     <h2><?= $foto['Titulo'] ?></h2>
-                    <a href="/fotos/<?= $foto['IdFoto'] ?>">
+                    <a href="fotos/<?= $foto['IdFoto'] ?>">
                         <img src="<?= $foto['Fichero'] ?>" alt="<?= $foto['Alternativo'] ?>">
                     </a>
                     <p><?= $foto['NomPais'] ?></p>
