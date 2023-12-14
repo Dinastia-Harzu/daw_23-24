@@ -26,7 +26,8 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
         'tabla-album' => 'Tabla del álbum',
         'usuario' => 'Usuario',  // TODO
         'ver-album' => 'Ver álbum',
-        'ver-album-priv' => 'Ver álbum'
+        'ver-album-priv' => 'Ver álbum',
+        'eliminar-cuenta' => 'Confirmación de eliminación de cuenta'
     );
     $tema = $_SESSION["tema"] ?? 'oscuro';
     echo <<<hereDOC

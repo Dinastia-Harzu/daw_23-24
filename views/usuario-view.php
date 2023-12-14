@@ -60,6 +60,9 @@
                                     <a href="publicar.php?id={$fila["IdUsuario"]}">Añadir foto a álbum</a>
                                 </p>
                                 <p>
+                                    <a href="eliminar-cuenta.php?id={$fila["IdUsuario"]}">Eliminar cuenta</a>
+                                </p>
+                                <p>
                                     <a href="index.php">Volver a inicio</a>
                                 </p>
                                 <form action="control-usuario.php" method="post">
