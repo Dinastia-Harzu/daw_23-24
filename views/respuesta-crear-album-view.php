@@ -15,6 +15,9 @@
                 <p>Titulo: <?= $_POST["titulo"] ?></p>
                 <p>Descripción: <?= $_POST["descripcion"] ?></p>
             </div>
+            <hr>
+                <p>¿Quieres incluir una nueva foto en el álbum?</p>
+                <p><a href="publicar.php?id=<?= $_GET["id"] ?>">Añadir foto</a><p>
         </section>
     </main>
     <?php
