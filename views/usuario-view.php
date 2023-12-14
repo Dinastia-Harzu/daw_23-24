@@ -48,10 +48,10 @@
                                     <a href="mis-albumes.php?id={$fila["IdUsuario"]}">Mis álbumes</a>
                                 </p>
                                 <p>
-                                    <a href="crear-album.php">Crear álbum</a>
+                                    <a href="crear-album.php?id={$fila["IdUsuario"]}">Crear álbum</a>
                                 </p>
                                 <p>
-                                    <a href="solicitar-album.php">Solicitar álbum</a>
+                                    <a href="solicitar-album.php?id={$fila["IdUsuario"]}">Solicitar álbum</a>
                                 </p>
                                 <p>
                                     <a href="configurar.php">Configurar estilos</a>
