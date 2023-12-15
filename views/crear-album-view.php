@@ -11,16 +11,16 @@
     <main>
         <section id="tab-crear-album">
             <h1>Crea tu álbum</h1>
-            <form action="usuario.php">
+            <form action="respuesta-crear-album.php?id=<?= $_GET["id"] ?>" method="post">
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <input type="text" placeholder=" " name="titulo" id="titulo-album">
+                        <input type="text" placeholder=" " name="titulo" id="titulo-album" required>
                         <span class="omrs-input-label">Titulo</span>
                     </label>
                 </div>
                 <div class="omrs-input-group">
                     <label class="omrs-input-filled">
-                        <textarea></textarea>
+                        <textarea name="descripcion"></textarea>
                         <span class="omrs-input-label">Descripción</span>
                     </label>
                 </div>

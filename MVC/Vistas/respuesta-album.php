@@ -7,25 +7,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título imagen - Masthermatika</title>
-    <link rel="stylesheet" href="css/global/style.css">
-    <link rel="stylesheet" href="css/ordenador/style.css">
-    <link rel="stylesheet" href="css/tablet/style.css">
-    <link rel="stylesheet" href="css/movil/style.css">
-    <link rel="stylesheet" href="css/global/album.css">
-    <link rel="stylesheet" href="css/ordenador/album.css">
-    <link rel="stylesheet" href="css/tablet/album.css">
-    <link rel="stylesheet" href="css/movil/album.css">
-    <?php
-        echo '<link rel="stylesheet" href="css/modos-alternativos/' . $tema . '.css">';
-    ?>
-    <link rel="stylesheet" href="css/impresion/style.css" media="print">
-    <link rel="stylesheet" href="css/impresion/respuesta-album.css" media="print">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<?php
+    require_once "helpers/funciones.php";
+
+    generarHead(pagina:'respuesta-album', estilo:'album');
+
+    // Hacemos el insert
+    anyadirSolicitud();
+?>
 <body>
 <?php
     require_once "inc/header.php";
@@ -75,31 +64,33 @@
             <section>
                 <h2>Formulario de solicitud</h2>
                 <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
+                <?php
+                echo <<<hereDOC
                 <form action="#">
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="nombre" id="nombre" disabled value="Mi nuevo álbum">
+                            <input type="text" placeholder=" " name="nombre" id="nombre" disabled value="{$_POST["nombre"]}">
                             <span class="omrs-input-label">Nombre</span>
                             <span class="omrs-input-helper">Tu nombre</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="text" placeholder=" " name="titulo" id="titulo" disabled value="Inserta texto">
+                            <input type="text" placeholder=" " name="titulo" id="titulo" disabled value="{$_POST["titulo"]}">
                             <span class="omrs-input-label">Título</span>
                             <span class="omrs-input-helper">El título para el álbum impreso</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <textarea placeholder=" " name="texto-adicional" id="texto-adicional" rows="10" maxlength="4000" disabled value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, neque itaque atque quae qui saepe doloribus assumenda sint exercitationem ullam dolor distinctio aspernatur alias natus, cum numquam minima, amet recusandae."></textarea>
+                            <textarea placeholder=" " name="texto-adicional" id="texto-adicional" rows="10" maxlength="4000" disabled value="{$_POST["texto-adicional"]}"></textarea>
                             <span class="omrs-input-label">Texto adicional</span>
                             <span class="omrs-input-helper">Hasta 4000 caracteres</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="email" placeholder=" " name="correo" id="correo" disabled value="debug@correo.es">
+                            <input type="email" placeholder=" " name="correo" id="correo" disabled value="{$_POST["correo"]}">
                             <span class="omrs-input-label">Correo electrónico</span>
                         </label>
                     </div>
@@ -107,65 +98,65 @@
                         <legend>Dirección</legend>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="text" name="direccion" id="direccion" placeholder=" " disabled value="Bulevard del plà">
+                                <input type="text" name="direccion" id="direccion" placeholder=" " disabled value="{$_POST["direccion"]}">
                                 <span class="omrs-input-label">Dirección</span>
                                 <span class="omrs-input-helper">La calle, avenida, bulevar, etc.</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="number" name="numero" id="numero" placeholder=" " disabled value="23">
+                                <input type="number" name="numero" id="numero" placeholder=" " disabled value="{$_POST["numero"]}">
                                 <span class="omrs-input-label">Número</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="text" name="cp" id="cp" placeholder=" " disabled value="01205">
+                                <input type="text" name="cp" id="cp" placeholder=" " disabled value="{$_POST["cp"]}">
                                 <span class="omrs-input-label">Código postal</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="text" name="ciudad" id="ciudad" placeholder=" " disabled value="Elche">
+                                <input type="text" name="ciudad" id="ciudad" placeholder=" " disabled value="{$_POST["ciudad"]}">
                                 <span class="omrs-input-label">Ciudad</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="text" name="provincia" id="provincia" placeholder=" " disabled value="Alicante">
+                                <input type="text" name="provincia" id="provincia" placeholder=" " disabled value="{$_POST["provincia"]}">
                                 <span class="omrs-input-label">Provincia</span>
                             </label>
                         </div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-filled">
-                                <input type="text" name="pais" id="pais" placeholder=" " disabled value="España">
+                                <input type="text" name="pais" id="pais" placeholder=" " disabled value="{$_POST["pais"]}">
                                 <span class="omrs-input-label">País</span>
                             </label>
                         </div>
                     </fieldset>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="tel" placeholder=" " name="telefono" id="telefono" disabled value="+34 965903400 x 2962">
+                            <input type="tel" placeholder=" " name="telefono" id="telefono" disabled value="{$_POST["telefono"]}">
                             <span class="omrs-input-label">Teléfono</span>
                             <span class="omrs-input-helper">El número de teléfono al que contactar</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled" id="swatch">
-                            <input type="color" id="color" name="color" disabled>
+                            <input type="color" id="color" name="color" disabled value="{$_POST["color"]}">
                             <span class="omrs-input-label">Color de la portada</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="number" placeholder=" " name="copias" id="copias" min="1" value="1" disabled>
+                            <input type="number" placeholder=" " name="copias" id="copias" min="1" value="1" disabled value="{$_POST["copias"]}">
                             <span class="omrs-input-label">Número de copias</span>
                             <span class="omrs-input-helper">Mínimo una copia</span>
                         </label>
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="range" placeholder=" " name="resolucion" id="resolucion" step="150" min="150" max="900" value="150" disabled>
+                            <input type="range" placeholder=" " name="resolucion" id="resolucion" step="150" min="150" max="900" value="150" disabled value="{$_POST["resolucion"]}">
                             <span class="omrs-input-label">Resolución de impresión</span>
                             <div>
                                 <output name="dpi" for="resolucion">150</output>
@@ -178,7 +169,7 @@
                         <label class="omrs-input-filled">
                             <select name="album" id="album" disabled>
                                 <option disabled value>-- Selecciona una opción --</option>
-                                <option value="0" selected>Mis álbumes</option>
+                                <option value="0" selected>{$_POST["album"]}</option>
                             </select>
                             <span class="omrs-input-label">Álbum de Masthermatika</span>
                             <span class="omrs-input-helper">Elige uno de tus álbumes</span>
@@ -186,7 +177,7 @@
                     </div>
                     <div class="omrs-input-group">
                         <label class="omrs-input-filled">
-                            <input type="date" name="fecha-recepcion" id="fecha-recepcion" disabled value="2023-10-27">
+                            <input type="date" name="fecha-recepcion" id="fecha-recepcion" disabled value="{$_POST["fecha-recepcion"]}">
                             <span class="omrs-input-label">Fecha recepción</span>
                             <span class="omrs-input-helper">Establece una fecha de recepción aproximada</span>
                         </label>
@@ -201,6 +192,8 @@
                         </label>
                     </div>
                 </form>
+            hereDOC;
+            ?>
             </section>
         </div>
     </main>

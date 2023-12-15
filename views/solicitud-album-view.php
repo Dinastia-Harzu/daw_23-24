@@ -52,7 +52,7 @@
             <section>
                 <h2>Formulario de solicitud</h2>
                 <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-                <form action="respuesta-album.php" oninput="dpi.value = parseInt(resolucion.value);">
+                <form action="respuesta-album.php" oninput="dpi.value = parseInt(resolucion.value);" method="post">
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input type="text" placeholder=" " name="nombre" id="nombre" required>
@@ -177,7 +177,7 @@
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <div class="checkbox-wrapper-19">
-                                <input type="checkbox" id="cbtest-19" />
+                                <input type="checkbox" id="cbtest-19" name="IColor">
                                 <label for="cbtest-19" class="check-box"></label>
                             </div>
                             <span class="omrs-input-label">Impresión a color</span>

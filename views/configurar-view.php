@@ -16,7 +16,7 @@
     ?>
     <main>
         <h2>Elige el estilo de la página</h2>
-        <form action="configurar.php" method="post" id ="datos-usuario">
+        <form action="respuesta-configurar.php?id=<?= $_GET["id"] ?>" method="post" id ="datos-usuario">
             <select name="tema" id="tema">
                 <?php
                     foreach($resultado_estilo as $fila) {

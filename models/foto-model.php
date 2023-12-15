@@ -21,5 +21,9 @@ class Foto {
         }
         return $this->data;
     }
+
+    public function insert_data(string $q){
+        $this->db->query($q);
+    }
 }
 ?>

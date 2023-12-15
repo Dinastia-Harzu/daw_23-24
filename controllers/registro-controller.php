@@ -6,9 +6,9 @@ $pais = new Pais();
 
 try {
     $resultado_pais = $pais->get_data("
-    SELECT *
-    FROM paises
-;");
+        SELECT *
+        FROM paises
+    ;");
 } catch(Exception $e) {
     header("Location: ./404.php");
     exit();

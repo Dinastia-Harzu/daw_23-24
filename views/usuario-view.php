@@ -42,22 +42,25 @@
                             </div>
                             <div id="funciones">
                                 <p>
-                                    <a href="mis-datos.php?usu={$fila["NomUsuario"]}">Mis datos</a>
+                                    <a href="mis-datos.php?id={$fila["IdUsuario"]}">Mis datos</a>
                                 </p>
                                 <p>
                                     <a href="mis-albumes.php?id={$fila["IdUsuario"]}">Mis álbumes</a>
                                 </p>
                                 <p>
-                                    <a href="crear-album.php">Crear álbum</a>
+                                    <a href="crear-album.php?id={$fila["IdUsuario"]}">Crear álbum</a>
                                 </p>
                                 <p>
-                                    <a href="solicitar-album.php">Solicitar álbum</a>
+                                    <a href="solicitar-album.php?id={$fila["IdUsuario"]}">Solicitar álbum</a>
                                 </p>
                                 <p>
-                                    <a href="configurar.php">Configurar estilos</a>
+                                    <a href="configurar.php?id={$fila["IdUsuario"]}">Configurar estilos</a>
                                 </p>
                                 <p>
                                     <a href="publicar.php?id={$fila["IdUsuario"]}">Añadir foto a álbum</a>
+                                </p>
+                                <p>
+                                    <a href="eliminar-cuenta.php?id={$fila["IdUsuario"]}">Eliminar cuenta</a>
                                 </p>
                                 <p>
                                     <a href="index.php">Volver a inicio</a>

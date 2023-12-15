@@ -9,6 +9,7 @@ $pais = new Pais();
 try {
     $resultado_usuario_misdatos = $usuario->get_data("
     SELECT
+        IdUsuario,
         NomUsuario,
         Clave,
         Email,
@@ -18,7 +19,7 @@ try {
         Pais,
         Foto
     FROM usuarios
-    WHERE NomUsuario = '{$_GET["usu"]}'
+    WHERE IdUsuario = {$_GET["id"]}
 ;");
 
     $resultado_pais_misdatos = $pais->get_data("

@@ -19,12 +19,18 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
         'publicar' => 'Publicar',
         'registro' => 'Registro',
         'respuesta-album' => 'Respuesta a la solicitud de álbum',
+        'respuesta-usuario' => 'Respuesta al registro de usuario',
+        'respuesta-publicar' => 'Respuesta a la publicacion de imagen',
+        'respuesta-eliminacion' => 'Respuesta a la eliminacion de cuenta',
+        'respuesta-crear-album' => 'Respuesta a la creación de álbum',
+        'respuesta-configuracion' => 'Respuesta a la nueva configuracion de estilo',
         'resultado' => 'Resultado de la búsqueda',
         'solicitar-album' => 'Solicitar állbum',
         'tabla-album' => 'Tabla del álbum',
         'usuario' => 'Usuario',  // TODO
         'ver-album' => 'Ver álbum',
-        'ver-album-priv' => 'Ver álbum'
+        'ver-album-priv' => 'Ver álbum',
+        'eliminar-cuenta' => 'Confirmación de eliminación de cuenta'
     );
     $tema = $_SESSION["tema"] ?? 'oscuro';
     echo <<<hereDOC

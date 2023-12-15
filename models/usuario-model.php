@@ -20,5 +20,13 @@ class Usuario {
         }
         return $this->data;
     }
+
+    public function insert_update_data(string $q) {
+        $this->db->query($q);
+    }
+
+    public function delete_data(string $q) {
+        $this->db->query($q);
+    }
 } 
 ?>

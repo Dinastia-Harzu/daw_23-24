@@ -1,6 +1,5 @@
 <?php
-
-class Album {
+class Solicitud {
     private $db;
     private $data;
 
@@ -25,5 +24,5 @@ class Album {
     public function insert_data(string $q) {
         $this->db->query($q);
     }
-}
+} 
 ?>
