@@ -33,6 +33,16 @@ function generarHead(string $pagina, string $estilo = null, bool $dialogos = fal
         'eliminar-cuenta' => 'Confirmación de eliminación de cuenta'
     );
     $tema = $_SESSION["tema"] ?? 'oscuro';
+    if(isset($_SESSION["usuario"])) {
+        $usuario = new Usuario;
+        $datos = $usuario->get_data("
+            SELECT *
+            FROM estilos
+            JOIN usuarios ON(IdEstilo = Estilo)
+            WHERE NomUsuario = '{$_SESSION["usuario"]}'
+        ;");
+        $tema = $datos[0]["Nombre"];
+    }
     echo <<<hereDOC
         <!DOCTYPE html>
         <html lang="es">
