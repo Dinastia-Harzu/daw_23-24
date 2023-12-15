@@ -3,7 +3,7 @@
 namespace MVC\Modelos;
 use mysqli;
 
-class Usuario extends Modelo {
+class Pais extends Modelo {
     protected $tabla = 'paises';
     protected $nombreIdTabla = 'IdPais';
 }

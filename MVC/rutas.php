@@ -13,7 +13,7 @@ use MVC\Controladores\ControladorFoto;
 Enrutador::agregarRutaMetodo('GET', '/', [ControladorIndex::class, 'index']);
 
 // resultado.php
-Enrutador::agregarRutaMetodo('GET', '/resultados', [ControladorIndex::class, 'respuesta']);
+Enrutador::agregarRutaMetodo('POST', '/resultados', [ControladorIndex::class, 'resultado']);
 
 // accesibilidad.php
 Enrutador::agregarRutaMetodo('GET', '/accesibilidad', [Controlador::class, 'accesibilidad']);

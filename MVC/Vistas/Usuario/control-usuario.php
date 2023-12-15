@@ -1,10 +1,5 @@
 <?php
 
-require_once "helpers/funciones.php";
-    session_start();
-
-session_start();
-
 if(isset($_POST["cerrar-sesion"])) {
     borrarSesion();
     borrarCookie('recuerdame');

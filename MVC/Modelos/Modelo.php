@@ -8,7 +8,7 @@ class Modelo {
     protected $conexion;
     protected $consulta;
     protected $tabla;
-    protected $idTabla = 'id';
+    protected $nombreIdTabla = 'id';
 
     public function __construct() {
         $this->conexion();
@@ -43,7 +43,7 @@ class Modelo {
     }
 
     public function obtenerPorId(int $id) {
-        $sql = "SELECT * FROM {$this->tabla} WHERE {$this->idTabla} = $id;";
+        $sql = "SELECT * FROM {$this->tabla} WHERE {$this->nombreIdTabla} = $id;";
 
         return $this->consulta($sql)->primero();
     }
@@ -82,14 +82,14 @@ class Modelo {
 
         $campos = implode(', ', $campos);
 
-        $sql = "UPDATE {$this->tabla} SET $campos WHERE {$this->idTabla} = $id;";
+        $sql = "UPDATE {$this->tabla} SET $campos WHERE {$this->nombreIdTabla} = $id;";
         $this->consulta($sql);
 
         return $this->obtenerPorId($id);
     }
 
     public function borrar($id) {
-        $sql = "DELETE FROM {$this->tabla} WHERE {$this->idTabla} = $id;";
+        $sql = "DELETE FROM {$this->tabla} WHERE {$this->nombreIdTabla} = $id;";
         $this->consulta($sql);
     }
 }

@@ -6,46 +6,48 @@
         <nav>
             <ul id="nav-texto">
                 <li>
-                    <a href="index.php">Inicio</a>
+                    <a href="<?= RUTA_APP ?>">Inicio</a>
                 </li>
                 <li>
-                    <a href="busqueda.php">Descubrir</a>
+                    <a href="busqueda">Descubrir</a>
                 </li>
-                <?php if(isset($_SESSION["usuario"])) {
-                    echo '<li><a href="publicar.php">Publicar</a></li>';
-                } ?>
+                <?php if(isset($_SESSION["usuario"])): ?>
+                    <li>
+                        <a href="publicar">Publicar</a>
+                    </li>;
+                <?php endif; ?>
             </ul>
             <ul id="nav-iconos">
                 <li>
-                    <a href="index.php"><i class="fa fa-home"></i></a>
+                    <a href="<?= RUTA_APP ?>"><i class="fa fa-home"></i></a>
                 </li>
                 <li class="dropdown">
                     <div class="dropdown-button"><i class="fa fa-search"></i></div>
                     <div class="dropdown-content">
-                        <a href="busqueda.php">Descubrir</a>
-                        <form action="resultado.php">
+                        <a href="busqueda">Descubrir</a>
+                        <form action="resultados" method="post">
                             <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                 </li>
-                <?php if(isset($_SESSION["usuario"])) {
-                    echo '<li><a href="publicar.php"><i class="fa fa-upload"></i></a></li>';
-                } ?>
+                <?php if(isset($_SESSION["usuario"])): ?>
+                    <li>
+                        <a href="publicar"><i class="fa fa-upload"></i></a>
+                    </li>;
+                <?php endif; ?>
             </ul>
         </nav>
     </aside>
-    <form action="resultado.php" id="busqueda-rapida">
+    <form action="resultados" method="post" id="busqueda-rapida">
         <input type="text" name="busqueda-rapida" placeholder="Búsqueda rápida">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-    <?php if(isset($_SESSION["usuario"])) {
-        echo <<<hereDOC
-            <figure>
-                <a href="usuario.php">
-                    <img src="img/placeholder.png" alt="Foto de perfil del usuario">
-                </a>
-            </figure>
-        hereDOC;
-    } ?>
+    <?php if(isset($_SESSION["usuario"])): ?>
+        <figure>
+            <a href="usuario">
+                <img src="img/placeholder.png" alt="Foto de perfil del usuario">
+            </a>
+        </figure>
+    <?php endif; ?>
 </header>
